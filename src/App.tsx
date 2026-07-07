@@ -118,6 +118,7 @@ export default function App() {
     "El mensaje se abre en tu cliente de correo con el resumen listo."
   );
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const [menuOpen, setMenuOpen] = useState(false);
   const bubbleId = useRef(0);
   const bubbleTimers = useRef<number[]>([]);
   const lastSparkAt = useRef(0);
@@ -175,6 +176,7 @@ export default function App() {
 
   const jumpToContact = (nextInterest: Interest) => {
     setInterest(nextInterest);
+    setMenuOpen(false);
     document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -276,17 +278,37 @@ export default function App() {
         ))}
       </div>
 
-      <header className="topbar">
+      <header className={`topbar${menuOpen ? " topbar-open" : ""}`}>
         <a className="brand" href="#inicio" aria-label="Ir al inicio de Kiuna AI">
           <span className="brand-mark" />
           <span className="brand-text">KIUNA AI</span>
         </a>
 
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-label={menuOpen ? "Cerrar menu" : "Abrir menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
         <nav className="nav">
-          <a href="#capacidades">Capacidades</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#comunidad">Comunidad</a>
-          <a href="#contacto">Contacto</a>
+          <a href="#capacidades" onClick={() => setMenuOpen(false)}>
+            Capacidades
+          </a>
+          <a href="#proceso" onClick={() => setMenuOpen(false)}>
+            Proceso
+          </a>
+          <a href="#comunidad" onClick={() => setMenuOpen(false)}>
+            Comunidad
+          </a>
+          <a href="#contacto" onClick={() => setMenuOpen(false)}>
+            Contacto
+          </a>
         </nav>
 
         <button
