@@ -8,98 +8,117 @@ import {
 } from "react";
 
 type Interest =
-  | "Consultoria IA"
-  | "Automatizacion"
-  | "Agentes IA"
-  | "Pagina web"
+  | "Growth AI"
+  | "AI Agency"
+  | "AI Coaching"
   | "Kiuna Academy";
 
-const capabilities = [
+type Vertical = {
+  id: string;
+  name: string;
+  tagline: string;
+  copy: string;
+  bullets: string[];
+  interest: Interest;
+};
+
+const verticals: Vertical[] = [
   {
     id: "01",
-    title: "Automatizacion operativa",
+    name: "Growth AI",
+    tagline: "Escala tu facturación con IA",
     copy:
-      "Disenamos flujos para reducir tareas manuales, ordenar seguimiento comercial y acelerar operaciones internas sin llenar el negocio de friccion nueva.",
+      "Ayudamos a negocios a crecer sus ingresos con inteligencia artificial aplicada a ventas, marketing y adquisición. Estrategia y ejecución enfocadas en mover el número que importa.",
+    bullets: [
+      "Sistemas de captación y calificación de leads",
+      "IA aplicada a ventas y seguimiento comercial",
+      "Growth medible, orientado a facturación",
+    ],
+    interest: "Growth AI",
   },
   {
     id: "02",
-    title: "Agentes IA y atencion",
+    name: "AI Agency",
+    tagline: "Automatizaciones, agentes y chatbots",
     copy:
-      "Creamos agentes que responden, califican, enrutan y asisten al equipo en canales donde el tiempo de respuesta cambia el resultado.",
+      "Construimos la capa técnica del negocio: automatizamos procesos, creamos agentes IA y chatbots, e integramos sistemas para operar más rápido y con menos fricción.",
+    bullets: [
+      "Automatización de procesos y tareas repetitivas",
+      "Agentes IA y chatbots para atención y ventas",
+      "Integraciones y webs con conversión",
+    ],
+    interest: "AI Agency",
   },
   {
     id: "03",
-    title: "Webs y funnels con conversion",
+    name: "AI Coaching",
+    tagline: "Llamadas 1:1 para aplicar IA",
     copy:
-      "Construimos paginas web y sistemas de captacion que sostienen la marca, explican mejor la oferta y convierten interes en reunion.",
-  },
-  {
-    id: "04",
-    title: "Consultoria aplicada",
-    copy:
-      "Aterrizamos donde conviene usar IA, que automatizar primero y como hacerlo sin romper la operacion ni sumar complejidad vacia.",
+      "Asesoría personalizada uno a uno para tomar decisiones claras sobre IA. Definimos qué implementar primero, cómo hacerlo y resolvemos tus dudas en llamadas enfocadas.",
+    bullets: [
+      "Sesiones 1:1 enfocadas en tu negocio",
+      "Ruta clara de qué automatizar primero",
+      "Acompañamiento práctico y directo, sin relleno",
+    ],
+    interest: "AI Coaching",
   },
 ];
 
-const outcomes = [
+type Differentiator = {
+  id: string;
+  label: string;
+  copy: string;
+};
+
+const differentiators: Differentiator[] = [
   {
-    title: "Negocios con flujo de entrada",
-    copy:
-      "Si llegan mensajes, formularios o leads y el equipo no alcanza a responder con consistencia, ahi la IA ya tiene un trabajo claro.",
+    id: "01",
+    label: "Sin relleno",
+    copy: "Cada elemento que construimos responde a un objetivo de negocio concreto. No incorporamos funciones ni reportes que no generen impacto medible.",
   },
   {
-    title: "Equipos con tareas repetidas",
-    copy:
-      "Cuando el negocio depende de copiar, mover, revisar o perseguir informacion todo el tiempo, automatizar deja de ser lujo y pasa a ser capacidad.",
+    id: "02",
+    label: "Construimos y acompañamos",
+    copy: "El trabajo no termina en la entrega. Acompañamos la implementación junto a tu equipo hasta que el sistema opere de forma estable y autónoma.",
   },
   {
-    title: "Marcas que necesitan presencia mejor",
-    copy:
-      "Si la oferta es buena pero la web no la sostiene, el problema ya no es de trafico: es de claridad, confianza y conversion.",
+    id: "03",
+    label: "Medible desde el día uno",
+    copy: "Cada sistema se diseña con indicadores de negocio definidos desde el inicio, de modo que su rendimiento pueda evaluarse en cualquier momento.",
+  },
+  {
+    id: "04",
+    label: "Implementación rápida",
+    copy: "Las primeras entregas se concretan en semanas, no en trimestres. Priorizamos las soluciones de mayor impacto sobre la búsqueda de la perfección.",
   },
 ];
 
 const steps = [
   {
     id: "01",
-    title: "Diagnostico",
+    title: "Diagnóstico",
     copy:
-      "Revisamos puntos de fuga, tiempos de respuesta, embudos y tareas que hoy consumen energia humana.",
+      "Revisamos puntos de fuga, tiempos de respuesta, embudos y tareas que hoy consumen energía humana.",
   },
   {
     id: "02",
     title: "Arquitectura",
     copy:
-      "Definimos que automatizar, que debe seguir humano y donde la IA agrega valor sin volver todo opaco o fragil.",
+      "Definimos qué automatizar, qué debe seguir humano y dónde la IA agrega valor sin volver todo opaco o frágil.",
   },
   {
     id: "03",
-    title: "Implementacion",
+    title: "Implementación",
     copy:
-      "Construimos la solucion, conectamos sistemas y dejamos una experiencia que se vea premium y funcione con sentido de negocio.",
+      "Construimos la solución, conectamos sistemas y dejamos una experiencia que se vea premium y funcione con sentido de negocio.",
   },
   {
     id: "04",
-    title: "Iteracion",
+    title: "Iteración",
     copy:
-      "Medimos, ajustamos y mejoramos la capa construida para que el sistema gane precision con el uso real.",
+      "Medimos, ajustamos y mejoramos la capa construida para que el sistema gane precisión con el uso real.",
   },
 ];
-
-const heroSignals = [
-  "Automatizacion operativa",
-  "Agentes con criterio",
-  "Webs con conversion",
-];
-
-const heroFlow = [
-  "Lead detectado",
-  "IA clasifica",
-  "Sistema enruta",
-  "Equipo cierra",
-];
-
-const heroBars = [68, 92, 54, 84, 74, 96];
 
 type Bubble = {
   id: number;
@@ -112,11 +131,11 @@ type Bubble = {
   hue: "cyan" | "amber" | "silver";
 };
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function App() {
-  const [interest, setInterest] = useState<Interest>("Consultoria IA");
-  const [note, setNote] = useState(
-    "El mensaje se abre en tu cliente de correo con el resumen listo."
-  );
+  const [interest, setInterest] = useState<Interest>("Growth AI");
+  const [status, setStatus] = useState<FormStatus>("idle");
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const bubbleId = useRef(0);
@@ -131,47 +150,50 @@ export default function App() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setStatus("sending");
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const company = String(formData.get("company") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
 
-    const summary = [
-      `Nombre: ${name}`,
-      `Email: ${email}`,
-      `Empresa: ${company || "No indicada"}`,
-      `Interes: ${interest}`,
-      "",
-      message,
-    ].join("\n");
-
-    try {
-      await navigator.clipboard.writeText(summary);
-    } catch (error) {
-      console.error("No se pudo copiar el resumen.", error);
+    const honeypot = String(formData.get("botcheck") ?? "").trim();
+    if (honeypot) {
+      setStatus("success");
+      return;
     }
 
-    const subject = encodeURIComponent(
-      `Solicitud desde la web | ${interest} | ${name}`
-    );
-    const body = encodeURIComponent(
-      [
-        `Nombre: ${name}`,
-        `Email: ${email}`,
-        `Empresa: ${company || "No indicada"}`,
-        `Interes: ${interest}`,
-        "",
-        "Objetivo o necesidad:",
-        message,
-      ].join("\n")
-    );
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          subject: `Solicitud desde la web | ${interest} | ${name}`,
+          from_name: "Kiuna AI — Formulario de contacto",
+          name,
+          email,
+          company: company || "No indicada",
+          interest,
+          message,
+        }),
+      });
 
-    window.location.href = `mailto:hola@kiuna.ai?subject=${subject}&body=${body}`;
-    setNote(
-      "Listo. Abrimos tu correo y dejamos el resumen copiado por si quieres pegarlo en otro canal."
-    );
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setStatus("success");
+        form.reset();
+        setInterest("Growth AI");
+      } else {
+        throw new Error(result.message || "Error desconocido de Web3Forms");
+      }
+    } catch (error) {
+      console.error("No se pudo enviar el formulario.", error);
+      setStatus("error");
+    }
   };
 
   const jumpToContact = (nextInterest: Interest) => {
@@ -287,7 +309,7 @@ export default function App() {
         <button
           className="nav-toggle"
           type="button"
-          aria-label={menuOpen ? "Cerrar menu" : "Abrir menu"}
+          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -297,8 +319,11 @@ export default function App() {
         </button>
 
         <nav className="nav">
-          <a href="#capacidades" onClick={() => setMenuOpen(false)}>
-            Capacidades
+          <a href="#por-que-kiuna" onClick={() => setMenuOpen(false)}>
+            Por qué Kiuna
+          </a>
+          <a href="#verticales" onClick={() => setMenuOpen(false)}>
+            Verticales
           </a>
           <a href="#proceso" onClick={() => setMenuOpen(false)}>
             Proceso
@@ -314,9 +339,9 @@ export default function App() {
         <button
           className="button button-quiet"
           type="button"
-          onClick={() => jumpToContact("Consultoria IA")}
+          onClick={() => jumpToContact("Growth AI")}
         >
-          Agendar consultoria
+          Agendar llamada
         </button>
       </header>
 
@@ -330,46 +355,35 @@ export default function App() {
           <img
             className="hero-visual"
             src="/assets/kiuna-hero.png"
-            alt="Escena oscura de un centro operativo futurista con paneles de automatizacion e interfaces flotantes."
+            alt="Escena oscura de un centro operativo futurista con paneles de automatización e interfaces flotantes."
           />
           <div className="hero-overlay" />
 
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow">
-                Automatizacion, agentes IA y experiencias web para negocios con
-                flujo real
+                {verticals.map((vertical) => vertical.name).join(" · ")}
               </p>
               <h1 className="hero-title">
-                Automatiza lo repetitivo y convierte mas oportunidades.
+                Tres formas de crecer tu negocio con IA.
               </h1>
               <p className="hero-text">
-                Kiuna AI ayuda a negocios que reciben volumen, repiten tareas o
-                necesitan responder mejor. Disenamos automatizaciones, agentes y
-                webs que trabajan como una capa viva del negocio.
+                Kiuna AI es una capa de inteligencia artificial construida en
+                tres frentes: más ingresos, más eficiencia y decisiones más
+                claras. Elige por dónde empezar.
               </p>
-              <div className="hero-pills" aria-label="Capas principales">
-                {heroSignals.map((signal) => (
-                  <span className="hero-pill" key={signal}>
-                    {signal}
-                  </span>
-                ))}
-              </div>
               <div className="hero-actions">
                 <button
                   className="button button-solid"
                   type="button"
-                  onClick={() => jumpToContact("Consultoria IA")}
+                  onClick={() => jumpToContact("Growth AI")}
                 >
-                  Agendar diagnostico
+                  Agendar diagnóstico
                 </button>
-                <a className="button button-ghost" href="#capacidades">
-                  Ver soluciones
-                </a>
               </div>
               <p className="hero-cta-note">
-                Revisamos tu operacion y detectamos donde la IA puede ahorrar
-                tiempo o generar mas oportunidades.
+                Agenda una llamada y te decimos cuál de las 3 opciones te
+                conviene más.
               </p>
             </div>
 
@@ -379,101 +393,71 @@ export default function App() {
               <div className="stage-beam stage-beam-b" />
 
               <div className="stage-stack">
-                <article className="stage-card stage-card-flow">
-                  <div className="stage-card-head">
-                    <p>Live orchestration</p>
-                    <span>Active</span>
-                  </div>
-                  <div className="stage-flow">
-                    {heroFlow.map((item, index) => (
-                      <div className="flow-node" key={item}>
-                        <span className="flow-step">{`0${index + 1}`}</span>
-                        <strong>{item}</strong>
-                      </div>
+                <div className="stage-card stage-card-verticals">
+                  <ul className="stage-vertical-list">
+                    {verticals.map((vertical) => (
+                      <li className="stage-vertical-item" key={vertical.id}>
+                        <span className="stage-vertical-index">
+                          {vertical.id}
+                        </span>
+                        <div className="stage-vertical-copy">
+                          <strong>{vertical.name}</strong>
+                          <p>{vertical.tagline}</p>
+                        </div>
+                      </li>
                     ))}
-                  </div>
-                </article>
-
-                <article className="stage-card stage-card-bars">
-                  <div className="stage-card-head">
-                    <p>System pressure</p>
-                    <span>Realtime</span>
-                  </div>
-                  <div className="metric-bars">
-                    {heroBars.map((height, index) => (
-                      <span
-                        className="metric-bar"
-                        key={`${height}-${index}`}
-                        style={
-                          {
-                            "--bar-height": `${height}%`,
-                            "--bar-delay": `${index * 140}ms`,
-                          } as CSSProperties
-                        }
-                      />
-                    ))}
-                  </div>
-                </article>
-
-                <article className="stage-card stage-card-notes">
-                  <div className="stage-card-head">
-                    <p>Kiuna layer</p>
-                    <span>Build + consulting</span>
-                  </div>
-                  <ul className="stage-notes">
-                    <li>Automatiza seguimiento y tareas de alta repeticion.</li>
-                    <li>Responde antes sin perder criterio operativo.</li>
-                    <li>Convierte trafico en reuniones y oportunidades reales.</li>
                   </ul>
-                </article>
+                </div>
               </div>
             </div>
           </div>
 
         </section>
 
-        <section className="intro section">
-          <div className="section-headline">
-            <h2>Soluciones de IA disenadas para operar, escalar y convertir.</h2>
-            <p>
-              Kiuna AI implementa automatizaciones, agentes inteligentes y
-              experiencias digitales que fortalecen procesos comerciales y
-              operativos. Cada solucion se construye con foco en eficiencia,
-              trazabilidad y resultados medibles para el negocio.
-            </p>
-          </div>
-        </section>
-
-        <section className="capabilities section" id="capacidades">
-          <div className="section-label">
-            <span />
-            <p>Capacidades</p>
+        <section className="differentiators section" id="por-que-kiuna">
+          <div className="section-head">
+            <div className="section-kicker">Por qué Kiuna</div>
+            <h2>Construimos inteligencia artificial pensada para durar.</h2>
           </div>
 
-          <div className="capability-list">
-            {capabilities.map((capability) => (
-              <article className="capability" key={capability.id}>
-                <p className="capability-index">{capability.id}</p>
-                <div>
-                  <h3>{capability.title}</h3>
-                  <p>{capability.copy}</p>
+          <ul className="differentiator-list">
+            {differentiators.map((item) => (
+              <li className="differentiator-item" key={item.id}>
+                <span className="differentiator-index">{item.id}</span>
+                <div className="differentiator-copy">
+                  <strong>{item.label}</strong>
+                  <p>{item.copy}</p>
                 </div>
-              </article>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
-        <section className="outcomes section">
-          <div className="section-label">
-            <span />
-            <p>Donde entramos</p>
+        <section className="verticals section" id="verticales">
+          <div className="section-head">
+            <div className="section-kicker">Verticales</div>
+            <h2>Tres formas en que Kiuna impulsa tu negocio con IA.</h2>
           </div>
 
-          <div className="outcome-grid">
-            {outcomes.map((outcome) => (
-              <article className="outcome" key={outcome.title}>
-                <h3>{outcome.title}</h3>
-                <p>{outcome.copy}</p>
+          <div className="vertical-grid">
+            {verticals.map((vertical) => (
+              <article className="vertical-card" key={vertical.id}>
+                <span className="vertical-index">{vertical.id}</span>
+                <h3 className="vertical-name">{vertical.name}</h3>
+                <p className="vertical-tagline">{vertical.tagline}</p>
+                <p className="vertical-copy">{vertical.copy}</p>
+                <ul className="vertical-bullets">
+                  {vertical.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+                <button
+                  className="button button-ghost vertical-cta"
+                  type="button"
+                  onClick={() => jumpToContact(vertical.interest)}
+                >
+                  Hablar de {vertical.name}
+                </button>
               </article>
             ))}
           </div>
@@ -483,11 +467,16 @@ export default function App() {
           <div className="section-head">
             <div className="section-kicker">Proceso</div>
             <h2>
-              Trabajamos como quien disena una capa operativa, no solo una demo.
+              Trabajamos como quien diseña una capa operativa, no solo una demo.
             </h2>
+            <p>
+              Diagnóstico, arquitectura, implementación e iteración: el mismo
+              método, adaptado al alcance exacto que tu negocio necesite hoy.
+            </p>
           </div>
 
           <div className="process-track">
+            <div className="process-line" aria-hidden="true" />
             {steps.map((step) => (
               <article className="step" key={step.id}>
                 <span className="step-number">{step.id}</span>
@@ -502,20 +491,22 @@ export default function App() {
           <div className="community-copy">
             <div className="section-kicker">Kiuna Academy</div>
             <h2>
-              Aprende IA desde lo practico, aunque no vengas del mundo tecnico.
+              Aprende IA desde lo práctico, aunque no vengas del mundo técnico.
             </h2>
             <p>
               Estamos preparando una comunidad para personas que quieren usar IA
-              en su trabajo, sus proyectos o su vida diaria. Sin humo, sin
-              tecnicismos innecesarios y con ejemplos que puedas aplicar.
+              en su trabajo, sus proyectos o su vida diaria, y quieran
+              profundizar más allá de lo que ven en redes. Sin relleno, sin
+              tecnicismos innecesarios y con ejemplos que puedas aplicar de
+              inmediato.
             </p>
           </div>
 
           <div className="community-panel">
             <p className="community-label">Lista de espera</p>
             <p className="community-lede">
-              Entra a la lista para recibir acceso temprano a clases, guias y
-              retos practicos de IA.
+              Entra a la lista para recibir acceso temprano a clases, guías y
+              retos prácticos de IA.
             </p>
             <button
               className="button button-solid button-wide"
@@ -530,10 +521,10 @@ export default function App() {
         <section className="contact section" id="contacto">
           <div className="contact-copy">
             <div className="section-kicker">Contacto</div>
-            <h2>Hablemos del sistema que mas impacto puede tener en tu negocio.</h2>
+            <h2>Hablemos del sistema que más impacto puede tener en tu negocio.</h2>
             <p>
-              Cuentalo en pocas lineas y te respondemos con una ruta concreta:
-              que automatizar primero, que construir y como medir si vale la
+              Cuéntalo en pocas líneas y te respondemos con una ruta concreta:
+              qué automatizar primero, qué construir y cómo medir si vale la
               pena.
             </p>
 
@@ -544,11 +535,11 @@ export default function App() {
               </div>
               <div>
                 <span>Ideal para</span>
-                <p>Automatizacion, agentes IA, webs y consultoria.</p>
+                <p>Negocios que quieren resultados medibles, no una demo bonita.</p>
               </div>
               <div>
                 <span>Siguiente paso</span>
-                <p>Diagnostico breve para detectar oportunidades reales.</p>
+                <p>Diagnóstico breve para detectar oportunidades reales.</p>
               </div>
             </div>
           </div>
@@ -575,22 +566,21 @@ export default function App() {
             </label>
 
             <label>
-              Interes principal
+              Interés principal
               <select
                 name="interest"
                 value={interest}
                 onChange={(event) => setInterest(event.target.value as Interest)}
               >
-                <option value="Consultoria IA">Consultoria IA</option>
-                <option value="Automatizacion">Automatizacion</option>
-                <option value="Agentes IA">Agentes IA</option>
-                <option value="Pagina web">Pagina web</option>
+                <option value="Growth AI">Growth AI</option>
+                <option value="AI Agency">AI Agency</option>
+                <option value="AI Coaching">AI Coaching</option>
                 <option value="Kiuna Academy">Kiuna Academy</option>
               </select>
             </label>
 
             <label className="full-width">
-              Que quieres resolver?
+              ¿Qué quieres resolver?
               <textarea
                 name="message"
                 rows={5}
@@ -599,11 +589,48 @@ export default function App() {
               />
             </label>
 
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="visually-hidden"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+
             <div className="form-actions full-width">
-              <button className="button button-solid" type="submit">
-                Enviar solicitud
+              <button
+                className="button button-solid"
+                type="submit"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? "Enviando…" : "Enviar solicitud"}
               </button>
-              <p className="form-note">{note}</p>
+
+              {status === "idle" && (
+                <p className="form-note">
+                  Te respondemos por correo con los siguientes pasos.
+                </p>
+              )}
+              {status === "sending" && (
+                <p className="form-note">Enviando tu solicitud…</p>
+              )}
+              {status === "success" && (
+                <p className="form-note form-note-success">
+                  Listo. Recibimos tu solicitud y te respondemos por correo
+                  pronto.
+                </p>
+              )}
+              {status === "error" && (
+                <div className="form-note form-note-error">
+                  <p>
+                    No pudimos enviar el formulario. Intenta de nuevo en un
+                    momento.
+                  </p>
+                  <a href="mailto:hola@kiuna.ai">
+                    ¿Falló? Escríbenos directo a hola@kiuna.ai
+                  </a>
+                </div>
+              )}
             </div>
           </form>
         </section>
@@ -611,7 +638,7 @@ export default function App() {
 
       <footer className="footer">
         <p>KIUNA AI</p>
-        <p>Sistemas de IA, automatizacion y experiencia digital para negocio.</p>
+        <p>Sistemas de IA, automatización y experiencia digital para negocios en crecimiento.</p>
         <p>
           &copy; {new Date().getFullYear()}
         </p>
