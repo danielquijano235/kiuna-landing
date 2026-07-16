@@ -368,22 +368,9 @@ export default function App() {
                 Tres formas de crecer tu negocio con IA.
               </h1>
               <p className="hero-text">
-                Kiuna AI es una capa de inteligencia artificial construida en
-                tres frentes: más ingresos, más eficiencia y decisiones más
-                claras. Elige por dónde empezar.
-              </p>
-              <div className="hero-actions">
-                <button
-                  className="button button-solid"
-                  type="button"
-                  onClick={() => jumpToContact("Growth AI")}
-                >
-                  Agendar diagnóstico
-                </button>
-              </div>
-              <p className="hero-cta-note">
-                Agenda una llamada y te decimos cuál de las 3 opciones te
-                conviene más.
+                Kiuna AI es una empresa de inteligencia artificial que trabaja
+                sobre tres pilares: más ingresos, más eficiencia y decisiones
+                más claras. Elige por dónde empezar.
               </p>
             </div>
 
@@ -409,6 +396,22 @@ export default function App() {
                   </ul>
                 </div>
               </div>
+            </div>
+
+            <div className="hero-cta">
+              <div className="hero-actions">
+                <button
+                  className="button button-solid"
+                  type="button"
+                  onClick={() => jumpToContact("Growth AI")}
+                >
+                  Agendar diagnóstico
+                </button>
+              </div>
+              <p className="hero-cta-note">
+                Cuéntanos tu caso y te respondemos en menos de 24h hábiles
+                para coordinar tu llamada de diagnóstico.
+              </p>
             </div>
           </div>
 
@@ -518,6 +521,23 @@ export default function App() {
           </div>
         </section>
 
+        <section className="proof">
+          <div className="proof-grid">
+            <div className="proof-stat">
+              <span className="proof-number">+50</span>
+              <p className="proof-label">
+                negocios automatizados con sistemas de IA
+              </p>
+            </div>
+            <div className="proof-stat">
+              <span className="proof-number">+$100M</span>
+              <p className="proof-label">
+                en ingresos adicionales generados para negocios con Growth AI
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="contact section" id="contacto">
           <div className="contact-copy">
             <div className="section-kicker">Contacto</div>
@@ -539,7 +559,10 @@ export default function App() {
               </div>
               <div>
                 <span>Siguiente paso</span>
-                <p>Diagnóstico breve para detectar oportunidades reales.</p>
+                <p>
+                  Te escribimos en menos de 24h hábiles para coordinar tu
+                  llamada de diagnóstico.
+                </p>
               </div>
             </div>
           </div>
@@ -608,7 +631,8 @@ export default function App() {
 
               {status === "idle" && (
                 <p className="form-note">
-                  Te respondemos por correo con los siguientes pasos.
+                  Te respondemos en menos de 24h hábiles para coordinar tu
+                  llamada de diagnóstico.
                 </p>
               )}
               {status === "sending" && (
@@ -616,8 +640,8 @@ export default function App() {
               )}
               {status === "success" && (
                 <p className="form-note form-note-success">
-                  Listo. Recibimos tu solicitud y te respondemos por correo
-                  pronto.
+                  Listo. Recibimos tu solicitud y te escribimos dentro de las
+                  próximas 24h hábiles para coordinar tu llamada.
                 </p>
               )}
               {status === "error" && (

@@ -367,12 +367,21 @@ main {
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.98fr) minmax(340px, 0.82fr);
-  gap: clamp(2rem, 4vw, 3.8rem);
+  grid-template-areas:
+    "copy stage"
+    "cta stage";
+  column-gap: clamp(2rem, 4vw, 3.8rem);
+  row-gap: 1.5rem;
   align-items: center;
 }
 
 .hero-copy {
+  grid-area: copy;
   min-width: 0;
+}
+
+.hero-cta {
+  grid-area: cta;
 }
 
 .eyebrow,
@@ -434,7 +443,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-top: 1.25rem;
 }
 
 .hero-pills {
@@ -475,6 +483,7 @@ main {
 }
 
 .hero-stage {
+  grid-area: stage;
   position: relative;
   min-height: 21rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -919,6 +928,41 @@ main {
   line-height: 1.55;
 }
 
+.proof {
+  padding: clamp(2rem, 5vw, 3rem) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+}
+
+.proof-stat {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.proof-number {
+  font-family: var(--display-font);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--amber);
+}
+
+.proof-label {
+  margin: 0;
+  max-width: 32ch;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .contact {
   display: grid;
   grid-template-columns: minmax(280px, 0.82fr) minmax(360px, 1.18fr);
@@ -1203,6 +1247,14 @@ main {
   .process-track,
   .vertical-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    grid-template-areas:
+      "copy"
+      "cta"
+      "stage";
+    row-gap: 2rem;
   }
 
   .hero {

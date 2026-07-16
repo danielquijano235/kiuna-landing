@@ -3,6 +3,8 @@ node_modules/
 *.tsbuildinfo
 .claude/
 .agents/
+.codex/
+.impeccable/
 
 .vercel
 .env*
