@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-16T22:20:00Z",
+  "title": "Design System: Kiuna AI",
+  "extensions": {
+    "colorMeta": {
+      "panel": { "role": "primary", "displayName": "Panel", "canonical": "#e9edee", "tonalRamp": ["#0f2430", "#2c3d47", "#4a5b64", "#697982", "#8b979d", "#b1bbbd", "#d4dadb", "#e9edee"] },
+      "surface": { "role": "primary", "displayName": "Surface", "canonical": "#ffffff" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0f2430", "tonalRamp": ["#060f14", "#0f2430", "#1c3a49", "#2f5567", "#4a7488", "#6f97a6", "#a3c1cb", "#d6e6ea"] },
+      "steel": { "role": "neutral", "displayName": "Steel", "canonical": "#56707c", "tonalRamp": ["#1c262a", "#324147", "#495e66", "#56707c", "#748d97", "#9bb0b8", "#c3d1d6", "#e6ecee"] },
+      "safety": { "role": "secondary", "displayName": "Safety", "canonical": "#ff5a1f", "tonalRamp": ["#4a1a09", "#7a2b0e", "#b03f14", "#e05219", "#ff5a1f", "#ff8452", "#ffac84", "#ffd6bc"] },
+      "steel-line": { "role": "neutral", "displayName": "Steel Line", "canonical": "rgba(15,36,48,0.16)" },
+      "steel-line-strong": { "role": "neutral", "displayName": "Steel Line Strong", "canonical": "rgba(15,36,48,0.32)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Heaviest section H2s; capped well under the 6rem hero-heading ceiling." },
+      "hero-title": { "displayName": "Hero Title", "purpose": "The actual hero H1; smaller than Display so the hero reads as a sentence." },
+      "headline": { "displayName": "Headline", "purpose": "Standard section headings across differentiators/verticals/process/community/contact." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, always in Steel." },
+      "label": { "displayName": "Label", "purpose": "Uppercase eyebrows, kickers, captions." },
+      "monospace-id": { "displayName": "Monospace ID", "purpose": "The one monospace moment: module IDs, step-number badges, REF.0x differentiator tags, status tag, proof numbers." }
+    },
+    "shadows": [
+      { "name": "flat-offset", "value": "0 10px 0 rgba(15,36,48,0.06), 0 18px 40px rgba(15,36,48,0.08)", "purpose": "The system's only shadow — used on the modules panel, vertical cards, and the lead-form. Never tinted with the accent." }
+    ],
+    "motion": [
+      { "name": "ease-out-bloom", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Bubble/spark particle bloom-and-fade animation, recolored to ink/safety/steel." },
+      { "name": "ease-standard", "value": "ease-out", "purpose": "Modules-panel pointer-parallax transition (220ms)." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "1080px" },
+      { "name": "sm", "value": "900px" },
+      { "name": "xs", "value": "760px" },
+      { "name": "xxs", "value": "430px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA (e.g. 'Agendar diagnóstico'); solid safety-orange fill, ink border, flat offset shadow.",
+      "html": "<button class=\"ds-btn-primary\">Agendar diagnóstico</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.74rem 1.16rem; border: 2px solid #ff5a1f; border-radius: 0.45rem; background: #ff5a1f; color: #0f2430; box-shadow: 0 10px 0 rgba(15,36,48,0.06), 0 18px 40px rgba(15,36,48,0.08); font-weight: 700; cursor: pointer; transition: transform 180ms ease; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { transform: translateY(-1px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action button; solid ink border, white fill, no accent at rest.",
+      "html": "<button class=\"ds-btn-ghost\">Hablar de Growth AI</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0.74rem 1.16rem; border: 2px solid #0f2430; border-radius: 0.45rem; background: #ffffff; color: #0f2430; font-weight: 700; cursor: pointer; transition: transform 180ms ease; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { transform: translateY(-1px); }"
+    },
+    {
+      "name": "Vertical Card",
+      "kind": "card",
+      "refersTo": "vertical-card",
+      "description": "Content card for each of the three verticals (Growth AI / AI Agency / AI Coaching); module-plate index chip.",
+      "html": "<article class=\"ds-vertical-card\"><span class=\"ds-vertical-index\">01</span><h3 class=\"ds-vertical-name\">Growth AI</h3><p class=\"ds-vertical-copy\">Escala tu facturación con IA aplicada a ventas y adquisición.</p></article>",
+      "css": ".ds-vertical-card { display: flex; flex-direction: column; gap: 0.65rem; padding: 1.9rem 1.7rem 1.7rem; border: 2px solid #0f2430; border-radius: 0.5rem; background: #ffffff; box-shadow: 0 10px 0 rgba(15,36,48,0.06), 0 18px 40px rgba(15,36,48,0.08); color: #0f2430; transition: border-color 200ms ease, transform 200ms ease; } .ds-vertical-card:hover { border-color: #ff5a1f; transform: translateY(-4px); } .ds-vertical-index { display: inline-block; padding: 0.2rem 0.5rem; background: #0f2430; color: #e9edee; font-family: ui-monospace, monospace; font-size: 0.78rem; letter-spacing: 0.06rem; } .ds-vertical-name { margin: 0.35rem 0 0; font-size: 1.55rem; font-weight: 600; } .ds-vertical-copy { margin: 0.35rem 0 0; color: #56707c; font-size: 1rem; line-height: 1.6; }"
+    },
+    {
+      "name": "Lead Form Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Text input used across the contact lead-form.",
+      "html": "<label class=\"ds-field\">Nombre<input class=\"ds-input\" type=\"text\" placeholder=\"Nombre y apellido\"></label>",
+      "css": ".ds-field { display: grid; gap: 0.75rem; color: #56707c; font-size: 0.92rem; } .ds-input { width: 100%; padding: 0.92rem 1rem; border: 1px solid rgba(15,36,48,0.16); border-radius: 0.35rem; background: #e9edee; color: #0f2430; outline: none; transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease; } .ds-input:focus { border-color: #ff5a1f; background: #ffffff; box-shadow: 0 0 0 3px rgba(255,90,31,0.14); }"
+    },
+    {
+      "name": "Topbar Nav",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "Solid, sticky, full-width navigation with a thick ink bottom border — no glass/blur chrome.",
+      "html": "<header class=\"ds-topbar\"><a class=\"ds-brand\">KIUNA AI</a><nav class=\"ds-nav\"><a href=\"#\">Por qué Kiuna</a><a href=\"#\">Verticales</a><a href=\"#\">Proceso</a></nav></header>",
+      "css": ".ds-topbar { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem min(5vw, 3rem); border-bottom: 2px solid #0f2430; background: #e9edee; } .ds-brand { color: #0f2430; font-family: ui-monospace, monospace; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16rem; } .ds-nav { display: inline-flex; gap: 0.25rem; color: #56707c; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08rem; font-weight: 700; } .ds-nav a { position: relative; padding: 0.62rem 0.82rem; color: inherit; text-decoration: none; transition: color 180ms ease; } .ds-nav a:hover { color: #0f2430; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Panel de Turno",
+    "overview": "Kiuna AI reads like the control panel of a plant that already runs on IA: a flat, gray-blue daylight surface, thick ink-colored borders, and a single safety-orange accent reserved for what's live or actionable. The referent is physical signage — an industrial control board, floor markings, shift-change status boards — not a SaaS dashboard and not the previous dark theme. Elevation is flat (hard offset shadows, no blur/glow), typography splits between the sans body face and a monospace face reserved for module IDs and step numerals, and the bubble/spark particle motion carries over from the previous system, recolored to ink/safety/steel. This is a captured baseline of the current implementation, not a locked mandate — PRODUCT.md gives explicit permission to keep reinventing it if a change moves the site further from generic AI-SaaS territory.",
+    "keyCharacteristics": [
+      "Flat daylight panel background (#e9edee) with white module surfaces and near-black ink text/borders — no gradients.",
+      "One-accent discipline: safety orange (#ff5a1f) marks only what's live, actionable, or proven.",
+      "One monospace face reserved for module IDs, step numerals, and REF.0x differentiator tags.",
+      "Thick (2px) ink-colored borders, small radii; no glass/blur chrome anywhere.",
+      "Flat elevation: hard offset shadow, never colored glow.",
+      "The 01–04 numeral motif is deliberately varied per content group instead of repeated identically."
+    ],
+    "rules": [
+      { "name": "The One-Accent Rule", "body": "Only safety orange carries interactive/live color meaning. No second accent color is introduced without renaming this rule.", "section": "colors" },
+      { "name": "The One-Monospace Rule", "body": "The monospace stack appears only on numerals/IDs/references: module IDs, step-number badges, REF.0x tags, vertical index chips, status tag, proof numbers. Every other character on the page is Aptos.", "section": "typography" },
+      { "name": "The Varied-Index Rule", "body": "The 01-04 numeral motif does not repeat the same treatment across unrelated content groups: Verticales use a filled module-plate chip, Proceso uses a circular node on the connector line, Diferenciadores use a small REF.0x label with no large numeral.", "section": "typography" },
+      { "name": "The Flat-Elevation Rule", "body": "No backdrop-filter, no colored glow, no gradient panel fill. Elevation comes from the single Flat Offset shadow and/or a thicker ink border.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the One-Accent Rule: safety orange only for what's live/actionable/proven.",
+      "Do keep the monospace face restricted to numerals/IDs/references.",
+      "Do keep the three numeral treatments (module plate / circular node / REF.0x label) visually distinct.",
+      "Do use the single Flat Offset shadow for elevation; don't reach for blur or colored glow.",
+      "Do treat this file as a captured baseline open to further reinvention per PRODUCT.md."
+    ],
+    "donts": [
+      "Don't introduce a second accent color alongside safety orange, or reintroduce the old cyan/amber pair.",
+      "Don't add gradient text anywhere — the previous system's one exception (step-number) was removed in this redesign.",
+      "Don't add backdrop-filter/blur chrome anywhere; it was removed from the topbar and hero stage.",
+      "Don't nest cards inside cards, or default to the vertical-card grid for every new content group.",
+      "Don't let the bubble/spark particle layer become permanent visual chrome."
+    ]
+  }
+}

@@ -4,7 +4,7 @@ node_modules/
 .claude/
 .agents/
 .codex/
-.impeccable/
+.impeccable/hook.cache.json
 
 .vercel
 .env*

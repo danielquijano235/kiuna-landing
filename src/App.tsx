@@ -120,6 +120,119 @@ const steps = [
   },
 ];
 
+type Client = {
+  name: string;
+  icon: JSX.Element;
+};
+
+const clients: Client[] = [
+  {
+    name: "Nortia Logística",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M3 12h18M3 12l5-5M3 12l5 5"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Verde Market",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Solvex Clínicas",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 4v16M4 12h16"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" />
+      </svg>
+    ),
+  },
+  {
+    name: "Andes Retail",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M4 20l6-14 2 5 2-5 6 14"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Pulse Fitness",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M3 12h3l2-6 4 12 2-8 2 4h5"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Casa Duna",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M4 11l8-6 8 6M6 10v9h12v-9"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Loop Studio",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="9" cy="12" r="5.5" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="15" cy="12" r="5.5" stroke="currentColor" strokeWidth="1.6" />
+      </svg>
+    ),
+  },
+  {
+    name: "Brío Seguros",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+];
+
 type Bubble = {
   id: number;
   x: number;
@@ -128,7 +241,7 @@ type Bubble = {
   delay: number;
   duration: number;
   kind: "burst" | "spark";
-  hue: "cyan" | "amber" | "silver";
+  hue: "ink" | "safety" | "steel";
 };
 
 type FormStatus = "idle" | "sending" | "success" | "error";
@@ -156,6 +269,7 @@ export default function App() {
     const formData = new FormData(form);
     const name = String(formData.get("name") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
     const company = String(formData.get("company") ?? "").trim();
     const message = String(formData.get("message") ?? "").trim();
 
@@ -175,6 +289,7 @@ export default function App() {
           from_name: "Kiuna AI — Formulario de contacto",
           name,
           email,
+          phone: phone || "No indicado",
           company: company || "No indicada",
           interest,
           message,
@@ -230,7 +345,7 @@ export default function App() {
 
     lastSparkAt.current = now;
 
-    const palette: Bubble["hue"][] = ["cyan", "silver", "amber"];
+    const palette: Bubble["hue"][] = ["ink", "steel", "safety"];
     const sparks = Array.from({ length: 1 }, (_, index) => ({
       id: bubbleId.current++,
       x: event.clientX + (Math.random() - 0.5) * 10,
@@ -253,7 +368,7 @@ export default function App() {
   };
 
   const handleShellPointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    const palette: Bubble["hue"][] = ["cyan", "silver", "amber"];
+    const palette: Bubble["hue"][] = ["ink", "steel", "safety"];
     const burst = Array.from({ length: 11 }, (_, index) => ({
       id: bubbleId.current++,
       x: event.clientX,
@@ -352,15 +467,12 @@ export default function App() {
           onPointerMove={handleHeroPointerMove}
           onPointerLeave={handleHeroPointerLeave}
         >
-          <img
-            className="hero-visual"
-            src="/assets/kiuna-hero.png"
-            alt="Escena oscura de un centro operativo futurista con paneles de automatización e interfaces flotantes."
-          />
-          <div className="hero-overlay" />
-
           <div className="hero-grid">
             <div className="hero-copy">
+              <p className="status-tag">
+                <span className="status-dot" aria-hidden="true" />
+                Sistema activo
+              </p>
               <p className="eyebrow">
                 {verticals.map((vertical) => vertical.name).join(" · ")}
               </p>
@@ -374,28 +486,19 @@ export default function App() {
               </p>
             </div>
 
-            <div className="hero-stage" aria-hidden="true">
-              <div className="stage-grid" />
-              <div className="stage-beam stage-beam-a" />
-              <div className="stage-beam stage-beam-b" />
-
-              <div className="stage-stack">
-                <div className="stage-card stage-card-verticals">
-                  <ul className="stage-vertical-list">
-                    {verticals.map((vertical) => (
-                      <li className="stage-vertical-item" key={vertical.id}>
-                        <span className="stage-vertical-index">
-                          {vertical.id}
-                        </span>
-                        <div className="stage-vertical-copy">
-                          <strong>{vertical.name}</strong>
-                          <p>{vertical.tagline}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            <div className="modules-panel" aria-hidden="true">
+              <ul className="module-list">
+                {verticals.map((vertical) => (
+                  <li className="module-row" key={vertical.id}>
+                    <span className="module-led" />
+                    <span className="module-id">{vertical.id}</span>
+                    <div className="module-copy">
+                      <strong>{vertical.name}</strong>
+                      <p>{vertical.tagline}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="hero-cta">
@@ -426,7 +529,7 @@ export default function App() {
           <ul className="differentiator-list">
             {differentiators.map((item) => (
               <li className="differentiator-item" key={item.id}>
-                <span className="differentiator-index">{item.id}</span>
+                <span className="differentiator-index">{`REF.${item.id}`}</span>
                 <div className="differentiator-copy">
                   <strong>{item.label}</strong>
                   <p>{item.copy}</p>
@@ -581,6 +684,11 @@ export default function App() {
                 placeholder="correo@empresa.com"
                 required
               />
+            </label>
+
+            <label>
+              Celular
+              <input type="tel" name="phone" placeholder="+51 999 999 999" />
             </label>
 
             <label>
