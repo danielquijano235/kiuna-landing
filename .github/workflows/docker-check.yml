@@ -1,0 +1,22 @@
+name: Comprobar imagen Docker
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construir imagen
+        run: docker build --build-arg VITE_WEB3FORMS_ACCESS_KEY=test -t kiuna-landing .
+      - name: Arrancar y probar
+        run: |
+          docker run -d --name web -p 8080:80 kiuna-landing
+          sleep 3
+          docker ps -a
+          docker logs web
+          curl -fsS -o /dev/null -w "HTTP %{http_code}\n" http://localhost:8080/
+          curl -fsS http://localhost:8080/ | grep -q '<div id="root">'
