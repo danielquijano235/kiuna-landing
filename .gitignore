@@ -1,9 +1,21 @@
+# Dependencias y build (dist se genera dentro de Docker)
 node_modules/
+dist/
+
+# Secretos / entorno (la clave de Web3Forms vive en .env.local y en EasyPanel)
+.env*
+.vercel
+
+# Logs y artefactos de TypeScript
 *.log
+vite-dev*.log
 *.tsbuildinfo
+
+# Herramientas locales de agentes / diseno
 .claude/
 .agents/
 .codex/
+.taste-skill/
 .impeccable/hook.cache.json
 
 .vercel

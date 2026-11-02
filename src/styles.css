@@ -10,6 +10,12 @@
   --muted: var(--steel);
   --shadow: 0 10px 0 rgba(15, 36, 48, 0.06), 0 18px 40px rgba(15, 36, 48, 0.08);
   --max-width: 1180px;
+  /* Escala tipográfica: solo estos cinco tamaños */
+  --fs-small: 0.875rem;
+  --fs-body: 1rem;
+  --fs-lead: 1.375rem;
+  --fs-heading: clamp(1.85rem, 3.1vw, 2.7rem);
+  --fs-display: clamp(2.2rem, 3.4vw, 3.3rem);
   --body-font: "Aptos", "Segoe UI Variable", "Segoe UI", sans-serif;
   --display-font: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", monospace;
 }
@@ -206,7 +212,7 @@ main {
   min-width: 10.5rem;
   padding-left: 0.1rem;
   font-family: var(--display-font);
-  font-size: 0.78rem;
+  font-size: var(--fs-small);
   font-weight: 700;
   letter-spacing: 0.16rem;
 }
@@ -224,7 +230,7 @@ main {
   align-items: center;
   gap: 0.25rem;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: var(--fs-small);
   text-transform: uppercase;
   letter-spacing: 0.08rem;
   font-weight: 700;
@@ -356,29 +362,6 @@ main {
   grid-area: cta;
 }
 
-.status-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin: 0 0 1.4rem;
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  color: var(--ink);
-  font-family: var(--display-font);
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-}
-
-.status-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--safety);
-}
-
 .eyebrow,
 .section-kicker,
 .section-label p,
@@ -386,7 +369,7 @@ main {
   margin: 0 0 1rem;
   color: var(--steel);
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.12rem;
 }
 
@@ -402,7 +385,7 @@ main {
 .contact h2 {
   margin: 0;
   font-family: var(--body-font);
-  font-size: clamp(3.5rem, 9vw, 6.6rem);
+  font-size: var(--fs-heading);
   line-height: 1.02;
   font-weight: 650;
   max-width: 11ch;
@@ -410,7 +393,7 @@ main {
 }
 
 .hero h1.hero-title {
-  font-size: clamp(2rem, 3vw, 3.15rem);
+  font-size: var(--fs-display);
   line-height: 1.08;
   max-width: 21ch;
   text-wrap: balance;
@@ -424,13 +407,13 @@ main {
 .capability p,
 .step p {
   color: var(--muted);
-  font-size: 1.04rem;
+  font-size: var(--fs-body);
 }
 
 .hero-text {
   max-width: 34rem;
   margin: 0.95rem 0 0;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.65;
 }
 
@@ -457,7 +440,7 @@ main {
   border-radius: 0;
   background: transparent;
   color: var(--steel);
-  font-size: 0.86rem;
+  font-size: var(--fs-small);
   animation: none;
 }
 
@@ -473,7 +456,7 @@ main {
   max-width: 33rem;
   margin: 0.85rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: var(--fs-small);
   line-height: 1.55;
 }
 
@@ -546,7 +529,7 @@ main {
 .module-id {
   font-family: var(--display-font);
   color: var(--steel);
-  font-size: 0.86rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.06rem;
 }
 
@@ -556,7 +539,7 @@ main {
 
 .module-copy strong {
   display: block;
-  font-size: 1rem;
+  font-size: var(--fs-body);
   font-weight: 600;
   letter-spacing: -0.005em;
 }
@@ -564,7 +547,7 @@ main {
 .module-copy p {
   margin: 0.3rem 0 0;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-small);
   line-height: 1.45;
 }
 
@@ -572,7 +555,7 @@ main {
 .differentiator-index {
   color: var(--steel);
   font-family: var(--display-font);
-  font-size: 0.78rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.06rem;
 }
 
@@ -583,7 +566,7 @@ main {
 .section-head h2,
 .community h2,
 .contact h2 {
-  font-size: clamp(1.85rem, 3.1vw, 2.7rem);
+  font-size: var(--fs-heading);
   line-height: 1.1;
   max-width: 20ch;
 }
@@ -603,7 +586,7 @@ main {
 
 .step h3 {
   margin: 0 0 0.75rem;
-  font-size: 1.4rem;
+  font-size: var(--fs-lead);
   font-weight: 500;
 }
 
@@ -636,13 +619,13 @@ main {
   background: var(--ink);
   color: var(--panel);
   font-family: var(--display-font);
-  font-size: 0.78rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.06rem;
 }
 
 .vertical-name {
   margin: 0.35rem 0 0;
-  font-size: 1.55rem;
+  font-size: var(--fs-lead);
   font-weight: 600;
   line-height: 1.1;
 }
@@ -650,13 +633,13 @@ main {
 .vertical-tagline {
   margin: 0;
   color: var(--steel);
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
 }
 
 .vertical-copy {
   margin: 0.35rem 0 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: var(--fs-body);
   line-height: 1.6;
 }
 
@@ -672,7 +655,7 @@ main {
   position: relative;
   padding-left: 1.25rem;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: var(--fs-small);
   line-height: 1.45;
 }
 
@@ -723,7 +706,7 @@ main {
 
 .differentiator-copy strong {
   display: block;
-  font-size: 1.05rem;
+  font-size: var(--fs-body);
   font-weight: 600;
   letter-spacing: -0.005em;
 }
@@ -731,7 +714,7 @@ main {
 .differentiator-copy p {
   margin: 0.5rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: var(--fs-small);
   line-height: 1.55;
 }
 
@@ -781,7 +764,7 @@ main {
   border-radius: 50%;
   background: var(--panel);
   font-family: var(--display-font);
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   font-weight: 600;
   line-height: 1;
   letter-spacing: 0;
@@ -811,7 +794,7 @@ main {
   margin-top: 0;
   margin-bottom: 1.5rem;
   color: var(--steel);
-  font-size: 1.12rem;
+  font-size: var(--fs-lead);
   line-height: 1.55;
 }
 
@@ -836,7 +819,7 @@ main {
 
 .proof-number {
   font-family: var(--display-font);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-size: var(--fs-display);
   font-weight: 600;
   line-height: 1;
   color: var(--safety);
@@ -846,7 +829,7 @@ main {
   margin: 0;
   max-width: 32ch;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--fs-body);
   line-height: 1.5;
 }
 
@@ -879,7 +862,7 @@ main {
 .contact-points span {
   color: var(--muted);
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: var(--fs-small);
   letter-spacing: 0.12rem;
 }
 
@@ -887,7 +870,7 @@ main {
 .contact-points p {
   margin: 0;
   color: var(--steel);
-  font-size: 1rem;
+  font-size: var(--fs-body);
 }
 
 .contact-points a {
@@ -915,7 +898,7 @@ main {
   display: grid;
   gap: 0.75rem;
   color: var(--steel);
-  font-size: 0.92rem;
+  font-size: var(--fs-small);
 }
 
 .lead-form input,
@@ -1004,7 +987,7 @@ main {
   padding: 2.5rem 0 3rem;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
 }
 
 @keyframes bubbleBloom {
@@ -1190,7 +1173,7 @@ main {
     flex-direction: column;
     align-items: stretch;
     gap: 0.1rem;
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
 
   .topbar-open .nav {
@@ -1275,7 +1258,7 @@ main {
     flex-direction: column;
     align-items: stretch;
     gap: 0.1rem;
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
 
   .topbar-open .nav {
@@ -1312,12 +1295,10 @@ main {
   .community h2,
   .contact h2 {
     max-width: 100%;
-    font-size: clamp(1.7rem, 6.2vw, 2.3rem);
     line-height: 1.15;
   }
 
   .hero h1.hero-title {
-    font-size: clamp(1.85rem, 7.6vw, 2.6rem);
     max-width: 100%;
   }
 
@@ -1382,11 +1363,11 @@ main {
   }
 
   .eyebrow {
-    font-size: 0.68rem;
+    font-size: var(--fs-small);
   }
 
   .hero-text {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
   }
 
   .hero-actions {
@@ -1402,11 +1383,11 @@ main {
   }
 
   .module-copy strong {
-    font-size: 0.95rem;
+    font-size: var(--fs-body);
   }
 
   .module-copy p {
-    font-size: 0.82rem;
+    font-size: var(--fs-small);
   }
 
   .lead-form {
@@ -1422,7 +1403,7 @@ main {
   }
 
   .vertical-name {
-    font-size: 1.4rem;
+    font-size: var(--fs-lead);
   }
 
   .vertical-cta {
@@ -1430,4 +1411,123 @@ main {
     text-align: center;
   }
 
+}
+
+/* Agendar directo + WhatsApp */
+.contact-booking {
+  margin: 1.25rem 0 0;
+  color: var(--text);
+}
+
+.contact-booking a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--safety);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.contact-points a.contact-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-whatsapp svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: none;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: calc(1.25rem + env(safe-area-inset-right));
+  bottom: calc(1.25rem + env(safe-area-inset-bottom));
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.whatsapp-float svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  background: var(--safety);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.whatsapp-float-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .footer {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float {
+    right: calc(1rem + env(safe-area-inset-right));
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float {
+    transition: opacity 200ms ease;
+  }
+
+  .whatsapp-float:hover,
+  .whatsapp-float:focus-visible,
+  .whatsapp-float-hidden {
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --fs-heading: clamp(1.7rem, 6.2vw, 2.3rem);
+    --fs-display: clamp(1.85rem, 7.6vw, 2.6rem);
+  }
+}
+
+/* Entrada al hacer scroll: solo se activa cuando el script marcó la página (html.reveal-ready). */
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-ready .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .reveal {
+    transform: none;
+    transition: opacity 300ms ease;
+    transition-delay: 0ms;
+  }
 }

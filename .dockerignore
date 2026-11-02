@@ -1,0 +1,15 @@
+node_modules
+dist
+.env*
+.vercel
+.taste-skill
+.claude
+.agents
+.codex
+.impeccable
+.git
+*.log
+*.tsbuildinfo
+Dockerfile
+.dockerignore
+DEPLOY.md

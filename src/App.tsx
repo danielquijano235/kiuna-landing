@@ -7,6 +7,38 @@ import {
   useState,
 } from "react";
 
+// Enlaces de Cal.com. Por ahora todo pasa por el diagnóstico; si luego se crea un evento
+// propio de coaching, basta con cambiar su enlace aquí.
+const CAL_DIAGNOSTICO = "https://cal.com/kiuna-1mqebt/diagnostico-ia";
+const BOOKING = {
+  diagnostico: CAL_DIAGNOSTICO,
+  coaching: CAL_DIAGNOSTICO,
+  academy: CAL_DIAGNOSTICO,
+};
+
+// WhatsApp: solo dígitos, con código de país y sin "+".
+const WHATSAPP_NUMBER = "573146593558";
+const WHATSAPP_MESSAGE =
+  "Hola Kiuna, quiero información sobre cómo aplicar IA en mi negocio.";
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE,
+)}`;
+
+const CONTACT_EMAIL = "kiunalabs@gmail.com";
+
+const newTab = { target: "_blank", rel: "noopener noreferrer" } as const;
+
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91A9.85 9.85 0 0 0 12.04 2Zm0 18.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 8.24 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.6.19 1.14.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"
+      />
+    </svg>
+  );
+}
+
 type Interest =
   | "Growth AI"
   | "AI Agency"
@@ -141,11 +173,66 @@ export default function App() {
   const bubbleId = useRef(0);
   const bubbleTimers = useRef<number[]>([]);
   const lastSparkAt = useRef(0);
+  const formActionsRef = useRef<HTMLDivElement>(null);
+  const [hideWhatsApp, setHideWhatsApp] = useState(false);
 
   useEffect(() => {
     return () => {
       bubbleTimers.current.forEach((timer) => window.clearTimeout(timer));
     };
+  }, []);
+
+  // Entrada escalonada de los bloques de cada sección al hacer scroll.
+  // Sin script (o sin IntersectionObserver) todo se ve normal: la clase reveal-ready no se pone.
+  useEffect(() => {
+    if (!("IntersectionObserver" in window)) return;
+    const groups = [
+      ".hero-copy, .modules-panel, .hero-cta",
+      ".section-head",
+      ".differentiator-item",
+      ".vertical-card",
+      ".step",
+      ".community-copy, .community-panel",
+      ".proof-stat",
+      ".contact-copy, .lead-form",
+    ];
+    const items: HTMLElement[] = [];
+    groups.forEach((selector) => {
+      document.querySelectorAll<HTMLElement>(selector).forEach((el, index) => {
+        el.classList.add("reveal");
+        el.style.setProperty("--reveal-delay", `${Math.min(index, 4) * 80}ms`);
+        items.push(el);
+      });
+    });
+    document.documentElement.classList.add("reveal-ready");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+    );
+    items.forEach((el) => observer.observe(el));
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("reveal-ready");
+    };
+  }, []);
+
+  // Oculta el botón flotante de WhatsApp cuando el botón de enviar del formulario está en pantalla.
+  useEffect(() => {
+    const target = formActionsRef.current;
+    if (!target || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(([entry]) =>
+      setHideWhatsApp(entry.isIntersecting),
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
   }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -338,13 +425,14 @@ export default function App() {
           </a>
         </nav>
 
-        <button
+        <a
           className="button button-quiet"
-          type="button"
-          onClick={() => jumpToContact("Growth AI")}
+          href={BOOKING.diagnostico}
+          {...newTab}
+          onClick={() => setMenuOpen(false)}
         >
           Agendar llamada
-        </button>
+        </a>
       </header>
 
       <main>
@@ -356,10 +444,6 @@ export default function App() {
         >
           <div className="hero-grid">
             <div className="hero-copy">
-              <p className="status-tag">
-                <span className="status-dot" aria-hidden="true" />
-                Sistema activo
-              </p>
               <p className="eyebrow">
                 {verticals.map((vertical) => vertical.name).join(" · ")}
               </p>
@@ -390,17 +474,17 @@ export default function App() {
 
             <div className="hero-cta">
               <div className="hero-actions">
-                <button
+                <a
                   className="button button-solid"
-                  type="button"
-                  onClick={() => jumpToContact("Growth AI")}
+                  href={BOOKING.diagnostico}
+                  {...newTab}
                 >
                   Agendar diagnóstico
-                </button>
+                </a>
               </div>
               <p className="hero-cta-note">
-                Cuéntanos tu caso y te respondemos en menos de 24h hábiles
-                para coordinar tu llamada de diagnóstico.
+                Elige el horario que te acomode y reserva tu llamada de
+                diagnóstico al instante.
               </p>
             </div>
           </div>
@@ -444,13 +528,17 @@ export default function App() {
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
-                <button
+                <a
                   className="button button-ghost vertical-cta"
-                  type="button"
-                  onClick={() => jumpToContact(vertical.interest)}
+                  href={
+                    vertical.interest === "AI Coaching"
+                      ? BOOKING.coaching
+                      : BOOKING.diagnostico
+                  }
+                  {...newTab}
                 >
                   Hablar de {vertical.name}
-                </button>
+                </a>
               </article>
             ))}
           </div>
@@ -514,7 +602,7 @@ export default function App() {
         <section className="proof">
           <div className="proof-grid">
             <div className="proof-stat">
-              <span className="proof-number">+50</span>
+              <span className="proof-number">+13</span>
               <p className="proof-label">
                 negocios automatizados con sistemas de IA
               </p>
@@ -538,10 +626,24 @@ export default function App() {
               pena.
             </p>
 
+            <p className="contact-booking">
+              ¿Prefieres agendar directo?{" "}
+              <a href={BOOKING.diagnostico} {...newTab}>
+                Elige un horario
+              </a>
+            </p>
+
             <div className="contact-points">
               <div>
                 <span>Correo directo</span>
-                <a href="mailto:hola@kiuna.ai">hola@kiuna.ai</a>
+                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+              </div>
+              <div>
+                <span>WhatsApp</span>
+                <a className="contact-whatsapp" href={WHATSAPP_URL} {...newTab}>
+                  <WhatsAppIcon />
+                  Escríbenos por WhatsApp
+                </a>
               </div>
               <div>
                 <span>Ideal para</span>
@@ -615,7 +717,7 @@ export default function App() {
               autoComplete="off"
             />
 
-            <div className="form-actions full-width">
+            <div className="form-actions full-width" ref={formActionsRef}>
               <button
                 className="button button-solid"
                 type="submit"
@@ -645,8 +747,8 @@ export default function App() {
                     No pudimos enviar el formulario. Intenta de nuevo en un
                     momento.
                   </p>
-                  <a href="mailto:hola@kiuna.ai">
-                    ¿Falló? Escríbenos directo a hola@kiuna.ai
+                  <a href={`mailto:${CONTACT_EMAIL}`}>
+                    ¿Falló? Escríbenos directo a {CONTACT_EMAIL}
                   </a>
                 </div>
               )}
@@ -662,6 +764,17 @@ export default function App() {
           &copy; {new Date().getFullYear()}
         </p>
       </footer>
+
+      <a
+        className={`whatsapp-float${hideWhatsApp ? " whatsapp-float-hidden" : ""}`}
+        href={WHATSAPP_URL}
+        {...newTab}
+        aria-label="Escribir por WhatsApp"
+        aria-hidden={hideWhatsApp || undefined}
+        tabIndex={hideWhatsApp ? -1 : undefined}
+      >
+        <WhatsAppIcon />
+      </a>
     </div>
   );
 }
