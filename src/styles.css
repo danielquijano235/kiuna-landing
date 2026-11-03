@@ -1531,3 +1531,350 @@ main {
     transition-delay: 0ms;
   }
 }
+
+/* ---------- Recursos gratuitos ---------- */
+.resources-shell main {
+  min-height: 70vh;
+}
+
+.resources-head,
+.guide-head {
+  display: grid;
+  gap: 1rem;
+  max-width: 46rem;
+  margin-bottom: 2.5rem;
+}
+
+.resources-head h1,
+.guide-head h1 {
+  margin: 0;
+  font-size: var(--fs-display);
+  line-height: 1.08;
+  font-weight: 650;
+  text-wrap: balance;
+}
+
+.resources-head p,
+.guide-head p {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-lead);
+  line-height: 1.45;
+}
+
+.resources-head .button,
+.guide-head .button {
+  justify-self: start;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resource-grid li {
+  display: flex;
+}
+
+.resource-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.6rem 1.5rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease;
+}
+
+.resource-card:hover,
+.resource-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--safety);
+}
+
+.resource-card h2 {
+  margin: 0;
+  font-size: var(--fs-lead);
+  line-height: 1.25;
+}
+
+.resource-card p {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+}
+
+.resource-card-kind {
+  color: var(--steel);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.resource-card-cta {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--safety);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Página de cada guía */
+.guide {
+  max-width: 46rem;
+}
+
+.guide-back {
+  display: inline-block;
+  margin-bottom: 1.75rem;
+  color: var(--steel);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.guide-back:hover,
+.guide-back:focus-visible {
+  color: var(--ink);
+}
+
+.guide-body {
+  display: grid;
+  gap: 1.1rem;
+  color: var(--text);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+}
+
+.guide-body > h2 {
+  margin: 1.75rem 0 0;
+  font-size: var(--fs-lead);
+  line-height: 1.3;
+}
+
+.guide-body > p,
+.guide-body > ul:not([class]),
+.guide-body > ol:not([class]) {
+  margin: 0;
+}
+
+.guide-body > ul:not([class]),
+.guide-body > ol:not([class]) {
+  display: grid;
+  gap: 0.5rem;
+  padding-left: 1.3rem;
+}
+
+.guide-tip,
+.guide-summary {
+  padding: 1.1rem 1.25rem;
+  border-left: 4px solid var(--safety);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--surface);
+}
+
+.guide-tip > strong,
+.guide-summary > strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.guide-tip p {
+  margin: 0;
+}
+
+.guide-summary ol {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.guide-steps {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: guide-step;
+}
+
+.guide-steps li {
+  position: relative;
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.1rem 1rem 3.6rem;
+  border-radius: 0.5rem;
+  background: var(--surface);
+  counter-increment: guide-step;
+}
+
+.guide-steps li::before {
+  content: counter(guide-step);
+  position: absolute;
+  top: 0.95rem;
+  left: 1rem;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+.guide-table {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.guide-table table {
+  width: 100%;
+  min-width: 28rem;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.guide-table th,
+.guide-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.guide-table th {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.guide-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.guide-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.guide-benefits li {
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.guide-resource {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1.35rem 1.4rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.guide-resource h3 {
+  margin: 0;
+  font-size: var(--fs-lead);
+  line-height: 1.25;
+}
+
+.guide-resource p {
+  margin: 0;
+}
+
+.guide-resource-badge {
+  justify-self: start;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.guide-resource-meta {
+  color: var(--steel);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.guide-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding-top: 0.25rem;
+}
+
+.guide-resource-links a {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--safety);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.guide-cta {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.guide-cta h2 {
+  margin: 0;
+  font-size: var(--fs-lead);
+}
+
+.guide-cta p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.guide-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.guide-cta .button-ghost {
+  border-color: var(--surface);
+  color: var(--surface);
+  gap: 0.5rem;
+}
+
+.guide-whatsapp svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@media (max-width: 760px) {
+  .resource-card {
+    padding: 1.35rem 1.2rem;
+  }
+
+  .guide-cta-actions .button {
+    flex: 1 1 100%;
+  }
+}

@@ -10,7 +10,7 @@ import {
 // Enlaces de Cal.com. Por ahora todo pasa por el diagnóstico; si luego se crea un evento
 // propio de coaching, basta con cambiar su enlace aquí.
 const CAL_DIAGNOSTICO = "https://cal.com/kiuna-1mqebt/diagnostico-ia";
-const BOOKING = {
+export const BOOKING = {
   diagnostico: CAL_DIAGNOSTICO,
   coaching: CAL_DIAGNOSTICO,
   academy: CAL_DIAGNOSTICO,
@@ -20,11 +20,11 @@ const BOOKING = {
 const WHATSAPP_NUMBER = "573146593558";
 const WHATSAPP_MESSAGE =
   "Hola Kiuna, quiero información sobre cómo aplicar IA en mi negocio.";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE,
 )}`;
 
-const CONTACT_EMAIL = "kiunalabs@gmail.com";
+export const CONTACT_EMAIL = "kiunalabs@gmail.com";
 
 // Clave pública de Web3Forms: está hecha para ir en el navegador y solo permite
 // enviar formularios al correo de Kiuna. Si existe VITE_WEB3FORMS_ACCESS_KEY al compilar, se usa esa.
@@ -32,9 +32,9 @@ const WEB3FORMS_ACCESS_KEY =
   import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
   "9194568e-a9ed-4efc-9956-3a209df1e602";
 
-const newTab = { target: "_blank", rel: "noopener noreferrer" } as const;
+export const newTab = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-function WhatsAppIcon() {
+export function WhatsAppIcon() {
   return (
     <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
       <path
@@ -426,6 +426,7 @@ export default function App() {
           <a href="#comunidad" onClick={() => setMenuOpen(false)}>
             Comunidad
           </a>
+          <a href="/recursos-gratuitos">Recursos</a>
           <a href="#contacto" onClick={() => setMenuOpen(false)}>
             Contacto
           </a>
