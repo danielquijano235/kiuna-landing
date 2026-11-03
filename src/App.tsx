@@ -26,6 +26,12 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 
 const CONTACT_EMAIL = "kiunalabs@gmail.com";
 
+// Clave pública de Web3Forms: está hecha para ir en el navegador y solo permite
+// enviar formularios al correo de Kiuna. Si existe VITE_WEB3FORMS_ACCESS_KEY al compilar, se usa esa.
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ||
+  "9194568e-a9ed-4efc-9956-3a209df1e602";
+
 const newTab = { target: "_blank", rel: "noopener noreferrer" } as const;
 
 function WhatsAppIcon() {
@@ -258,7 +264,7 @@ export default function App() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          access_key: WEB3FORMS_ACCESS_KEY,
           subject: `Solicitud desde la web | ${interest} | ${name}`,
           from_name: "Kiuna AI — Formulario de contacto",
           name,
