@@ -1,7 +1,7 @@
 {
   "slug": "ganar-dinero-con-ia",
   "title": "3 formas de ganar tus primeros $300 con IA",
-  "subtitle": "Qué vender, a quién ofrecérselo y cómo cobrar — con los cursos que recomiendo para cada ruta.",
+  "subtitle": "Qué vender, a quién ofrecérselo y cómo cobrar, con los cursos que recomiendo para cada ruta.",
   "kind": "Recursos recomendados",
   "readingMinutes": 6,
   "date": "2026-08-30",
@@ -12,7 +12,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Me escribes preguntando cómo empezar a generar ingresos con IA, así que reuní 3 rutas reales que hoy están pagando bien — y no hace falta saber programar para ninguna. Esta guía no es solo una lista de videos: por cada forma te explico **qué servicio ofrecer, a quién y cómo llegar a tus primeros $300**. Los cursos son el paso para aprender la habilidad; el negocio está en cómo lo vendes."
+      "text": "Me escribes preguntando cómo empezar a generar ingresos con IA, así que reuní 3 rutas reales que hoy están pagando bien, y no hace falta saber programar para ninguna. Esta guía no es solo una lista de videos: por cada forma te explico **qué servicio ofrecer, a quién y cómo llegar a tus primeros $300**. Los cursos son el paso para aprender la habilidad; el negocio está en cómo lo vendes."
     },
     {
       "type": "heading",
@@ -36,12 +36,12 @@
       "rows": [
         [
           "1 video UGC individual",
-          "$40 – $60",
+          "$40 a $60",
           "5 a 8 videos"
         ],
         [
           "Pack de 3 videos para una marca",
-          "$150 – $200",
+          "$150 a $200",
           "2 marcas"
         ]
       ]
@@ -70,7 +70,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Qué ofreces y a quién.** No todo se trata de avatares: negocios locales, infoproductores y pequeñas marcas necesitan un video bien hecho con IA para anunciar un producto, explicar un servicio o promocionar una oferta — sin presupuesto para una productora. Tu cliente típico es el dueño de un negocio pequeño que ya te sigue o al que puedes escribirle directo, o un cliente conseguido en Fiverr/Upwork buscando \"AI video ads\"."
+      "text": "**Qué ofreces y a quién.** No todo se trata de avatares: negocios locales, infoproductores y pequeñas marcas necesitan un video bien hecho con IA para anunciar un producto, explicar un servicio o promocionar una oferta, sin presupuesto para una productora. Tu cliente típico es el dueño de un negocio pequeño que ya te sigue o al que puedes escribirle directo, o un cliente conseguido en Fiverr/Upwork buscando \"AI video ads\"."
     },
     {
       "type": "paragraph",
@@ -86,12 +86,12 @@
       "rows": [
         [
           "Video publicitario corto (15-30s)",
-          "$80 – $120",
+          "$80 a $120",
           "3 videos"
         ],
         [
           "Video de producto/demo más elaborado",
-          "$150 – $300",
+          "$150 a $300",
           "1 a 2 videos"
         ]
       ]
@@ -149,12 +149,12 @@
       "rows": [
         [
           "Agente simple (FAQ o agendado)",
-          "$150 – $300",
+          "$150 a $300",
           "1 agente"
         ],
         [
           "Mantenimiento mensual tras la entrega",
-          "$50 – $100/mes",
+          "$50 a $100/mes",
           "Ingreso recurrente extra"
         ]
       ]
@@ -198,7 +198,7 @@
       "type": "list",
       "ordered": true,
       "items": [
-        "Elige una de las 3 formas según lo que más te llame — no intentes las tres a la vez.",
+        "Elige una de las 3 formas según lo que más te llame. No intentes las tres a la vez.",
         "Sigue el curso recomendado hasta producir tu primera pieza (video o agente) de muestra.",
         "Usa esa muestra para conseguir tu primer cliente pagado siguiendo el tip de venta de esa sección; tu meta son los primeros $300, no la perfección."
       ]

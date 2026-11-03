@@ -1,0 +1,50 @@
+{
+  "slug": "recursos-claude-code",
+  "title": "3 recursos para dominar Claude Code",
+  "subtitle": "Los cursos y series que recomiendo para aprender a construir (y vender) con IA.",
+  "kind": "Recursos recomendados",
+  "readingMinutes": 3,
+  "date": "2026-08-25",
+  "blocks": [
+    { "type": "heading", "text": "Por qué estos 3" },
+    {
+      "type": "paragraph",
+      "text": "Me escribes pidiendo por dónde empezar con Claude Code, así que reuní los 3 recursos que más recomiendo ahora mismo: uno para aprender la herramienta desde cero en español, uno para llevarla a un nivel profesional (construir y vender proyectos) y uno para dar el siguiente paso: montar una agencia de automatización con IA. Guárdalos y ve por orden."
+    },
+    { "type": "heading", "text": "Los recursos" },
+    {
+      "type": "resource",
+      "badge": "Curso · Español",
+      "title": "Claude Code 2026: Curso Completo en Español (actualizado)",
+      "meta": "Ideal si estás empezando desde cero",
+      "text": "Recorre la instalación, el flujo de trabajo básico y las funciones esenciales de Claude Code explicadas en español, de forma ordenada y actualizada a 2026. El mejor punto de partida si nunca lo has usado.",
+      "links": [{ "label": "Ver en YouTube", "href": "https://www.youtube.com/watch?v=h49d1-d_fYk" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Curso · Inglés · Nick Saraev",
+      "title": "Claude Code Full Course 4 Hours: Build & Sell (2026)",
+      "meta": "Para llevarlo a nivel profesional",
+      "text": "Curso extenso de Nick Saraev enfocado en construir proyectos reales con Claude Code y convertirlos en algo vendible. Perfecto cuando ya conoces lo básico y quieres pasar a crear productos.",
+      "links": [{ "label": "Ver en YouTube", "href": "https://www.youtube.com/watch?v=QoQBzR1NIqI" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Playlist · Inglés",
+      "title": "How to Start an AI Automation Agency (AAA)",
+      "meta": "El siguiente paso: monetizar lo que aprendiste",
+      "text": "Serie completa sobre cómo montar una agencia de automatización con IA, desde conseguir el primer cliente hasta entregar proyectos. Útil una vez que ya sabes construir y quieres convertirlo en negocio.",
+      "links": [{ "label": "Ver la playlist", "href": "https://www.youtube.com/playlist?list=PL2V6IBDeR5YP_O0sovZZvIs4QgwMIx6ZZ" }]
+    },
+    { "type": "heading", "text": "Cómo aprovecharlos" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Empieza por el curso en español si es tu primera vez con Claude Code.",
+        "Pasa al curso de Nick Saraev cuando quieras construir algo real y venderlo.",
+        "Usa la playlist de AAA cuando quieras convertir esa habilidad en ingresos."
+      ]
+    }
+  ]
+}

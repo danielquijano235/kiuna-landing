@@ -6,6 +6,7 @@
 export type Block =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
+  | { type: "code"; text: string }
   | { type: "tip"; title?: string; text: string }
   | { type: "summary"; title: string; items: string[] }
   | { type: "list"; ordered?: boolean; items: string[] }

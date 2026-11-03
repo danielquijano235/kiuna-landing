@@ -266,7 +266,7 @@ export default function App() {
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
           subject: `Solicitud desde la web | ${interest} | ${name}`,
-          from_name: "Kiuna AI — Formulario de contacto",
+          from_name: "Kiuna AI, formulario de contacto",
           name,
           email,
           phone: phone || "No indicado",

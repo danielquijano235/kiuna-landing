@@ -1,0 +1,158 @@
+{
+  "slug": "claude-memoria-conectores-proyectos",
+  "title": "3 secretos de Claude que quizás no conocías",
+  "subtitle": "Cómo configurar la memoria, los conectores y los proyectos paso a paso, para que Claude trabaje con tu contexto sin que tengas que repetírselo en cada chat.",
+  "kind": "Guía paso a paso",
+  "readingMinutes": 7,
+  "date": "2026-11-01",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Los 3 secretos",
+      "items": [
+        "**Memoria:** se acuerda de tus chats anteriores.",
+        "**Conectores:** Claude dentro de Drive, Sheets, Slack y Notion.",
+        "**Proyectos:** tus archivos cargados en cada chat."
+      ]
+    },
+    { "type": "heading", "text": "1. Memoria" },
+    {
+      "type": "paragraph",
+      "text": "Activa por defecto, en plan gratis y de pago, en web, escritorio y móvil. Claude guarda un resumen de lo que hablas con él. Abres un chat nuevo y ya sabe en qué proyecto estás o con qué cliente trabajas, sin que se lo expliques otra vez."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "En claude.ai o en la app, abre **Configuración (Settings)** y entra a **Your Claude**. En cuentas con el menú anterior aparece como **Memoria**." },
+        { "text": "Enciende **Memory from chats** para que aprenda de tus conversaciones." },
+        { "text": "Enciende también **Search and reference chats** para que pueda buscar en chats pasados (planes Pro, Max, Team y Enterprise)." },
+        { "text": "Toca **Manage** junto a **Your memory**. Ahí ves lo que recuerda ordenado por temas, y puedes editar o borrar cualquiera." }
+      ]
+    },
+    { "type": "paragraph", "text": "**¿No quieres que recuerde?**" },
+    {
+      "type": "list",
+      "items": [
+        "**Pausar:** deja de usar y de crear recuerdos, pero no borra los que ya tiene.",
+        "**Borrar (Reset):** elimina toda la memoria, también la de tus proyectos. No se puede deshacer.",
+        "**Solo en un chat:** en un chat nuevo toca **+** y apaga **Memory** antes de enviar el primer mensaje.",
+        "**Modo incógnito:** el ícono del fantasma, arriba a la derecha. Ese chat no se guarda ni entra a la memoria."
+      ]
+    },
+    { "type": "paragraph", "text": "**Pruébalo ahora.** Abre un chat nuevo y escribe:" },
+    { "type": "code", "text": "¿Qué recuerdas de mí y de lo que estoy haciendo?" },
+    {
+      "type": "tip",
+      "text": "Si algo está mal o desactualizado, corrígelo ahí mismo: **\"Ya no trabajo con ese cliente\"**. Los temas sensibles (salud, política) no se guardan salvo que actives **Include sensitive topics in memory**."
+    },
+    { "type": "heading", "text": "2. Conectores" },
+    {
+      "type": "paragraph",
+      "text": "Más de mil apps, en web, escritorio y móvil. Conectas Claude a las herramientas que ya usas y puede leer tus archivos, buscar en tus mensajes y crear cosas ahí mismo. Es tener a Claude dentro de tus apps."
+    },
+    {
+      "type": "benefits",
+      "items": [
+        "**Google Drive:** busca y lee tus documentos",
+        "**Google Sheets:** lee y arma hojas de cálculo",
+        "**Slack:** resume canales y conversaciones",
+        "**Notion:** consulta y crea páginas"
+      ]
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Entra a **Personalizar (Customize) → Conectores (Connectors)**." },
+        { "text": "Toca el **+** junto a Conectores y busca la app, o explórala por categoría." },
+        { "text": "Ábrela, toca **Connect** e inicia sesión con tu cuenta de esa app para darle permiso." },
+        { "text": "En cualquier chat, toca **+** (o escribe `/`) → **Connectors** y enciende o apaga los que quieres usar en esa conversación." }
+      ]
+    },
+    { "type": "paragraph", "text": "**Pídeselo así:**" },
+    {
+      "type": "list",
+      "items": [
+        "\"Busca en mi Drive la propuesta del cliente Pérez y resúmela en 5 puntos.\"",
+        "\"Pasa estos datos a una hoja de Google Sheets con totales por mes.\"",
+        "\"¿Qué se decidió esta semana en el canal #marketing?\"",
+        "\"Convierte esta conversación en una página de Notion con tareas.\""
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Claude solo ve lo que tu cuenta ya puede ver en esa app. En planes Team y Enterprise, primero el administrador tiene que habilitar el conector."
+    },
+    { "type": "heading", "text": "3. Proyectos" },
+    {
+      "type": "paragraph",
+      "text": "Disponibles en todos los planes (en el gratis, hasta 5 proyectos). Un proyecto es una carpeta de trabajo con sus propios archivos e instrucciones. Cada chat que abres dentro ya tiene todo ese contexto cargado, sin volver a subir nada."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "En la barra lateral entra a **Proyectos (Projects)**, o ve directo a claude.ai/projects." },
+        { "text": "Toca **+ New Project** arriba a la derecha y ponle un nombre, por ejemplo el de tu cliente o tu negocio." },
+        { "text": "A la derecha está el conocimiento del proyecto. Toca **+** y sube tus documentos, textos o código." },
+        { "text": "Toca **Set project instructions**, escribe cómo quieres que responda (tono, rol, formato) y guarda." },
+        { "text": "Abre un chat desde el proyecto. Claude ya conoce tus archivos y sigue tus instrucciones." }
+      ]
+    },
+    { "type": "paragraph", "text": "**Qué subir:**" },
+    {
+      "type": "list",
+      "items": [
+        "La propuesta y el brief de un cliente.",
+        "Tu guía de marca y tono de voz.",
+        "Tus mejores guiones o textos anteriores.",
+        "Precios, servicios y preguntas frecuentes."
+      ]
+    },
+    { "type": "paragraph", "text": "**Bueno saber:**" },
+    {
+      "type": "list",
+      "items": [
+        "Cada proyecto tiene su propia memoria, separada de los demás.",
+        "Los chats de un proyecto no se leen entre sí: lo que deba saber siempre, súbelo como archivo.",
+        "En planes de pago, si subes mucho, Claude amplía la capacidad solo."
+      ]
+    },
+    { "type": "paragraph", "text": "**Ejemplo de instrucciones del proyecto:**" },
+    {
+      "type": "code",
+      "text": "Eres mi asistente para el cliente Pérez. Responde en español, con tono cercano y frases cortas. Usa siempre los precios del archivo tarifas.pdf y, si te falta un dato, pregúntame antes de inventarlo."
+    },
+    { "type": "heading", "text": "Úsalos los tres juntos" },
+    {
+      "type": "paragraph",
+      "text": "Cada uno sirve solo, pero juntos hacen que Claude trabaje como alguien de tu equipo. Ejemplo con un cliente:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Proyecto:** \"Cliente Pérez\", con su brief, su marca y la propuesta firmada.",
+        "**Conectores:** Drive y Slack encendidos para traer los archivos y mensajes nuevos.",
+        "**Memoria:** recuerda lo que decidieron la semana pasada, sin repetírselo."
+      ]
+    },
+    { "type": "paragraph", "text": "En un chat dentro del proyecto, escribe:" },
+    {
+      "type": "code",
+      "text": "Revisa lo último del cliente en Drive y Slack y prepárame un resumen para la reunión de mañana."
+    },
+    { "type": "heading", "text": "Configúralo en 10 minutos" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Revisa tu **memoria** en Configuración y borra lo que no quieras que use.",
+        "Conecta **una sola app**, la que más usas en tu día.",
+        "Crea **un proyecto** para tu cliente o negocio principal y sube 3 archivos."
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Deja de explicarle todo desde cero",
+      "text": "Los menús pueden cambiar de nombre con las actualizaciones; la idea es la misma."
+    }
+  ]
+}

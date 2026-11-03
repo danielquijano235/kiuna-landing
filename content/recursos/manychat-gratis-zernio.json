@@ -1,0 +1,250 @@
+{
+  "slug": "manychat-gratis-zernio",
+  "title": "Tu propio ManyChat gratis con Zernio",
+  "subtitle": "Cada persona que comente una palabra en tu reel recibe tu guía por mensaje directo, sin pagar una herramienta mensual. Incluye el prompt para que Claude Code lo construya y te guíe paso a paso.",
+  "kind": "Guía + prompt",
+  "readingMinutes": 14,
+  "date": "2026-10-15",
+  "blocks": [
+    { "type": "heading", "text": "Qué vas a construir" },
+    {
+      "type": "paragraph",
+      "text": "Seguro lo has visto: un reel dice \"comenta la palabra GUÍA y te la envío\". Comentas, y en segundos te llega un mensaje directo con lo prometido. Eso lo hace ManyChat, que se paga cada mes. Aquí armas tu propia versión."
+    },
+    {
+      "type": "paragraph",
+      "text": "Funciona con la **conexión oficial de Meta**, no con trucos ni robots que simulan clics, así que no pone en riesgo tu cuenta. El alojamiento (Vercel) tiene plan gratis, y Zernio es la herramienta que conecta con Instagram. Revisa en su página el plan vigente, porque los precios cambian."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Comentan tu palabra." },
+        { "text": "Reciben un DM con botón." },
+        { "text": "Tocan el botón." },
+        { "text": "Reciben tu guía." }
+      ]
+    },
+    { "type": "tip", "text": "No necesitas saber programar: tú preparas las cuentas y Claude Code hace el resto." },
+    { "type": "heading", "text": "Lo que necesitas antes de empezar" },
+    {
+      "type": "list",
+      "items": [
+        "**Instagram Business o Creator.** Una cuenta personal no sirve. Cambiarla es gratis (más abajo te explico cómo).",
+        "**Una página de Facebook** vinculada a tu Instagram. Es un requisito de Meta; puede estar vacía.",
+        "**Cuenta en Zernio** (zernio.com). Es el puente entre Instagram y tu sistema.",
+        "**Cuenta en Vercel** (vercel.com). Ahí vivirá tu sistema en internet. El plan Hobby alcanza.",
+        "**Node.js instalado** (nodejs.org, botón \"LTS\"). Solo se instala, no se usa directamente.",
+        "**Claude Code:** la IA que escribirá, publicará y te guiará en todo lo demás."
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Tip clave",
+      "text": "Vas a crear **cuatro claves secretas**. Ten a mano un **gestor de contraseñas** (o una nota segura) y guárdalas **en el momento en que las crees**. Vercel las oculta después y no vuelven a mostrarse."
+    },
+    { "type": "heading", "text": "Cómo funciona: tres piezas, como un restaurante" },
+    {
+      "type": "list",
+      "items": [
+        "**Zernio es el mesero:** se entera cuando alguien comenta y avisa a tu sistema. También entrega los mensajes.",
+        "**Tu app es el cocinero:** recibe el aviso, mira tus reglas y decide qué mensaje enviar.",
+        "**Las reglas son el menú:** una lista de \"si comentan X en este video, responde Y\". Es lo único que editas."
+      ]
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Comentan la palabra", "text": "Por ejemplo \"recurso\", en tu reel." },
+        { "title": "Zernio lo detecta", "text": "Y le avisa a tu app en segundos." },
+        { "title": "Tu app verifica", "text": "Comprueba que el aviso sea auténtico." },
+        { "title": "Busca la regla", "text": "¿Esa palabra, en ese video, tiene respuesta?" },
+        { "title": "Envía el DM con botón", "text": "Y responde el comentario en público." },
+        { "title": "Tocan el botón", "text": "Zernio avisa otra vez a tu app." },
+        { "title": "Llega el mensaje final", "text": "Con el link de tu guía. Todo en segundos y sin tocar nada." }
+      ]
+    },
+    { "type": "heading", "text": "Prepara tus cuentas (esto lo haces tú)" },
+    { "type": "paragraph", "text": "Claude Code no puede crear cuentas por ti, así que este paso es tuyo." },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Pasa a cuenta profesional", "text": "En Instagram: Configuración → Tipo de cuenta y herramientas → Cambiar a cuenta profesional. Elige Creator o Business." },
+        { "title": "Crea una página de Facebook", "text": "Desde facebook.com, en Páginas → Crear. Puede estar vacía; solo necesita existir." },
+        { "title": "Vincula las dos", "text": "En la configuración de Instagram, conecta tu página de Facebook. Si no lo encuentras, busca \"página de Facebook\" en la configuración: los menús de Meta cambian." },
+        { "title": "Cuenta en Zernio", "text": "Regístrate en zernio.com y conecta tu Instagram: inicia sesión con Facebook y da los permisos." },
+        { "title": "Crea tu API key", "text": "En Settings → API Keys. Empieza con `sk_`. **Guárdala ya.**" },
+        { "title": "Cuenta en Vercel", "text": "En vercel.com, plan Hobby. Anota con qué método te registraste (Google, GitHub o correo)." },
+        { "title": "Claude Code listo", "text": "Con Node.js instalado. Lo demás lo hace él en el siguiente paso." }
+      ]
+    },
+    { "type": "heading", "text": "Un solo prompt, y Claude Code te guía" },
+    {
+      "type": "paragraph",
+      "text": "Crea una carpeta nueva (por ejemplo **mi-manychat**), abre una terminal dentro, escribe `claude` y pega el prompt de abajo. Claude Code construye la app y después te lleva de la mano por todo lo demás, **un paso a la vez**, esperando tu \"listo\"."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Construye la app:** webhook, reglas, página de IDs y la skill de videos nuevos.",
+        "**Account ID y claves:** consigue el ID de tu cuenta y genera tus claves secretas.",
+        "**Prueba en tu computador:** simula un comentario para confirmar que todo responde.",
+        "**Publica en Vercel:** vincula, carga las variables y despliega. Te pide confirmación.",
+        "**Conecta el webhook:** registra en Zernio los dos eventos con el secreto correcto.",
+        "**Crea tu primera regla:** con el ID de tu reel y los textos que tú apruebas."
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Tu parte",
+      "text": "Lee lo que te pide, **acepta los permisos**, pega las claves cuando te las pida y responde **\"listo\"**. Si no entiendes algo, escríbele: \"explícame esto como si no supiera programar\"."
+    },
+    {
+      "type": "code",
+      "text": "Quiero construir una automatización \"comentario -> DM\" de Instagram, estilo ManyChat, usando Zernio como puente. Crea un proyecto Next.js (App Router, TypeScript) listo para desplegar en Vercel.\n\nIMPORTANTE: no adivines cómo funciona la API de Zernio. La base es https://zernio.com/api y la referencia fiable es https://zernio.com/openapi.json. Léela antes de escribir código. Autenticación: header \"Authorization: Bearer <ZERNIO_API_KEY>\".\n\n## Qué debe hacer\n1) Endpoint POST /api/zernio/webhook que recibe eventos de Zernio:\n- Lee el body CRUDO (req.text()) y verifica la firma: header X-Zernio-Signature = \"sha256=\" + HMAC-SHA256 hex del body con ZERNIO_WEBHOOK_SECRET. Compara con timingSafeEqual. Firma inválida -> 401. Falta el secreto -> 500.\n- Deduplica por el id del evento (un Set en memoria).\n- Evento \"comment.received\": ignora si comment.author.id == account.id (evita bucles). Busca una regla con matchRule(texto, platformPostId). Si hay regla, envía un \"private reply\" (el DM) con botón postback si la regla tiene botón, y si tiene publicReply, responde el comentario en público. Si falla el envío, responde 502 para que Zernio reintente.\n- Evento \"message.received\": SOLO actúa si el mensaje es entrante Y trae metadata.postbackPayload (clic de botón). Recupera la regla desde el payload y envía button.finalMessage en la misma conversación. Ignora mensajes normales.\n\n2) lib/keywords.ts con las reglas. Tipo de regla:\n{ postId?: string; keyword: string; dm: string; publicReply?: string; button?: { title: string; finalMessage: string } }\nMatching: el comentario CONTIENE la palabra (sin importar mayúsculas), pero es sensible a tildes. Prioridad: regla con el postId del comentario primero, luego regla global (sin postId). Dentro del mismo postId gana la primera que coincida. El payload del botón es \"btn:<postId o *>:<keyword en minúsculas>\".\n\n3) lib/zernio.ts con funciones para: private reply (POST /v1/inbox/comments/{platformPostId}/{commentId}/private-reply, body {accountId, message, buttons?}, máx 3 botones), enviar mensaje (POST /v1/inbox/conversations/{conversationId}/messages), responder comentario público (POST /v1/inbox/comments/{postId}), listar posts recientes (GET /v1/posts?source=external&accountId=...&sortBy=scheduled-desc&limit=25) y sincronizar un post (POST /v1/posts/sync-external con {accountId, url}). Ojo: en el private reply, platformPostId es el ID del post EN INSTAGRAM, no el postId interno de Zernio.\n\n4) GET /api/sync-post?key=<SYNC_POST_SECRET>&url=<link del post>: fuerza la sincronización de un post recién publicado y devuelve { ok, platformPostId, caption, url, publishedAt, thumbnail }. Si la key es incorrecta, responde 404.\n\n5) Página /posts?key=<ADMIN_TOKEN> que lista posts recientes con miniatura, link y botón \"Copiar ID\". Key incorrecta -> 404.\n\n6) Página de inicio \"/\" que diga \"Automatización activa\".\n\n## Variables de entorno\nCrea .env.example, nunca pongas valores reales en el código: ZERNIO_API_KEY, ZERNIO_WEBHOOK_SECRET, ZERNIO_ACCOUNT_ID, ADMIN_TOKEN, SYNC_POST_SECRET, ZERNIO_API_BASE_URL (opcional, por defecto https://zernio.com/api). Estilo de los textos de las reglas: texto plano, sin emojis.\n\n## Archivos de apoyo\n- Crea un CLAUDE.md que explique la arquitectura y las trampas, para que futuras sesiones entiendan el proyecto sin que yo lo repita.\n- Crea una skill en .claude/skills/publicar-video-nuevo/SKILL.md que, cuando yo diga \"publiqué un video nuevo\" y pase un link de Instagram + un link de mi guía, haga: llamar a /api/sync-post, detectar la palabra clave del caption, escribir la regla en lib/keywords.ts, pedirme confirmación y desplegar a producción, y verificar el sitio.\n\n## Cómo quiero que me guíes\nCuando termines de construir, guíame por estos pasos. Haz UNO a la vez, explícame en lenguaje simple qué hacemos (asume que no sé programar) y espera mi \"listo\" antes de pasar al siguiente.\nA) Mi Account ID: pídeme mi ZERNIO_API_KEY y obtén mi ZERNIO_ACCOUNT_ID con GET /v1/accounts.\nB) Claves: genera valores aleatorios largos para ZERNIO_WEBHOOK_SECRET, ADMIN_TOKEN y SYNC_POST_SECRET y recuérdame guardarlos en mi gestor de contraseñas ANTES de seguir.\nC) Prueba local: simula un comentario firmado y confirma que la firma y el matching funcionan.\nD) Vercel: instala la CLI, inicia sesión, vincula el proyecto, carga las variables en producción y despliega con \"vercel deploy --prod\". Pídeme confirmación antes del deploy y verifica que la página de inicio responda 200.\nE) Webhook: regístralo en Zernio (POST /v1/webhooks/settings) apuntando a https://<mi-app>.vercel.app/api/zernio/webhook, con los eventos comment.received y message.received y el MISMO secreto que cargué en Vercel.\nF) Primera regla: pídeme el link de mi reel y el de mi guía, obtén el ID con /api/sync-post, propón los textos (respuesta pública, mensaje de apertura, botón de máx. 20 caracteres y mensaje final), espera mi aprobación, escribe la regla, despliega y dime cómo probarla desde otra cuenta. Recuérdame que la guía debe estar en \"Cualquier persona con el enlace\"."
+    },
+    { "type": "heading", "text": "El ID de cada video (lo más importante del paso F)" },
+    {
+      "type": "paragraph",
+      "text": "Cada reel tiene un **número de identificación interno**, por ejemplo 18035001017646757. No es el código raro que sale en el link (instagram.com/p/DcXTFMKoCe1). Sirve para que una regla funcione **solo en un video concreto**: así la misma palabra puede entregar guías distintas en videos distintos. Una regla sin ID funciona en todos tus videos. Claude Code lo consigue por ti, de una de estas dos formas:"
+    },
+    {
+      "type": "table",
+      "head": ["Forma", "Para qué", "Cómo"],
+      "rows": [
+        ["**A · La página /posts**", "Ver muchos videos", "Abre `tu-app.vercel.app/posts?key=TU_ADMIN_TOKEN`. Verás tus videos con un botón \"Copiar ID\"."],
+        ["**B · El sincronizador (recomendada)**", "Un video recién publicado, al instante", "Abre `tu-app.vercel.app/api/sync-post?key=TU_SYNC_POST_SECRET&url=LINK_DE_TU_REEL`. Te devuelve el ID y la descripción."]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "¿Por qué dos formas?",
+      "text": "Zernio revisa tu cuenta solo cada 90 minutos más o menos. Si publicas un reel y lo quieres activar ya, /posts todavía no lo muestra; el sincronizador le obliga a mirar ese video en ese momento. Si responde **ok: false**, casi siempre el video se publicó hace segundos: espera de 15 a 30 segundos, reintenta y comprueba que copiaste el link completo."
+    },
+    { "type": "heading", "text": "Las reglas de tu sistema" },
+    {
+      "type": "paragraph",
+      "text": "Todas las reglas viven en **un solo archivo** (`lib/keywords.ts`) y todas tienen las mismas partes. No las escribes tú: se las dictas a Claude Code."
+    },
+    {
+      "type": "table",
+      "head": ["Parte", "Qué es", "Ejemplo"],
+      "rows": [
+        ["`postId`", "ID del video donde aplica (opcional)", "18114774950291010"],
+        ["`keyword`", "La palabra que debe contener el comentario", "recurso"],
+        ["`dm`", "Mensaje de apertura por DM", "Hola. Dale click para recibir la guia"],
+        ["`publicReply`", "Respuesta pública (opcional)", "Enviado, revisa tu DM"],
+        ["`button.title`", "Texto del botón, **máx. 20 caracteres**", "Ver la guia"],
+        ["`button.finalMessage`", "Lo que llega al tocar el botón, con el link de tu guía", "Aqui tienes la guia: https://…"]
+      ]
+    },
+    {
+      "type": "code",
+      "text": "{\n  // Reel \"Mi video\" - https://www.instagram.com/p/XXXXXXXXXXX/\n  postId: \"18114774950291010\",\n  keyword: \"recurso\",\n  dm: \"Hola. Dale click para recibir la guia\",\n  publicReply: \"Enviado, revisa tu DM\",\n  button: {\n    title: \"Ver la guia\",\n    finalMessage: \"Aqui tienes la guia: https://kiuna.cloud/recursos-gratuitos/tu-guia\",\n  },\n},"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Por qué usamos un botón:** en vez de mandar el link directo, mandamos primero un mensaje con un botón y la persona lo toca para recibir el link. Es **más confiable en la entrega**, incluso si no te sigue, y confirma que de verdad quiere el recurso."
+    },
+    {
+      "type": "tip",
+      "title": "Advertencia crítica",
+      "text": "El botón \"recuerda\" su regla por el **postId** y la **keyword**. Si cambias alguno en una regla ya en uso, **los botones que ya enviaste dejan de funcionar**. Corregir los textos (dm, publicReply, button.title, button.finalMessage) es seguro. Si necesitas otra palabra u otro video, crea una regla nueva."
+    },
+    {
+      "type": "tip",
+      "title": "No lo olvides",
+      "text": "El link de tu guía tiene que abrirse para cualquiera. Si usas Drive, ponla en **\"Cualquier persona con el enlace\"**; si queda privada, la persona recibe el mensaje pero no puede abrirla. Es el olvido más común."
+    },
+    { "type": "heading", "text": "Reglas de oro para las palabras clave" },
+    {
+      "type": "list",
+      "items": [
+        "**Contiene, no es exacta:** \"recurso\" también activa con \"quiero el RECURSO porfa\". Las mayúsculas no importan.",
+        "**Las tildes sí importan:** \"guía\" no coincide con \"guia\". Elige palabras sin tilde, o crea dos reglas.",
+        "**Palabras dentro de palabras:** con \"guia\" y \"guias\" en el mismo video, \"guias\" activa las dos y gana la primera.",
+        "**El video gana a lo general:** una regla con ID se usa antes que una regla sin ID.",
+        "**Misma palabra, otro video:** \"automatiza\" en dos videos puede entregar guías distintas. Para eso sirve el ID.",
+        "**Textos sin emojis:** texto plano en los mensajes, se ve más limpio y confiable."
+      ]
+    },
+    { "type": "heading", "text": "Prueba de punta a punta (no te la saltes)" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Otra cuenta", "text": "Abre tu reel desde una cuenta que no sea la tuya." },
+        { "title": "Comenta la palabra", "text": "Espera unos segundos." },
+        { "title": "Revisa el DM", "text": "Debe llegar con botón, y tu cuenta responde en público." },
+        { "title": "Toca el botón", "text": "Debe llegar el mensaje con el link." },
+        { "title": "Abre el link en una ventana de incógnito", "text": "Sin sesión iniciada, para confirmar que cualquiera puede verlo." }
+      ]
+    },
+    { "type": "heading", "text": "Tu rutina para cada video nuevo" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Publica el video", "text": "Con el llamado: \"comenta RECURSO\"." },
+        { "title": "Ten lista la guía", "text": "Con un link que cualquiera pueda abrir." },
+        { "title": "Obtén el ID", "text": "Con el sincronizador." },
+        { "title": "Elige la palabra clave", "text": "La que dices en el video y pusiste en la descripción." },
+        { "title": "Redacta los 4 textos", "text": "Respuesta pública, apertura, botón y mensaje final." },
+        { "title": "Agrega la regla y despliega", "text": "Un solo cambio y una publicación." },
+        { "title": "Prueba desde otra cuenta", "text": "Siempre. Un minuto de prueba evita que tus seguidores comenten y no les llegue nada." }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**El atajo:** los pasos 3 a 6 los hace la skill **publicar-video-nuevo** que Claude Code creó con el prompt. Abre Claude Code en tu carpeta y escribe esto. Él consigue el ID, detecta la palabra, te propone los textos, **espera tu aprobación**, despliega y verifica."
+    },
+    { "type": "code", "text": "Publiqué un video nuevo.\nInstagram: [link de tu reel]\nGuía: [link de tu guía]" },
+    { "type": "tip", "title": "Tip", "text": "**Aprueba siempre los textos antes de desplegar.** Tus seguidores los van a leer tal cual." },
+    { "type": "heading", "text": "Si algo no funciona" },
+    {
+      "type": "list",
+      "items": [
+        "**Comentan y no pasa nada:** revisa tildes, que el ID del video sea el correcto y que hayas desplegado tras agregar la regla. Pide: \"revisa los logs de Vercel\".",
+        "**El botón no hace nada:** falta el evento **message.received** en el webhook, o editaste el postId o la keyword de una regla en uso.",
+        "**Error 401 en los avisos:** el secreto del webhook en Zernio y en Vercel no es idéntico, o no volviste a desplegar.",
+        "**Error 500 \"misconfigured\":** falta cargar ZERNIO_WEBHOOK_SECRET en Vercel. Cárgalo y vuelve a desplegar.",
+        "**No pueden abrir la guía:** el link es privado. Ponlo en \"Cualquier persona con el enlace\".",
+        "**/posts no muestra el video:** Zernio tarda unos 90 min en sincronizar. Usa el sincronizador.",
+        "**El sincronizador da ok: false:** espera de 15 a 30 segundos si el video es reciente y revisa que el link esté completo.",
+        "**Las páginas con clave dan 404:** la clave está mal o no está cargada en Vercel. Es a propósito: así nadie sabe que existen.",
+        "**\"Host inexistente\" con Zernio:** se escribió api.zernio.com. El correcto es **zernio.com/api**.",
+        "**Llega el mensaje dos veces:** puede pasar con poco tráfico. Es poco frecuente y aceptable para empezar.",
+        "**Perdiste una clave marcada \"Sensitive\" en Vercel:** no se puede recuperar, a propósito. Crea una nueva, reemplázala en Vercel, vuelve a desplegar y guárdala en tu gestor."
+      ]
+    },
+    { "type": "heading", "text": "Seguridad y límites" },
+    {
+      "type": "list",
+      "items": [
+        "**Nunca compartas tus claves,** ni en un video, captura o repositorio público. Con ellas, cualquiera usa tu cuenta.",
+        "**La firma es tu escudo:** sin verificarla, cualquiera haría que tu app mande mensajes. El prompt la exige.",
+        "**Claves largas y aleatorias** para ADMIN_TOKEN y SYNC_POST_SECRET. Claude Code las genera.",
+        "**Solo a quien comenta:** es la política de Meta. No lo uses para escribirle a quien no interactuó contigo."
+      ]
+    },
+    {
+      "type": "table",
+      "head": ["Lo que esto no hace, comparado con ManyChat", "Detalle"],
+      "rows": [
+        ["Sin panel visual", "Cambiar algo es editar y desplegar. Con Claude Code es una frase."],
+        ["Sin historial ni métricas", "No guarda a quién se le envió qué."],
+        ["Búsqueda simple", "Busca la palabra dentro del comentario; no entiende sinónimos ni errores."],
+        ["Depende de Zernio", "Si tiene una caída o cambia sus planes, tu sistema se afecta."]
+      ]
+    },
+    {
+      "type": "summary",
+      "title": "Todo en seis pasos",
+      "items": [
+        "Prepara Instagram y Facebook: cuenta profesional vinculada a una página de Facebook.",
+        "Crea tus cuentas de Zernio y Vercel, conecta tu Instagram en Zernio y guarda tu API key.",
+        "Pega el prompt en Claude Code: construye la app y te guía hasta dejar todo conectado.",
+        "Responde \"listo\" a cada paso: acepta los permisos, pega las claves y confirma el deploy.",
+        "Prueba tu primera regla comentando la palabra desde otra cuenta y abriendo el link sin sesión.",
+        "Con cada video nuevo, dile \"publiqué un video nuevo\"."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "slug": "rea-ingenieria-inversa",
+  "title": "REA: ingeniería inversa con tu agente de IA",
+  "subtitle": "Qué es, cómo instalarlo y cómo usarlo paso a paso.",
+  "kind": "Guía paso a paso",
+  "readingMinutes": 4,
+  "date": "2026-10-29",
+  "blocks": [
+    { "type": "heading", "text": "Qué es REA" },
+    {
+      "type": "paragraph",
+      "text": "**REA (Reverse Engineer Anything)** es un servidor MCP que le da a tu agente de IA (Claude Code, Codex, Cursor, Gemini CLI…) la capacidad de hacer ingeniería inversa: inspeccionar una app o un binario, rastrear el código relevante y devolverte conclusiones **con la evidencia y sus límites**."
+    },
+    {
+      "type": "paragraph",
+      "text": "También funciona desde la terminal con el comando `rea`, y el análisis se hace **en local**, en tu computador."
+    },
+    {
+      "type": "resource",
+      "badge": "Repositorio oficial",
+      "title": "morluto/rea en GitHub",
+      "text": "Código, documentación y novedades de REA. Descárgalo solo desde aquí, desde rea.tools o desde el paquete `rea-agents` en npm.",
+      "links": [{ "label": "github.com/morluto/rea", "href": "https://github.com/morluto/rea" }]
+    },
+    { "type": "heading", "text": "Para qué sirve" },
+    {
+      "type": "paragraph",
+      "text": "Ves una función en una app y quieres entender cómo funciona (o recrearla) sin tener el código fuente. Por ejemplo, le pides a tu agente:"
+    },
+    {
+      "type": "tip",
+      "text": "\"Entiende cómo funciona la búsqueda en la app Notes, muéstrame la evidencia y construye una función parecida para mi proyecto.\""
+    },
+    {
+      "type": "paragraph",
+      "text": "Qué puede analizar: binarios nativos, apps JavaScript/Electron, ensamblados .NET, APKs de Android, sitios web, capturas de red y de paquetes, firmware, binarios de Go/Rust, modelos (GGUF, safetensors), apps Flutter, bases SQLite y más."
+    },
+    { "type": "heading", "text": "Requisitos" },
+    {
+      "type": "list",
+      "items": [
+        "**Node.js 22.x** (22.23.4 o superior), 24.x (24.22.1+) o 26.12.1+, con npm.",
+        "Para binarios nativos: Hopper, Ghidra o IDA.",
+        "Para APKs de Android: JADX y un JDK completo.",
+        "Para sitios web: un navegador basado en Chrome.",
+        "Para capturas de paquetes: TShark 4.x.",
+        "Analizar JavaScript/Electron y .NET **no necesita** ninguna herramienta extra."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "REA no instala estas herramientas externas por ti (solo puede instalar Hopper si tú lo apruebas)."
+    },
+    { "type": "heading", "text": "Instalación: conectarlo a tu agente" },
+    {
+      "type": "paragraph",
+      "text": "Ejecuta esto desde una carpeta de confianza, **fuera** del proyecto que vas a analizar:"
+    },
+    { "type": "code", "text": "npx rea-agents setup" },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Elige tu agente (Claude Code, Codex, Cursor, Gemini CLI, Grok Build)." },
+        { "text": "Revisa los cambios que propone." },
+        { "text": "Aprueba. REA hace backup de tu configuración existente." },
+        { "text": "**Reinicia tu agente.**" }
+      ]
+    },
+    { "type": "heading", "text": "Opcional: usarlo desde la terminal" },
+    { "type": "code", "text": "npm install --global rea-agents\nrea --help" },
+    { "type": "paragraph", "text": "Para actualizarlo:" },
+    { "type": "code", "text": "rea update" },
+    { "type": "paragraph", "text": "Si lo usas con npx: `npx rea-agents@latest setup`." },
+    { "type": "heading", "text": "Cómo usarlo" },
+    {
+      "type": "paragraph",
+      "text": "**Con tu agente:** abre Claude Code y descríbele lo que quieres entender, indicando la ruta del programa o app. Pídele siempre evidencia y límites del análisis."
+    },
+    { "type": "paragraph", "text": "**Desde la terminal**, por ejemplo para una app Electron ya extraída:" },
+    { "type": "code", "text": "npx -y rea-agents@latest analyze-javascript-application /ruta/absoluta/a/la/app --json" },
+    {
+      "type": "paragraph",
+      "text": "**Extra:** REA puede convertir una sesión grabada de tráfico (archivo `.har`) en un entorno de herramientas para agentes con `rea environment-build`."
+    },
+    { "type": "heading", "text": "Configuración opcional" },
+    {
+      "type": "list",
+      "items": [
+        "`REA_MCP_INPUT_SCHEMA_PROFILE=full`: guía de esquema de entrada completa.",
+        "`REA_GHIDRA_STARTUP_TIMEOUT_MS` y `REA_HOPPER_STARTUP_TIMEOUT_MS`: más tiempo de arranque para binarios grandes."
+      ]
+    },
+    { "type": "heading", "text": "Seguridad y uso responsable" },
+    {
+      "type": "list",
+      "items": [
+        "Descárgalo **solo de fuentes oficiales**: github.com/morluto/rea, rea.tools o el paquete `rea-agents` en npm. Un repo con nombre parecido no es el oficial.",
+        "Úsalo para investigación, educación, interoperabilidad y análisis de software **tuyo o que estés autorizado a examinar**.",
+        "Las herramientas comerciales (IDA, Hopper, JEB) debes obtenerlas legalmente; REA no incluye licencias.",
+        "Licencia de REA: MIT."
+      ]
+    },
+    {
+      "type": "summary",
+      "title": "Resumen rápido",
+      "items": [
+        "Instala Node.js 22+.",
+        "Ejecuta `npx rea-agents setup` y reinicia tu agente.",
+        "Pídele a tu agente que analice una app, con evidencia.",
+        "Actualiza con `rea update`."
+      ]
+    }
+  ]
+}

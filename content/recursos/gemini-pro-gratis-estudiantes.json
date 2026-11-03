@@ -21,7 +21,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Me escribes preguntando por el \"Gemini gratis para estudiantes\", así que aquí lo tienes claro y en orden. La buena noticia: **sí, casi cualquier estudiante universitario del mundo puede activar el plan pagado de Gemini gratis por 12 meses** — el mismo que normalmente cuesta unos $20 al mes."
+      "text": "Me escribes preguntando por el \"Gemini gratis para estudiantes\", así que aquí lo tienes claro y en orden. La buena noticia: **sí, casi cualquier estudiante universitario del mundo puede activar el plan pagado de Gemini gratis por 12 meses**, el mismo que normalmente cuesta unos $20 al mes."
     },
     {
       "type": "paragraph",
@@ -51,7 +51,7 @@
     {
       "type": "tip",
       "title": "Importante",
-      "text": "La oferta tiene una **fecha límite para reclamarla** que cambia según el país. No la dejes para después — actívala apenas puedas."
+      "text": "La oferta tiene una **fecha límite para reclamarla** que cambia según el país. No la dejes para después: actívala apenas puedas."
     },
     {
       "type": "heading",
@@ -108,7 +108,7 @@
     {
       "type": "resource",
       "badge": "Página oficial · Google",
-      "title": "Gemini para estudiantes — reclama tu año gratis",
+      "title": "Gemini para estudiantes: reclama tu año gratis",
       "meta": "El único enlace en el que debes hacer todo el proceso",
       "text": "Aquí verificas que eres estudiante y activas el plan pagado de Gemini (AI Pro o AI Plus según tu país) sin costo por 12 meses. Ábrelo con tu cuenta personal de Google.",
       "links": [
@@ -125,7 +125,7 @@
     {
       "type": "tip",
       "title": "Se cobra solo al terminar el año",
-      "text": "Cuando pasen los 12 meses, Google cobra el plan automáticamente (~$20/mes) si no lo cancelas antes. Ponte un **recordatorio un mes antes** para decidir si sigues o cancelas — así nunca te llega un cobro sorpresa."
+      "text": "Cuando pasen los 12 meses, Google cobra el plan automáticamente (~$20/mes) si no lo cancelas antes. Ponte un **recordatorio un mes antes** para decidir si sigues o cancelas. Así nunca te llega un cobro sorpresa."
     },
     {
       "type": "tip",
@@ -135,7 +135,7 @@
     {
       "type": "tip",
       "title": "Si SheerID no encuentra tu universidad",
-      "text": "Usa tu correo institucional o sube el comprobante de matrícula que te pida — con eso suele resolverse la verificación."
+      "text": "Usa tu correo institucional o sube el comprobante de matrícula que te pida; con eso suele resolverse la verificación."
     },
     {
       "type": "heading",
@@ -147,7 +147,7 @@
       "items": [
         "Actívalo hoy siguiendo el paso a paso; te toma pocos minutos.",
         "Agenda el recordatorio para el mes 11, así decides con calma si continúas.",
-        "Empieza a usarlo para tus estudios y proyectos — para eso lo activaste."
+        "Empieza a usarlo para tus estudios y proyectos: para eso lo activaste."
       ]
     }
   ]

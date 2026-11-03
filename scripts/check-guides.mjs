@@ -8,6 +8,7 @@ const dir = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "conte
 const BLOCKS = {
   heading: ["text"],
   paragraph: ["text"],
+  code: ["text"],
   tip: ["text"],
   summary: ["title", "items"],
   list: ["items"],
@@ -40,6 +41,10 @@ for (const file of files) {
   }
   if (!Number.isInteger(g.readingMinutes) || g.readingMinutes < 1) errors.push(`${where}: "readingMinutes" debe ser un entero ≥ 1`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(g.date ?? "")) errors.push(`${where}: "date" debe ser AAAA-MM-DD`);
+  // Regla de estilo: nada de guion largo (—) ni medio (–); se leen como texto hecho con IA.
+  const raw = fs.readFileSync(path.join(dir, file), "utf8");
+  const dashes = raw.match(/.{0,30}[—–].{0,30}/g);
+  if (dashes) errors.push(`${where}: usa guion largo/medio (cambiarlo por coma, punto, dos puntos o "a" en rangos): ${dashes.slice(0, 3).join(" | ")}`);
   if (!Array.isArray(g.blocks) || g.blocks.length === 0) {
     errors.push(`${where}: "blocks" vacío`);
     continue;

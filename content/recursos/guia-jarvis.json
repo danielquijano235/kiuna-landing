@@ -12,7 +12,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Un \"Jarvis\" no es un chatbot más: es un asistente de IA personal que vive prendido, conoce tu negocio, se conecta a tus herramientas, recuerda quién eres y actúa por vos — desde texto, voz o WhatsApp. No hace falta programar nada desde cero: hoy existen piezas open-source que ya resuelven cada parte del problema. Estos son los 9 pasos para ensamblarlas, en orden, de la infraestructura al toque final."
+      "text": "Un \"Jarvis\" no es un chatbot más: es un asistente de IA personal que vive prendido, conoce tu negocio, se conecta a tus herramientas, recuerda quién eres y actúa por vos desde texto, voz o WhatsApp. No hace falta programar nada desde cero: hoy existen piezas open-source que ya resuelven cada parte del problema. Estos son los 9 pasos para ensamblarlas, en orden, de la infraestructura al toque final."
     },
     {
       "type": "heading",
@@ -23,7 +23,7 @@
       "badge": "Paso 1",
       "title": "Dale una casa",
       "meta": "Infraestructura donde vive 24/7",
-      "text": "Tu Jarvis necesita estar siempre encendido, no solo cuando abrís tu laptop. Las 3 opciones más comunes: reciclar un computador viejo que ya no uses, comprar una Mac mini (bajo consumo eléctrico, suficiente potencia para correr un agente sin parar) o alquilar un servidor en la nube tipo VPS si no querés tener hardware físico en casa. Sin este paso, el agente \"muere\" cada vez que apagás tu equipo — y no puede recordarte nada ni actuar mientras dormís.",
+      "text": "Tu Jarvis necesita estar siempre encendido, no solo cuando abrís tu laptop. Las 3 opciones más comunes: reciclar un computador viejo que ya no uses, comprar una Mac mini (bajo consumo eléctrico, suficiente potencia para correr un agente sin parar) o alquilar un servidor en la nube tipo VPS si no querés tener hardware físico en casa. Sin este paso, el agente \"muere\" cada vez que apagás tu equipo, y no puede recordarte nada ni actuar mientras dormís.",
       "links": []
     },
     {
@@ -31,7 +31,7 @@
       "badge": "Paso 2",
       "title": "Elegí el modelo",
       "meta": "El \"cerebro\" que razona y decide",
-      "text": "Puede ser Claude, ChatGPT, Gemini o Grok — podés usar cualquiera, todos se conectan por API. Esta decisión no es permanente: el harness del paso 3 habla con el modelo a través de una API key, así que podés cambiarlo después sin rehacer el resto del sistema. Lo que importa al elegir no es solo \"qué tan inteligente es\", sino qué tan bien sigue instrucciones largas y usa herramientas (tool calling), porque de eso depende que ejecute tareas reales y no solo converse.",
+      "text": "Puede ser Claude, ChatGPT, Gemini o Grok: podés usar cualquiera, todos se conectan por API. Esta decisión no es permanente: el harness del paso 3 habla con el modelo a través de una API key, así que podés cambiarlo después sin rehacer el resto del sistema. Lo que importa al elegir no es solo \"qué tan inteligente es\", sino qué tan bien sigue instrucciones largas y usa herramientas (tool calling), porque de eso depende que ejecute tareas reales y no solo converse.",
       "links": []
     },
     {
@@ -39,7 +39,7 @@
       "badge": "Paso 3",
       "title": "Instalá un harness agéntico",
       "meta": "Convierte el modelo en un agente que actúa",
-      "text": "Un modelo de IA solo, por sí mismo, únicamente devuelve texto. El harness es la capa de software que le da un bucle real de \"percibir → decidir → ejecutar\": le da acceso a herramientas, le permite encadenar varios pasos sin que vos intervengas en cada uno, y lo deja correr en segundo plano en la casa que armaste en el paso 1. Hermes Agent es un harness open-source pensado justo para esto — corre en tu propio servidor, es agnóstico al modelo que elijas y no manda tus datos a la nube de nadie.",
+      "text": "Un modelo de IA solo, por sí mismo, únicamente devuelve texto. El harness es la capa de software que le da un bucle real de \"percibir → decidir → ejecutar\": le da acceso a herramientas, le permite encadenar varios pasos sin que vos intervengas en cada uno, y lo deja correr en segundo plano en la casa que armaste en el paso 1. Hermes Agent es un harness open-source pensado justo para esto: corre en tu propio servidor, es agnóstico al modelo que elijas y no manda tus datos a la nube de nadie.",
       "links": [
         {
           "label": "hermes-agent.org",
@@ -52,7 +52,7 @@
       "badge": "Paso 4",
       "title": "Enseñale quién sos",
       "meta": "El contexto que lo saca de lo genérico",
-      "text": "Armá un documento (o memoria \"core\", según el harness) con quién sos, a qué te dedicás, cómo funciona tu negocio, tu tono de comunicación y tus reglas no negociables. Ese contexto se inyecta en cada conversación, así que el agente deja de sonar a chatbot genérico y empieza a responder y decidir como lo harías vos — es la diferencia entre \"una IA cualquiera\" y \"tu Jarvis\".",
+      "text": "Armá un documento (o memoria \"core\", según el harness) con quién sos, a qué te dedicás, cómo funciona tu negocio, tu tono de comunicación y tus reglas no negociables. Ese contexto se inyecta en cada conversación, así que el agente deja de sonar a chatbot genérico y empieza a responder y decidir como lo harías vos. Es la diferencia entre \"una IA cualquiera\" y \"tu Jarvis\".",
       "links": []
     },
     {
@@ -68,7 +68,7 @@
       "badge": "Paso 6",
       "title": "Dale memoria persistente",
       "meta": "Que no se le borre todo al reiniciar",
-      "text": "Sin memoria persistente, cada conversación empieza de cero — el agente olvida decisiones, preferencias y datos apenas se reinicia. Letta es un framework open-source diseñado justo para esto: guarda el estado del agente (memoria, decisiones, aprendizajes) en una base de datos real, así sobrevive a reinicios y va acumulando contexto sobre vos con el tiempo, en vez de repetir las mismas preguntas cada sesión.",
+      "text": "Sin memoria persistente, cada conversación empieza de cero: el agente olvida decisiones, preferencias y datos apenas se reinicia. Letta es un framework open-source diseñado justo para esto: guarda el estado del agente (memoria, decisiones, aprendizajes) en una base de datos real, así sobrevive a reinicios y va acumulando contexto sobre vos con el tiempo, en vez de repetir las mismas preguntas cada sesión.",
       "links": [
         {
           "label": "letta.com",

@@ -1,0 +1,234 @@
+{
+  "slug": "proyectos-fin-de-semana-claude-code",
+  "title": "3 proyectos con Claude Code en un fin de semana",
+  "subtitle": "Un buscador de clientes, un mini CRM y un clasificador que separa tus correos importantes del spam y la basura. Cada uno con su plan por bloques y los prompts listos para copiar.",
+  "kind": "Guía + prompts",
+  "readingMinutes": 10,
+  "date": "2026-10-25",
+  "blocks": [
+    { "type": "heading", "text": "Tres proyectos que se conectan" },
+    {
+      "type": "paragraph",
+      "text": "Con Claude Code puedes construir herramientas reales para vender, no solo demos. Estos tres proyectos se hacen cada uno en un fin de semana y juntos forman un flujo completo."
+    },
+    {
+      "type": "paragraph",
+      "text": "Primero **encuentras clientes**, luego los **organizas en tu propio CRM** y por último **automatizas tu bandeja** para que la IA separe lo importante del spam y la basura. No necesitas saber programar: Claude Code escribe el código y **tú tomas las decisiones**."
+    },
+    {
+      "type": "table",
+      "head": ["Cuándo", "Qué haces"],
+      "rows": [
+        ["**Sábado por la mañana**", "Defines qué construir y planeas en modo plan."],
+        ["**Sábado por la tarde**", "Construyes la parte central, probando cada paso."],
+        ["**Domingo**", "Afinas, exportas y lo dejas listo para usar."]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Lo que necesitas",
+      "text": "Claude Code listo. El proyecto 1 pide una API key de Google (Places API) y el 3, una cuenta de Gmail."
+    },
+    { "type": "heading", "text": "Proyecto 1: buscador de clientes" },
+    {
+      "type": "paragraph",
+      "text": "**Sábado por la mañana: define y planea.** Lo que decidas hoy es lo que filtra todo lo demás. Define **quién es tu cliente ideal** y después activa el modo plan para que Claude Code te proponga cómo construirlo antes de tocar un archivo."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Elige rubro y ciudad:** uno solo para empezar. \"Dentistas en Medellín\", no \"negocios\".",
+        "**Define tu señal:** qué indica que necesitan ayuda (no tienen web, pocas reseñas, web antigua).",
+        "**Crea la carpeta:** en una carpeta nueva, abre Claude Code y escribe `/init`.",
+        "**Pide el plan:** **Shift + Tab** hasta modo plan y pega el prompt 1."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Quiero un buscador de clientes: le doy un rubro y una ciudad y me devuelve negocios de Google Maps con nombre, dirección, teléfono, web, rating y número de reseñas. Mi cliente ideal es [tipo de negocio] y mi señal de oportunidad es [ej: no tiene web o tiene pocas reseñas]. Usa Node.js y la Places API de Google. Antes de proponer el plan hazme las preguntas que necesites y dime qué necesitas de mi parte."
+    },
+    {
+      "type": "tip",
+      "title": "¿No sabes qué señal usar?",
+      "text": "Pídele a Claude: **\"dame 5 señales de que un negocio de [tu rubro] necesita mi servicio\"** y quédate con las dos que más te convenzan."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Sábado por la tarde: construye la búsqueda.** Con el plan aprobado, construyes en dos pasos: primero que **traiga negocios** y luego que **encuentre su correo** entrando a su web. Prueba cada paso antes de pasar al siguiente."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Saca tu API key:** en Google Cloud crea un proyecto, activa Places API y genera la clave. Va en un archivo `.env`, nunca en el código.",
+        "**Búsqueda pequeña:** prueba con 20 resultados antes de pedir cientos.",
+        "**Correos desde la web:** Claude entra al sitio de cada negocio y busca correos públicos en su página de contacto.",
+        "**Sin duplicados:** si el mismo negocio sale dos veces, que lo junte en uno solo."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Plan aprobado. Constrúyelo en dos pasos y detente después de cada uno para que yo pruebe. Paso 1: búsqueda por rubro y ciudad que guarde los resultados en resultados.json. Paso 2: para cada negocio con web, entra a su página principal y a su página de contacto y extrae los correos públicos. Lee la API key desde un archivo .env y agrégalo al .gitignore. Evita duplicados y espera un poco entre visitas para no saturar los sitios."
+    },
+    {
+      "type": "tip",
+      "title": "Si algo falla",
+      "text": "Pega el error tal cual y escribe: **\"arréglalo y explícame qué pasó\"**. Así arreglas y aprendes en el mismo paso."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Domingo: puntúa y exporta.** Una lista sin orden es solo otra lista. Hoy le das **criterio**: cada negocio recibe una puntuación según tu señal de oportunidad, y todo sale en una hoja que abres en Excel o Google Sheets."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Puntuación de 0 a 100:** suma puntos por cada señal (sin web, pocas reseñas, rating bajo, tiene correo).",
+        "**Exporta a CSV:** ordenado de mayor a menor oportunidad, con una columna \"estado\" vacía.",
+        "**Un solo comando:** que todo corra con `node buscar.mjs \"rubro\" \"ciudad\"`.",
+        "**Úsalo con respeto:** escribe solo con algo de valor, ofrece salir de tu lista y respeta las leyes de datos de tu país."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Agrega una puntuación de oportunidad de 0 a 100: +40 si no tiene web, +20 si tiene menos de 30 reseñas, +20 si encontraste un correo y +20 si su rating es menor a 4. Exporta todo a leads.csv ordenado de mayor a menor puntuación, con una columna \"estado\" vacía. Convierte todo en un comando: node buscar.mjs \"rubro\" \"ciudad\". Al final explícame cómo ejecutarlo y cómo cambiar los puntos."
+    },
+    {
+      "type": "tip",
+      "title": "Siguiente proyecto",
+      "text": "Ese **leads.csv** es justo lo que importa el mini CRM del proyecto 2. Buscas, importas y das seguimiento sin copiar nada a mano."
+    },
+    { "type": "heading", "text": "Proyecto 2: mini CRM" },
+    {
+      "type": "paragraph",
+      "text": "**Sábado por la mañana: define los datos y arma la base.** Antes de dibujar pantallas, decide **qué guardas de cada contacto**. Con eso claro, Claude Code arma la base de datos y una primera pantalla para crear, ver, editar y borrar contactos."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Campos mínimos:** nombre, empresa, correo, teléfono, etapa, notas y fecha del próximo seguimiento.",
+        "**Tus etapas:** nuevo, contactado, reunión, propuesta, cerrado. Cámbialas por las de tu proceso real.",
+        "**Base local con SQLite:** un solo archivo en tu computador, sin instalar ni pagar servidores.",
+        "**Plan primero:** **Shift + Tab** hasta modo plan y pega el prompt 1."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Quiero un mini CRM web solo para mí. Cada contacto tiene nombre, empresa, correo, teléfono, etapa, notas y fecha de próximo seguimiento. Mis etapas son [Nuevo, Contactado, Reunión, Propuesta, Cerrado]. Usa Node.js con SQLite y una interfaz web simple que corra en localhost. Antes de proponer el plan hazme las preguntas que necesites. Primera meta: poder crear, ver, editar y borrar contactos."
+    },
+    {
+      "type": "tip",
+      "title": "Local primero",
+      "text": "Haz que funcione en tu computador antes de pensar en internet. Es más rápido y **no arriesgas datos de clientes** mientras pruebas."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Sábado por la tarde: pipeline y notas.** Ver tus contactos en columnas y **arrastrarlos de etapa en etapa** es lo que hace que un CRM se sienta vivo. Súmale un historial de notas y ya tienes algo que usarías de verdad."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Tablero Kanban:** una columna por etapa; arrastras la tarjeta y se guarda al soltar.",
+        "**Notas con fecha:** historial por cliente (\"llamé\", \"pidió cotización\", \"no contestó\").",
+        "**Búsqueda:** escribes un nombre y aparece al instante.",
+        "**Importar CSV:** subes el leads.csv del proyecto 1 y quedan todos cargados."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Agrega un tablero tipo Kanban con una columna por etapa, donde pueda arrastrar contactos entre columnas y que se guarde al soltar. Dentro de cada contacto quiero un historial de notas con fecha, de la más nueva a la más vieja. Agrega búsqueda por nombre y un botón para importar contactos desde un CSV (detecta las columnas por el encabezado y evita duplicados por correo). Hazlo paso a paso y detente para que yo lo pruebe."
+    },
+    {
+      "type": "tip",
+      "title": "Prueba con datos reales",
+      "text": "Carga 10 contactos de verdad y úsalo un rato. **Lo que te moleste al usarlo es lo que hay que cambiar**; dile a Claude exactamente qué."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Domingo: seguimientos y respaldo.** Muchas ventas se pierden por no volver a escribir. Hoy haces que la app **te diga a quién escribir** cada día y dejas tus datos respaldados para no perder nada."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Pantalla \"Hoy\":** los contactos con seguimiento para hoy o vencido, del más antiguo al más nuevo.",
+        "**Fecha rápida:** al anotar algo, eliges el próximo seguimiento (+2 días, +1 semana, +1 mes).",
+        "**Respaldo:** exporta todo a CSV con un clic y guarda copias del archivo de la base.",
+        "**En la nube (opcional):** si lo quieres en el celular, pídele que lo publique con contraseña."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Agrega una pantalla \"Hoy\" que muestre los contactos con seguimiento para hoy o vencido, ordenados por antigüedad. Al registrar una nota, pregúntame cuándo es el próximo seguimiento con atajos de +2 días, +1 semana y +1 mes. Agrega un botón para exportar todo a CSV como respaldo. Al final explícame cómo respaldar el archivo de la base de datos y cómo abrir la app cada día."
+    },
+    {
+      "type": "tip",
+      "title": "Si lo subes a internet",
+      "text": "Son datos de clientes: **nunca lo publiques sin contraseña**. Antes de subirlo, pídele a Claude que revise la seguridad de la app."
+    },
+    { "type": "heading", "text": "Proyecto 3: clasificador de correos" },
+    {
+      "type": "paragraph",
+      "text": "**Sábado por la mañana: define tus categorías y conecta Gmail.** Una IA solo clasifica bien si le explicas **qué es importante para ti**. Hoy defines las categorías y las reglas, conectas tu Gmail y pides el plan antes de construir nada."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Importante:** clientes, pagos, reuniones y cualquier cosa que requiera tu respuesta.",
+        "**Spam:** estafas, ofertas que nunca pediste y remitentes que no conoces.",
+        "**Basura:** newsletters, promociones y notificaciones que no necesitas leer.",
+        "**Conecta Gmail:** en Google Cloud activas la Gmail API y autorizas tu cuenta. Claude te guía paso a paso."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Quiero una automatización que lea los correos nuevos de mi Gmail y los clasifique en tres categorías: Importante, Spam y Basura (newsletters, promociones, notificaciones). Para mí es importante [ej: clientes, pagos, reuniones, mi equipo]. Debe usar la Gmail API y un modelo de IA para clasificar, explicar el motivo de cada decisión y marcar los correos con etiquetas de Gmail. Antes de proponer el plan hazme las preguntas que necesites."
+    },
+    {
+      "type": "tip",
+      "title": "Regla de oro",
+      "text": "Que **nunca borre nada**. Solo etiqueta y archiva: si se equivoca, el correo sigue ahí y lo puedes recuperar."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Sábado por la tarde: construye el clasificador.** Construyes el corazón de la herramienta: lee tus correos, **la IA decide la categoría** y explica por qué. Primero en modo prueba, sin tocar tu bandeja."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Lee tus últimos correos:** empieza con 50 para probar, no con toda la bandeja.",
+        "**La IA decide:** usa la API de Claude, que devuelve la categoría y una frase con el motivo.",
+        "**Etiquetas en Gmail:** IA/Importante, IA/Spam e IA/Basura, para verlas en tu propia bandeja.",
+        "**Modo prueba:** muestra qué haría con cada correo sin modificar nada todavía."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Plan aprobado. Constrúyelo con un modo prueba que sea el predeterminado: lee mis últimos 50 correos, los clasifica con la API de Claude y me muestra en una tabla remitente, asunto, categoría y motivo, sin cambiar nada en Gmail. Cuando yo lo apruebe, con una opción aparte crea las etiquetas IA/Importante, IA/Spam e IA/Basura y las aplica. Usa un modelo ligero para gastar poco. Guarda las claves en un archivo .env fuera del código."
+    },
+    {
+      "type": "tip",
+      "title": "Afínalo con tus errores",
+      "text": "Revisa la tabla y fíjate en lo que clasificó mal. Dile: **\"este debió ser importante porque…\"** y que ajuste las reglas hasta que acierte."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Domingo: automatiza y recibe tu resumen.** Ya clasifica bien. Hoy haces que **corra solo** cada cierto tiempo, que la basura se archive y que recibas un resumen diario solo con lo importante."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Corre solo:** una tarea programada que revisa los correos nuevos cada 15 o 30 minutos.",
+        "**Archiva la basura:** sale de tu bandeja pero sigue en Gmail por si la necesitas.",
+        "**Resumen diario:** un solo correo con los importantes del día y por qué lo son.",
+        "**Cuida tu privacidad:** el texto de los correos viaja a la API de IA, así que no lo uses con información muy sensible."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Haz que el clasificador corra solo cada 30 minutos sobre los correos nuevos usando el Programador de tareas de Windows. Los de Basura se archivan, los de Spam se marcan como spam y los Importantes se quedan en la bandeja con su etiqueta. Cada día a las 8 de la mañana envíame un resumen con los correos importantes y el motivo de cada uno. Guarda un registro de todo lo que hace y explícame cómo pausarlo."
+    },
+    {
+      "type": "tip",
+      "title": "Revisa la primera semana",
+      "text": "Mira la etiqueta IA/Basura cada día los primeros días. **Si algo importante cayó ahí, corrige la regla** y vuelve a probar."
+    }
+  ]
+}

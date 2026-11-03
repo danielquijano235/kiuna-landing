@@ -1,0 +1,110 @@
+{
+  "slug": "claude-disenador-motion",
+  "title": "5 repos que convierten a Claude en diseñador",
+  "subtitle": "Proyectos gratis de GitHub para que Claude Code haga videos de lanzamiento, reels y motion graphics. Sin After Effects y sin saber animar.",
+  "kind": "Recursos recomendados",
+  "readingMinutes": 6,
+  "date": "2026-10-31",
+  "blocks": [
+    { "type": "heading", "text": "Claude no dibuja: escribe el video" },
+    {
+      "type": "paragraph",
+      "text": "Los cinco funcionan igual. Claude escribe cada escena como una página web animada y un programa la graba fotograma a fotograma. Por eso puedes pedir cambios con palabras."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Tú pides", "text": "\"Hazme un reel de 15 s presentando mi app.\"" },
+        { "title": "Claude escribe", "text": "Textos, colores y animaciones en código, escena por escena." },
+        { "title": "Se graba en MP4", "text": "Listo para subir a Instagram, TikTok o YouTube." }
+      ]
+    },
+    { "type": "heading", "text": "¿Cuál necesitas?" },
+    {
+      "type": "table",
+      "head": ["Si quieres…", "Usa"],
+      "rows": [
+        ["La base que usan casi todos los demás", "**HyperFrames**"],
+        ["Que lo que haga Claude se vea profesional y tenga sonido", "**Claude Motion**"],
+        ["Hacer reels seguido y que respeten tu marca", "**Motion Graphics Skills**"],
+        ["El video de lanzamiento de tu web", "**Product Launch Motion**"],
+        ["Editar rápido un video que ya grabaste", "**Herk Edit Kit**"]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Necesitas en tu computador",
+      "text": "Claude Code, Node.js 22+ y FFmpeg."
+    },
+    { "type": "heading", "text": "Los 5 repos" },
+    {
+      "type": "resource",
+      "badge": "1 · La base · de HeyGen",
+      "title": "HyperFrames",
+      "meta": "Motor de video · Gratis y open source",
+      "text": "Convierte HTML animado en un MP4. La misma entrada da siempre el mismo video, así que Claude puede corregir una escena sin romper las demás. **Úsalo para:** títulos, subtítulos y overlays animados; gráficos, mapas y clips verticales; y como base de los kits 3 y 5.",
+      "links": [{ "label": "github.com/heygen-com/hyperframes", "href": "https://github.com/heygen-com/hyperframes" }]
+    },
+    {
+      "type": "code",
+      "text": "claude plugin marketplace add heygen-com/hyperframes\nclaude plugin install hyperframes@hyperframes"
+    },
+    {
+      "type": "resource",
+      "badge": "2 · El criterio · de whaleyxbt",
+      "title": "Claude Motion",
+      "meta": "Kit de motion design · Gratis · Pide Python 3 además de Node y FFmpeg",
+      "text": "Le enseña a Claude reglas de animación (ritmo, curvas, tipografía), lo obliga a revisar sus propios fotogramas antes de entregar y trae un motor de sonido. **Úsalo para:** que las animaciones no se vean \"hechas por IA\", detectar textos cortados o saltos raros, y añadir efectos de sonido sin bancos de audio.",
+      "links": [{ "label": "github.com/whaleyxbt/claude-motion", "href": "https://github.com/whaleyxbt/claude-motion" }]
+    },
+    {
+      "type": "code",
+      "text": "git clone https://github.com/whaleyxbt/claude-motion\ncd claude-motion && npm install"
+    },
+    {
+      "type": "resource",
+      "badge": "3 · Para creadores · de charlie947",
+      "title": "Motion Graphics Skills",
+      "meta": "Paquete de skills · Gratis · Sin API keys",
+      "text": "Skills listas para videos de lanzamiento, gráficos animados y reels. Primero le das tu marca (colores, fuentes, logo) y todo lo que crea sale con tu estilo. **Úsalo para:** reels y portadas en loop para redes, gráficos animados con tus datos y videos explicativos estilo documental. Después de instalarlo, en Claude Code empieza con la skill **brand-intake**.",
+      "links": [{ "label": "github.com/charlie947/motion-graphics-skills", "href": "https://github.com/charlie947/motion-graphics-skills" }]
+    },
+    { "type": "code", "text": "npx skills add charlie947/motion-graphics-skills" },
+    {
+      "type": "resource",
+      "badge": "4 · Para negocios · de AbubakrChan",
+      "title": "Product Launch Motion",
+      "meta": "Skill de lanzamiento · Gratis",
+      "text": "Le pasas el link de tu web. Claude la lee, escribe la historia, dirige las escenas y entrega un MP4 con música y efectos de sonido al ritmo. **Úsalo para:** el video de lanzamiento de tu app o curso, anuncios cortos para un cliente y presentar una web sin grabar pantalla. Después de instalarlo, pídele en Claude Code: **\"Make a launch video for https://tu-web.com\"**.",
+      "links": [{ "label": "github.com/AbubakrChan/product-launch-motion", "href": "https://github.com/AbubakrChan/product-launch-motion" }]
+    },
+    { "type": "code", "text": "npx skills add AbubakrChan/product-launch-motion" },
+    {
+      "type": "resource",
+      "badge": "5 · Para editar · de Nate Herk",
+      "title": "Herk Edit Kit",
+      "meta": "Kit de edición · Antes se llamaba HyperFrames Student Kit",
+      "text": "Le das tu video grabado y lo edita: corta silencios y errores usando la transcripción, ordena la historia y le pone motion graphics encima. **Úsalo para:** editar reels y Shorts en minutos, quitar silencios y tomas falladas, y sumar gráficos sin abrir un editor. Después de instalarlo, abre la carpeta en Claude Code y escribe `/edit-video`.",
+      "links": [{ "label": "github.com/nateherkai/herk-edit-kit", "href": "https://github.com/nateherkai/herk-edit-kit" }]
+    },
+    {
+      "type": "code",
+      "text": "git clone https://github.com/nateherkai/herk-edit-kit\ncd herk-edit-kit && npm ci && npm run setup"
+    },
+    { "type": "heading", "text": "Por dónde empezar" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Instala **HyperFrames**. Es la base y casi todo lo demás se apoya en él.",
+        "Suma **un solo kit**, el que respondiste en \"¿Cuál necesitas?\".",
+        "Pide un video de **10 segundos**, revísalo y corrige con palabras."
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Todo se renderiza en tu computador",
+      "text": "Sin pagar por video ni por suscripción de edición. Solo tu plan de Claude."
+    }
+  ]
+}

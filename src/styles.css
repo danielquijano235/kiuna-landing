@@ -1878,3 +1878,59 @@ main {
     flex: 1 1 100%;
   }
 }
+
+.guide-body code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.3rem;
+  background: rgba(15, 36, 48, 0.08);
+  font-family: "Cascadia Code", "SF Mono", Consolas, monospace;
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.guide-code {
+  position: relative;
+  border-radius: 0.5rem;
+  background: var(--ink);
+}
+
+.guide-code pre {
+  margin: 0;
+  padding: 1rem 5.5rem 1rem 1.1rem;
+  overflow-x: auto;
+  color: var(--surface);
+  font-size: var(--fs-small);
+  line-height: 1.6;
+}
+
+.guide-code pre code {
+  padding: 0;
+  background: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.guide-code button {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.35rem;
+  background: transparent;
+  color: var(--surface);
+  font: inherit;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.guide-code button:hover,
+.guide-code button:focus-visible {
+  border-color: var(--safety);
+  color: var(--safety);
+}
+
+.guide-table code {
+  white-space: nowrap;
+}

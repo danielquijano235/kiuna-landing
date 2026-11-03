@@ -1,0 +1,118 @@
+{
+  "slug": "brolls-claude-design",
+  "title": "Crea b-rolls animados para tus videos con Claude Design",
+  "subtitle": "Le pasas tu guion y te devuelve una animación tipo explainer de producto en 16:9, lista para poner encima de tu video vertical. Incluye el prompt completo.",
+  "kind": "Recurso + prompt",
+  "readingMinutes": 6,
+  "date": "2026-10-11",
+  "blocks": [
+    { "type": "heading", "text": "Por qué un b-roll animado" },
+    {
+      "type": "paragraph",
+      "text": "Cuando hablas a cámara de herramientas de IA, casi todo es abstracto: apps, flujos, automatizaciones. Un b-roll animado lo vuelve algo que se puede ver."
+    },
+    {
+      "type": "paragraph",
+      "text": "Con Claude Design no tienes que animar nada a mano. Le pasas tu guion, saca los momentos clave y arma una escena por cada uno: tarjetas que imitan interfaces, logos de las herramientas, líneas que conectan todo y subtítulos cortos. Al final lo exportas como video y lo pones encima de tu video vertical mientras hablas."
+    },
+    { "type": "tip", "text": "La animación acompaña lo que dices, no lo reemplaza." },
+    { "type": "heading", "text": "Cómo funciona" },
+    {
+      "type": "paragraph",
+      "text": "Claude Design lee tu guion, identifica la idea principal y los **momentos clave** (el problema, la solución, las herramientas, el resultado y el cierre) y crea **una escena por cada uno**, en el mismo orden en que los dices. Ajusta la duración al ritmo de tu guion y, cuando algo es muy abstracto, lo convierte en una metáfora visual simple."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Lee el guion." },
+        { "text": "Saca los momentos clave." },
+        { "text": "Crea una escena por momento." },
+        { "text": "Exporta en video." }
+      ]
+    },
+    {
+      "type": "table",
+      "head": ["Dato", "Valor"],
+      "rows": [
+        ["Formato horizontal", "**16:9**, 1920 × 1080 px"],
+        ["Escenas por video", "**4 a 7**, una por momento clave"],
+        ["Ritmo de habla que asume", "**2.5 palabras por segundo**, si no le das tiempos"],
+        ["Exportación", "**30 o 60 fps**, lista para descargar"]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Tip clave",
+      "text": "El video horizontal se va a **recortar encima de tu video vertical**. Por eso el prompt pide dejar todo lo importante en una zona segura centrada (con un margen de unos 8 %) y usar texto grande, que se lea desde un celular."
+    },
+    { "type": "heading", "text": "El estilo visual" },
+    {
+      "type": "paragraph",
+      "text": "Animación de interfaz tipo explainer de producto: un **fondo crema con cuadrícula** muy sutil, tipo papel milimetrado, y encima **tarjetas blancas** con esquinas muy redondeadas y sombra suave que funcionan como mini maquetas de interfaz: ventanas de chat, teléfonos con perfil o notificaciones. Para la tipografía: monoespaciada en las etiquetas, serif en las frases y titulares grandes en negrita con una palabra resaltada en terracota."
+    },
+    {
+      "type": "benefits",
+      "items": [
+        "**Crema** para el fondo",
+        "**Terracota** para resaltar",
+        "**Mostaza** para etiquetas",
+        "**Azul** para stickers",
+        "**Negro** para subtítulos"
+      ]
+    },
+    { "type": "heading", "text": "Los elementos en pantalla" },
+    {
+      "type": "list",
+      "items": [
+        "**Tarjetas de interfaz:** chats, teléfonos y notificaciones que imitan apps reales.",
+        "**Píldoras con logos:** el nombre y el logo oficial de cada herramienta.",
+        "**Líneas que se dibujan:** una línea negra gruesa que conecta los elementos.",
+        "**Tachados en rojo:** para señalar el problema o lo que ya no hace falta.",
+        "**Mascota pixel art:** un personaje pequeño que se mueve y lleva cosas.",
+        "**Subtítulos en píldora:** negras, con texto blanco en mayúsculas, abajo al centro."
+      ]
+    },
+    { "type": "heading", "text": "Cómo se mueve" },
+    {
+      "type": "list",
+      "items": [
+        "**Entrada en cascada:** los elementos aparecen uno tras otro con rebote suave.",
+        "**Números que cuentan:** las cifras suben hasta su valor final.",
+        "**Cámara continua:** desplazamientos o zoom a una tarjeta, sin cortes bruscos.",
+        "**Mínimo 1.5 s:** cada elemento queda en pantalla lo justo para leerlo."
+      ]
+    },
+    { "type": "heading", "text": "El prompt para copiar" },
+    {
+      "type": "paragraph",
+      "text": "Copia el prompt y pégalo en Claude Design. Solo tienes que rellenar lo que está entre corchetes y adjuntar tus imágenes. Lo demás ya está resuelto: estilo, animación, formato y reglas."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Contexto", "text": "Tema, problema, solución y herramientas." },
+        { "title": "Tu guion", "text": "Completo, tal cual lo vas a decir." },
+        { "title": "Logos", "text": "Los nombres de las herramientas y sus logos adjuntos." }
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Voy a grabar un video vertical hablando sobre un tema. Necesito que crees una animación de apoyo (b-roll) en formato HORIZONTAL 16:9 (1920x1080), que se pondrá encima de mi video vertical mientras hablo. La animación acompaña lo que digo, no lo reemplaza.\n\n## Contexto del video\n[Explica de qué vas a hablar: el tema, el problema, la solución y las herramientas.]\n\n## Mi guion\n[Pega aquí tu guion completo.]\n\n## Qué quiero que hagas con el guion\n1. Lee el guion e identifica la idea principal y los 4 a 7 momentos clave (el problema, la solución, las herramientas, el resultado, el cierre).\n2. Crea una escena visual por cada momento clave, en el mismo orden en que lo digo. Cada escena debe ilustrar la idea con pocas palabras y elementos visuales, sin transcribir mi guion.\n3. Ajusta la duración total al ritmo del guion (si no te doy tiempos, asume que hablo a ritmo normal, unas 2.5 palabras por segundo).\n4. Si algo del guion es muy abstracto, represéntalo con una metáfora visual simple (una mascota que lleva cosas, líneas que conectan herramientas, una tarjeta con candado para lo que cuesta, etc.).\n\n## Estilo (referencia adjunta, parecido pero no idéntico)\nAnimación de interfaz tipo explainer de producto, como en las capturas que te paso:\n- Fondo crema claro con cuadrícula muy sutil, tipo papel milimetrado.\n- Tarjetas blancas con esquinas muy redondeadas y sombra suave, que funcionan como mini maquetas de interfaz (ventana de chat, teléfono con perfil, tarjeta de notificación).\n- Tipografía: monoespaciada para etiquetas y nombres, serif para frases, titulares grandes en negrita con una palabra o número resaltado en naranja terracota.\n- Acentos: terracota, amarillo mostaza para etiquetas pequeñas, azul para stickers inclinados con un dato clave.\n- Detalles: píldoras con el nombre de cada herramienta, línea negra gruesa que se dibuja conectando elementos, tachados en rojo para señalar el problema, mascota pixel art pequeña que se mueve por la escena.\n- Subtítulos de apoyo en píldoras negras con texto blanco en mayúsculas, abajo al centro, con frases muy cortas.\n\n## Animación\n- Entrada en cascada (staggered pop-in): los elementos aparecen uno tras otro con rebote suave tipo spring.\n- Las líneas de conexión se dibujan solas.\n- Los números cuentan hacia arriba.\n- Transiciones entre escenas con desplazamiento de cámara o zoom a una tarjeta, sin cortes bruscos.\n- Cada elemento se queda en pantalla al menos 1.5 s para poder leerse.\n\n## Assets\nUsa los logos oficiales adjuntos ([nombres de las herramientas]) sin redibujarlos ni modificarlos. Si falta alguno, deja un marcador con el nombre.\n\n## Reglas\n- Contenido importante dentro de una zona segura centrada (margen de ~8 %), porque se recortará sobre un video vertical.\n- Texto grande y legible desde un celular.\n- Sin música ni voz, el audio lo pongo yo.\n- Si el guion es ambiguo en algún punto, toma la decisión más razonable y sigue, no me preguntes.\n\n## Entregable\nAnimación exportable en 1920x1080 a 30 o 60 fps, lista para descargar como video."
+    },
+    {
+      "type": "tip",
+      "title": "Tip",
+      "text": "Junto con el prompt, **adjunta 2 o 3 capturas del estilo que te gusta** y los logos oficiales de las herramientas que mencionas. Así Claude Design no tiene que inventarlos y el resultado se parece mucho más a lo que tienes en la cabeza."
+    },
+    { "type": "heading", "text": "Tu primer b-roll, paso a paso" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Escribe tu guion", "text": "Tal cual lo vas a decir a cámara." },
+        { "title": "Pega el prompt en Claude Design", "text": "Rellena los corchetes y adjunta capturas de referencia y logos." },
+        { "title": "Revisa las escenas y pide ajustes", "text": "Cambia lo que no te convenza antes de exportar." },
+        { "title": "Exporta en 16:9", "text": "Y ponlo encima de tu video vertical." }
+      ]
+    }
+  ]
+}

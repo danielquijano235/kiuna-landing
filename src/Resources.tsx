@@ -2,14 +2,41 @@ import { Fragment, ReactNode, useEffect, useState } from "react";
 import { BOOKING, WHATSAPP_URL, WhatsAppIcon, newTab } from "./App";
 import { Block, RESOURCES_PATH, Resource, findResource, resources } from "./guides";
 
-// Convierte **texto** en <strong>texto</strong>.
+// Convierte **texto** en <strong> y `texto` en <code>.
 function rich(text: string): ReactNode {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((part, index) =>
-    part.startsWith("**") && part.endsWith("**") ? (
-      <strong key={index}>{part.slice(2, -2)}</strong>
-    ) : (
-      <Fragment key={index}>{part}</Fragment>
-    ),
+  return text.split(/(\*\*[^*]+\*\*|`[^`]+`)/g).map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={index}>{rich(part.slice(2, -2))}</strong>;
+    }
+    if (part.length > 1 && part.startsWith("`") && part.endsWith("`")) {
+      return <code key={index}>{part.slice(1, -1)}</code>;
+    }
+    return <Fragment key={index}>{part}</Fragment>;
+  });
+}
+
+function CodeBlock({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* el usuario puede seleccionar el texto a mano */
+    }
+  };
+
+  return (
+    <div className="guide-code">
+      <pre>
+        <code>{text}</code>
+      </pre>
+      <button type="button" onClick={copy} aria-label="Copiar código">
+        {copied ? "Copiado" : "Copiar"}
+      </button>
+    </div>
   );
 }
 
@@ -98,6 +125,8 @@ function BlockView({ block }: { block: Block }) {
   switch (block.type) {
     case "heading":
       return <h2>{block.text}</h2>;
+    case "code":
+      return <CodeBlock text={block.text} />;
     case "paragraph":
       return <p>{rich(block.text)}</p>;
     case "tip":

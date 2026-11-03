@@ -1,0 +1,152 @@
+{
+  "slug": "stack-herramientas-ia",
+  "title": "Elige tu stack de IA",
+  "subtitle": "Ocho herramientas que uso a diario, para qué sirve cada una y cómo saber cuáles necesitas tú. Spoiler: no necesitas las ocho.",
+  "kind": "Guía práctica",
+  "readingMinutes": 8,
+  "date": "2026-10-30",
+  "blocks": [
+    { "type": "heading", "text": "Ocho herramientas, ocho trabajos" },
+    {
+      "type": "paragraph",
+      "text": "Cada una resuelve un problema diferente. El error más común es pagar por todas porque \"todo el mundo las usa\". Primero mira qué hace cada una."
+    },
+    {
+      "type": "table",
+      "head": ["Herramienta", "Para qué", "En una frase"],
+      "rows": [
+        ["**Claude Code**", "Construir", "Un agente que construye por ti: apps, webs, scripts, esta guía."],
+        ["**Codex**", "Construir", "El agente de programación de OpenAI. Segunda opinión y tareas en paralelo."],
+        ["**Gemini**", "Pensar y analizar", "La IA de Google. Lee videos y documentos enormes y vive dentro de Drive."],
+        ["**Perplexity**", "Investigar", "Buscador con IA que responde con fuentes. Investigar sin inventar."],
+        ["**Apify**", "Conseguir datos", "Saca datos públicos de Instagram, Google Maps y webs con scrapers listos."],
+        ["**Higgsfield**", "Crear contenido visual", "Genera video e imagen con IA y control de cámara estilo cine."],
+        ["**Hostinger**", "Publicar y alojar", "El lugar donde tus webs y bots viven encendidos las 24 horas."],
+        ["**n8n**", "Automatizar", "Conecta tus apps y haz que las tareas repetitivas pasen solas."]
+      ]
+    },
+    { "type": "heading", "text": "Seis preguntas para armar tu stack" },
+    {
+      "type": "paragraph",
+      "text": "Si tu respuesta es \"sí\", esa es la herramienta que te toca. Si es \"no\", sáltala sin culpa."
+    },
+    {
+      "type": "table",
+      "head": ["Pregunta", "Si es que sí", "Detalle"],
+      "rows": [
+        ["¿Quieres crear apps, webs o scripts sin escribir todo a mano?", "**Claude Code**", "Suma Codex solo si quieres comparar o delegar más tareas."],
+        ["¿Necesitas investigar un tema con datos y fuentes que puedas citar?", "**Perplexity**", "Para documentos o videos larguísimos, apóyate en Gemini."],
+        ["¿Necesitas sacar datos de redes o webs: clientes, competencia, comentarios?", "**Apify**", "Ya trae scrapers hechos, no tienes que programarlos."],
+        ["¿Haces videos o imágenes para redes y quieres más material visual?", "**Higgsfield**", "Gemini te ayuda a analizar referencias antes de crear."],
+        ["¿Quieres que algo pase solo: bots, avisos, reportes, procesos?", "**n8n**", "Es el pegamento que conecta todas las demás."],
+        ["¿Necesitas que tu web, bot o automatización esté siempre encendida?", "**Hostinger**", "Un servidor propio para n8n y tus proyectos."]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Empieza con una sola herramienta",
+      "text": "La de tu primera respuesta \"sí\". Añade la siguiente solo cuando choques con un límite real. Un buen stack tiene tres, no ocho."
+    },
+    { "type": "heading", "text": "Las ocho, una por una" },
+    {
+      "type": "resource",
+      "badge": "Agente de código · Suscripción o API",
+      "title": "Claude Code",
+      "meta": "Elígelo si quieres construir sin ser programador experto o trabajas con proyectos de muchos archivos",
+      "text": "Una IA que vive en tu terminal o editor, lee tu carpeta completa, edita archivos y ejecuta comandos. Tú le dices qué quieres; ella lo construye. **Lo uso para:** crear webs, apps y herramientas desde cero; generar PDFs y automatizaciones como esta guía; ordenar, renombrar y procesar archivos en masa. **Mejor otra cosa si** solo haces preguntas sueltas (el chat normal alcanza) o nunca vas a construir nada.",
+      "links": [{ "label": "claude.com", "href": "https://claude.com/product/claude-code" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Agente de código · Incluido en ChatGPT",
+      "title": "Codex",
+      "meta": "Elígelo si ya pagas ChatGPT y te viene incluido, o quieres comparar contra otro agente",
+      "text": "El agente de programación de OpenAI. Funciona en terminal, en el editor y en la nube, donde puede trabajar varias tareas a la vez. **Lo uso para:** pedir una segunda opinión sobre un código, revisar errores y mejorar lo que ya existe, y delegar tareas largas en segundo plano. **Mejor otra cosa si** ya te funciona bien un solo agente o no programas ni construyes cosas.",
+      "links": [{ "label": "openai.com", "href": "https://openai.com/codex/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "IA de Google · Capa gratis generosa",
+      "title": "Gemini",
+      "meta": "Elígelo si vives dentro de Google Workspace o eres estudiante (hay planes gratis)",
+      "text": "La IA de Google: entiende texto, imágenes, audio y video, aguanta documentos larguísimos y se integra con Drive, Docs y Gmail. **Lo uso para:** analizar videos y PDFs muy largos, trabajar con mis archivos de Google Drive y probar cosas gratis antes de pagar otra IA. **Mejor otra cosa si** necesitas citas verificables (usa Perplexity) o quieres un agente que construya apps.",
+      "links": [{ "label": "gemini.google.com", "href": "https://gemini.google.com/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Buscador con IA · Gratis o suscripción",
+      "title": "Perplexity",
+      "meta": "Elígelo si necesitas información actual y confiable, o quieres ahorrar horas de Google",
+      "text": "Responde tus preguntas buscando en internet en tiempo real y te muestra las fuentes. Su modo de investigación profunda arma informes completos. **Lo uso para:** investigar un nicho o la competencia antes de lanzar, verificar datos y encontrar la fuente original, y descubrir tendencias para mis contenidos. **Mejor otra cosa si** quieres construir o programar algo, o buscas escribir textos largos creativos.",
+      "links": [{ "label": "perplexity.ai", "href": "https://www.perplexity.ai/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Datos de la web · Crédito gratis + pago por uso",
+      "title": "Apify",
+      "meta": "Elígelo si necesitas listas de datos sin programar, o haces prospección o estudios de mercado",
+      "text": "Una tienda de scrapers listos (los llama Actors) que extraen datos públicos de Instagram, TikTok, Google Maps y casi cualquier web, en la nube. **Lo uso para:** encontrar negocios y prospectos en Google Maps, analizar cuentas y comentarios de redes, y alimentar flujos de n8n con datos frescos. **Mejor otra cosa si** solo necesitas una respuesta puntual (Perplexity) o los datos no son públicos: no los extraigas.",
+      "links": [{ "label": "apify.com", "href": "https://apify.com/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Video e imagen con IA · Créditos o suscripción",
+      "title": "Higgsfield",
+      "meta": "Elígelo si publicas contenido visual con frecuencia o quieres producir sin cámara ni equipo",
+      "text": "Plataforma para generar video e imagen con IA, con movimientos de cámara de cine y varios modelos en un mismo lugar. **Lo uso para:** hacer b-rolls y tomas que no tengo grabadas, crear piezas visuales para reels y anuncios, y darle un look cinematográfico a una idea. **Mejor otra cosa si** no haces video ni imágenes, o lo tuyo son textos o datos.",
+      "links": [{ "label": "higgsfield.ai", "href": "https://higgsfield.ai/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Hosting y servidores · Plan mensual",
+      "title": "Hostinger",
+      "meta": "Elígelo si necesitas que algo viva siempre online y quieres controlar tus datos y tus costos",
+      "text": "Hosting para webs y VPS, es decir, un servidor tuyo que siempre está encendido. Ahí puedes instalar n8n, un bot o cualquier proyecto. **Lo uso para:** publicar mis webs con dominio propio, alojar n8n en un servidor privado y mantener bots corriendo 24/7. **Mejor otra cosa si** solo usas herramientas que ya están en la nube o tus proyectos son locales y de uso personal.",
+      "links": [{ "label": "hostinger.com", "href": "https://www.hostinger.com/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "Automatización · Gratis si lo alojas tú",
+      "title": "n8n",
+      "meta": "Elígelo si repites la misma tarea cada semana o quieres vender automatizaciones a negocios",
+      "text": "Un lienzo visual donde conectas apps y servicios como piezas. Recibe un mensaje, consulta una IA, guarda el dato y responde, todo sin tocarlo. **Lo uso para:** bots de WhatsApp e Instagram con IA; conectar Apify, hojas de cálculo y correo; y reportes y avisos que se envían solos. **Mejor otra cosa si** es una tarea que haces una sola vez o prefieres no ver ninguna configuración.",
+      "links": [{ "label": "n8n.io", "href": "https://n8n.io/" }]
+    },
+    { "type": "heading", "text": "Cuatro stacks según quién eres" },
+    {
+      "type": "paragraph",
+      "text": "Si no te identificas con ninguno, usa las preguntas y combina dos. Estos son puntos de partida, no reglas."
+    },
+    {
+      "type": "table",
+      "head": ["Perfil", "Stack", "Cómo se usa"],
+      "rows": [
+        ["**Creador de contenido**: graba, edita y publica en redes", "Perplexity, Gemini, Higgsfield", "Perplexity para investigar el tema, Gemini para analizar referencias y Higgsfield para el material visual que no grabaste."],
+        ["**Builder o programador**: construye apps, webs y herramientas", "Claude Code, Codex, Gemini", "Claude Code como agente principal, Codex para segunda opinión y la capa gratis de Gemini para lo que no justifica pagar."],
+        ["**Agencia o freelancer**: vende automatizaciones a negocios", "n8n, Hostinger, Apify, Claude Code", "n8n en un servidor de Hostinger como base, Apify para conseguir clientes y datos, y Claude Code para armar lo que no existe hecho."],
+        ["**Empiezo desde cero**: poco presupuesto, mucha curiosidad", "Gemini, Perplexity", "Las capas gratis de Gemini y Perplexity te llevan lejos. Suma Claude Code cuando tengas un proyecto concreto que construir."]
+      ]
+    },
+    { "type": "heading", "text": "Así se conectan cuando las juntas" },
+    {
+      "type": "paragraph",
+      "text": "Un ejemplo de cómo trabajan varias a la vez. No necesitas todos los pasos, solo los que cubran tu problema."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Perplexity", "text": "Investigas qué necesita tu nicho y qué está haciendo la competencia." },
+        { "title": "Apify", "text": "Sacas la lista de negocios o cuentas que encajan con lo que encontraste." },
+        { "title": "n8n", "text": "Automatizas el envío, el seguimiento y el registro de esos contactos." },
+        { "title": "Hostinger", "text": "Dejas el flujo corriendo en tu servidor para que no dependa de tu computador." },
+        { "title": "Claude Code", "text": "Construye lo que falta: una web, un panel, un script a medida." },
+        { "title": "Higgsfield", "text": "Crea el material visual para promocionarlo en redes." }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Elige una. Pruébala una semana.",
+      "text": "Si te quedas sin límite o sin tiempo, entonces añade la siguiente."
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "slug": "chatbots-n8n",
+  "title": "3 agentes de IA para WhatsApp (listos para usar)",
+  "subtitle": "Tres bots que se instalan en n8n en minutos: uno responde, otro captura clientes y el tercero contesta con la información real de tu negocio.",
+  "kind": "Guía + plantillas gratis",
+  "readingMinutes": 9,
+  "date": "2026-09-23",
+  "blocks": [
+    { "type": "heading", "text": "Qué te estás llevando" },
+    {
+      "type": "paragraph",
+      "text": "Me escribes por los \"3 agentes de IA que regalo\", así que aquí los tienes con todo y las plantillas para instalarlos. Son **tres bots de WhatsApp** creados en **n8n** (una herramienta gratuita de automatización). No hay que programar: los importas, cambias unos datos y quedan funcionando."
+    },
+    {
+      "type": "resource",
+      "badge": "Descarga · Plantillas",
+      "title": "Los 3 workflows para importar en n8n",
+      "meta": "Carpeta con bot-1-portero.json, bot-2-captador.json y bot-3-completo.json",
+      "text": "Descarga los tres archivos `.json` y guárdalos en tu computador. Los vas a importar en n8n en el paso de instalación.",
+      "links": [{ "label": "Abrir la carpeta de plantillas", "href": "https://drive.google.com/drive/folders/1SblxQYhNZ4LzZDDLZsJO6BaneTsI9cS1" }]
+    },
+    {
+      "type": "table",
+      "head": ["Archivo", "Bot", "Qué hace"],
+      "rows": [
+        ["`bot-1-portero.json`", "**El Portero**", "Contesta por WhatsApp 24/7 con memoria de la conversación"],
+        ["`bot-2-captador.json`", "**El Captador**", "Todo lo del Portero, y además guarda cada cliente (lead) en tu Excel y base de datos"],
+        ["`bot-3-completo.json`", "**El Completo (RAG)**", "Todo lo anterior, y responde usando la información real de tu negocio, sin inventar"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Van de menos a más. Empieza por el Portero: si lo entiendes, los otros dos son el mismo bot con piezas extra."
+    },
+    { "type": "heading", "text": "Lo que necesitas una sola vez" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Una cuenta gratis en **n8n** (n8n.io; puedes usar la nube o instalarlo tú).",
+        "Una cuenta de **OpenAI** con saldo (el cerebro de los bots; gpt-4o-mini es muy barato).",
+        "**WhatsApp Business API** conectada. Es el paso más técnico, así que aquí tienes las tres formas de resolverlo, de más simple a más \"hazlo tú mismo\":"
+      ]
+    },
+    {
+      "type": "table",
+      "head": ["Opción", "Costo", "Qué tan difícil", "Cuándo usarla"],
+      "rows": [
+        ["**WhatsApp Web (no oficial, por QR)**", "Gratis", "Muy fácil", "Solo para **probar** el bot contigo mismo mientras armas todo. No la uses con clientes reales: Meta puede bloquear el número."],
+        ["**Un proveedor** (ej. 360dialog, Twilio, Evolution API)", "Casi siempre gratis para empezar, con costo por mensaje después", "Fácil", "La opción que recomiendo para la mayoría: te dan un panel guiado y quedas conectado en menos de una hora."],
+        ["**Meta directo (Cloud API)**", "Gratis las primeras 1.000 conversaciones al mes", "Media: hay que verificar tu negocio en Meta Business Manager", "Si ya tienes tu negocio verificado en Meta o quieres cero intermediarios."]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Para probar el flujo completo sin pelear con WhatsApp todavía, empieza con la opción de WhatsApp Web, y cuando el bot responda como quieres, cambia a un proveedor o a Meta directo para ir en serio."
+    },
+    {
+      "type": "paragraph",
+      "text": "Para el Captador y el Completo además necesitas una hoja de **Google Sheets** y una cuenta gratis de **Supabase** (una base de datos). Todo esto es gratis o casi; en la siguiente sección ves los números exactos."
+    },
+    { "type": "heading", "text": "Cuánto te va a costar esto al mes" },
+    {
+      "type": "paragraph",
+      "text": "Nada de esto tiene un costo fijo obligatorio: todo arranca en un plan gratis y solo pagas si tu volumen de mensajes crece. Como referencia:"
+    },
+    {
+      "type": "table",
+      "head": ["Servicio", "Plan gratis", "Cuándo empiezas a pagar"],
+      "rows": [
+        ["n8n", "Sí, si lo instalas tú mismo", "Unos $20 USD/mes si prefieres la nube de n8n en vez de instalarlo"],
+        ["OpenAI (gpt-4o-mini)", "No tiene plan gratis, pero cuesta centavos", "Para un negocio chico (cientos de mensajes al mes) suele rondar $1 a $3 USD/mes"],
+        ["WhatsApp Business API", "Sí, primeras 1.000 conversaciones al mes", "Depende de tu volumen y país; revisa el precio vigente antes de escalar"],
+        ["Google Sheets", "Siempre gratis", "Nunca"],
+        ["Supabase", "Sí, el plan gratis sobra para esto", "Solo si tu negocio crece mucho (miles de clientes guardados)"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "En resumen: mientras estás probando y en los primeros meses de un negocio chico, esto te sale prácticamente gratis. El único gasto casi seguro son unos pocos dólares al mes en OpenAI. Los precios cambian con el tiempo, así que confirma las tarifas actuales antes de comprometerte con un volumen grande."
+    },
+    { "type": "heading", "text": "Cómo instalar cualquiera de los tres" },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Abre n8n y entra a **Workflows → Import from File**." },
+        { "text": "Elige el `.json` del bot que quieras." },
+        { "text": "Verás varios nodos con un **globo rojo**: son las credenciales que faltan. Cada uno dice `REEMPLAZAR`. Haz clic y conecta tu cuenta (WhatsApp, OpenAI, etc.). Solo se hace una vez por cuenta; después se reutilizan." },
+        { "text": "Abre el nodo **AI Agent** y edita el texto de `[TU NEGOCIO]` con tu información real." },
+        { "text": "Activa el workflow (interruptor arriba a la derecha) y escríbele a tu WhatsApp para probar." }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Nota",
+      "text": "Cada bot trae una **nota amarilla** dentro del workflow con sus pasos específicos (qué tablas crear, qué encabezados poner). Ahí están los nombres exactos que espera cada nodo; la sección siguiente te da la idea general antes de que la leas."
+    },
+    { "type": "heading", "text": "Cómo preparar Google Sheets y Supabase (solo Captador y Completo)" },
+    {
+      "type": "paragraph",
+      "text": "El Portero no necesita nada de esto: sáltate esta sección si vas a instalar solo ese. Para el Captador y el Completo, prepara esto **antes** de activar el workflow:"
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Google Sheets", "text": "Crea una hoja nueva y en la primera fila escribe **exactamente** estos encabezados, uno por columna, en este orden: `fecha`, `telefono`, `nombre`, `necesidad`, `contacto`. El bot escribe una fila nueva cada vez que alguien deja sus datos." },
+        { "title": "Supabase: cuenta y proyecto", "text": "Crea una cuenta gratis en supabase.com y un proyecto nuevo. Copia la URL del proyecto y la `API key`: son las credenciales que vas a pegar en los nodos con el globo rojo." },
+        { "title": "Supabase: tabla de clientes (Captador y Completo)", "text": "En el editor SQL de Supabase, corre el comando de abajo. Es el mismo que trae la nota amarilla del workflow; cópialo tal cual." },
+        { "title": "Supabase: base de conocimiento (solo Completo)", "text": "Este bot necesita una tabla adicional con soporte de vectores para guardar tus documentos (catálogo, precios, preguntas frecuentes). El workflow trae el nodo que la crea automáticamente la primera vez que lo ejecutas; solo tienes que subir tus documentos después." }
+      ]
+    },
+    {
+      "type": "code",
+      "text": "CREATE TABLE leads (id bigint generated always as identity primary key, telefono text, nombre text, necesidad text, contacto text, creado timestamptz default now());"
+    },
+    {
+      "type": "tip",
+      "text": "Los nombres exactos de tablas y columnas pueden variar según cómo esté armado cada nodo: esto es la idea general para que sepas qué esperar. Los nombres que realmente debes usar están en la **nota amarilla** de cada workflow. Cópialos tal cual, sin acentos ni espacios raros, para evitar errores de conexión."
+    },
+    { "type": "heading", "text": "Los 3 bots" },
+    {
+      "type": "resource",
+      "badge": "Bot 1 · Nivel básico",
+      "title": "El Portero: el que nunca deja un mensaje sin responder",
+      "meta": "Ideal para dejar de perder clientes por no contestar a tiempo",
+      "text": "Recibe el mensaje de WhatsApp, lo entiende con IA y responde al instante manteniendo el hilo de la conversación (recuerda lo que la persona dijo antes). Le editas la personalidad y la info del negocio en un solo lugar.",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Bot 2 · Nivel intermedio",
+      "title": "El Captador: el Portero que además convierte charlas en clientes",
+      "meta": "Para no perder ni un dato de quien te escribe",
+      "text": "Hace todo lo del Portero y, cuando detecta interés de compra, pide el nombre y un contacto de forma natural y lo guarda automáticamente en tu Google Sheets y en tu base de datos Supabase. Al día siguiente tienes la lista de todos los interesados.",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Bot 3 · Nivel avanzado",
+      "title": "El Completo (con RAG): el vendedor que se sabe tu negocio de memoria",
+      "meta": "Para que no invente precios ni datos",
+      "text": "Suma todo lo de los otros dos y le agrega una base de conocimiento (RAG): antes de responder, busca en tus documentos reales (catálogo, precios, preguntas frecuentes) y contesta solo con esa información. Subes tus documentos una vez y el bot deja de improvisar.",
+      "links": []
+    },
+    {
+      "type": "tip",
+      "title": "Qué es \"RAG\" en simple",
+      "text": "En vez de que la IA responda de memoria (y a veces se invente cosas), primero busca en tus documentos y luego responde con lo que encontró. Por eso es el más confiable para dar precios y condiciones."
+    },
+    { "type": "heading", "text": "Cómo aprovecharlos" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Instala primero el **Portero** y pruébalo contigo mismo hasta que responda como quieres.",
+        "Cuando ya te sientas cómodo, sube al **Captador** para empezar a guardar clientes.",
+        "Deja el **Completo** para cuando tengas tus documentos del negocio ordenados; es el que da respuestas más precisas.",
+        "¿Los quieres vender como servicio a otros negocios? Son la base perfecta: personaliza el texto del agente para cada cliente y cobra por la instalación."
+      ]
+    },
+    { "type": "heading", "text": "Si algo no funciona" },
+    {
+      "type": "paragraph",
+      "text": "Antes de frustrarte, revisa esta lista. Cubre el 90% de los problemas al activar un bot por primera vez."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**El bot no responde nada:** revisa que el interruptor del workflow (arriba a la derecha) esté activado. Un workflow importado queda desactivado por defecto.",
+        "**Ves un globo rojo en un nodo:** falta conectar esa credencial. Haz clic en el nodo, elige o crea la cuenta correspondiente (OpenAI, WhatsApp, Google, Supabase) y guarda.",
+        "**El bot responde, pero \"no se acuerda\" de lo que dijiste antes:** revisa el nodo de memoria. Necesita usar el número de teléfono del cliente como identificador de la conversación, siempre el mismo por persona.",
+        "**Error de OpenAI (\"rate limit\" o \"insufficient quota\"):** tu cuenta de OpenAI se quedó sin saldo. Entra a platform.openai.com y carga crédito.",
+        "**El Captador no guarda nada en Sheets o Supabase:** lo más común es que el nombre de una columna no coincida exactamente con el que espera el nodo. Compáralos letra por letra (mayúsculas, acentos y espacios cuentan).",
+        "**El Completo (RAG) no encuentra información o inventa datos:** revisa que hayas subido tus documentos al índice de Supabase antes de probar el bot. Sin documentos cargados, no tiene de dónde sacar las respuestas.",
+        "**Nada de lo anterior aplica:** abre la ejecución fallida en n8n (pestaña \"Executions\") y fíjate en qué nodo se pintó de rojo. El mensaje de error casi siempre dice exactamente qué falta."
+      ]
+    }
+  ]
+}

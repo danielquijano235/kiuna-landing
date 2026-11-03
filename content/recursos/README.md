@@ -32,7 +32,8 @@ No hay que tocar código para agregar una guía: solo crear su archivo.
 - `kind`: etiqueta corta de la tarjeta ("Guía práctica", "Guía paso a paso", "Recursos recomendados"…).
 - `readingMinutes`: ~200 palabras por minuto.
 - `date`: fecha de publicación (AAAA-MM-DD).
-- En cualquier texto, `**así**` se muestra en negrita. No usar HTML.
+- En cualquier texto, `**así**` se muestra en negrita y `` `así` `` como código en línea (nombres de archivo, comandos cortos). No usar HTML.
+- **Prohibido el guion largo (—) y el medio (–)**: se leen como texto hecho con IA. Usar coma, punto, dos puntos o punto y coma; en rangos de precio, "a" (`$40 a $60`). El verificador rechaza la guía si encuentra uno.
 
 ## Bloques disponibles (`blocks`)
 
@@ -40,6 +41,7 @@ No hay que tocar código para agregar una guía: solo crear su archivo.
 |---|---|---|
 | `heading` | `text` | Título de sección |
 | `paragraph` | `text` | Párrafo normal |
+| `code` | `text` | Comando o código para copiar (con botón "Copiar") |
 | `tip` | `title` (opcional), `text` | Consejo o aviso destacado |
 | `summary` | `title`, `items` | Resumen numerado al inicio ("Resumen en 30 segundos") |
 | `list` | `items`, `ordered` (opcional, `true` = numerada) | Lista simple |

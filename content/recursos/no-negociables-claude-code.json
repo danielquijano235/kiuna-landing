@@ -1,0 +1,188 @@
+{
+  "slug": "no-negociables-claude-code",
+  "title": "Mis 6 no negociables en Claude Code",
+  "subtitle": "Las seis costumbres que aplico cada vez que abro Claude Code: qué es cada una, por qué importa y cómo empezar hoy, con los comandos y prompts listos para copiar.",
+  "kind": "Guía práctica",
+  "readingMinutes": 8,
+  "date": "2026-10-22",
+  "blocks": [
+    { "type": "heading", "text": "Por qué tener no negociables" },
+    {
+      "type": "paragraph",
+      "text": "Claude Code puede construir casi cualquier cosa, pero la diferencia entre un resultado mediocre y uno excelente casi nunca está en el prompt mágico. Está en los hábitos con los que trabajas."
+    },
+    {
+      "type": "paragraph",
+      "text": "Estas son las seis reglas que yo no me salto. Las dos primeras cuidan **la calidad y tu límite de uso**, las dos del medio hacen que Claude **entienda bien qué construir**, y las dos últimas hacen que **tú sigas al mando** y aprendas en el camino."
+    },
+    {
+      "type": "tip",
+      "text": "Claude Code no es solo una herramienta que obedece: es un compañero con el que trabajas. Estas reglas son la forma de trabajar bien con él."
+    },
+    { "type": "heading", "text": "1. Usa /clear entre tareas" },
+    {
+      "type": "paragraph",
+      "text": "Todo lo que escribes, cada archivo que Claude lee y cada respuesta se acumula en su **contexto**, su memoria de trabajo. Cuando se llena de cosas de tareas viejas, responde peor, se confunde y gasta más de tu límite de uso. `/clear` borra esa conversación y empiezas de cero, pero tu CLAUDE.md se vuelve a cargar solo."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Cambias de tarea:** terminaste el login y ahora vas con los pagos. Haz `/clear` antes de empezar.",
+        "**Da vueltas en círculos:** lo corregiste dos veces y repite el error. Empieza limpio con un prompt mejor.",
+        "**`/compact` si no quieres perder todo:** resume la conversación y libera espacio, pero conserva lo importante.",
+        "**`/context` para medir:** te muestra qué tan lleno está el contexto y qué lo ocupa."
+      ]
+    },
+    { "type": "paragraph", "text": "Antes de hacer `/clear` en algo a medias, pégale esto:" },
+    {
+      "type": "code",
+      "text": "Escribe en NOTAS.md un resumen de lo que hicimos, qué falta y las decisiones que tomamos, para retomarlo en una sesión nueva."
+    },
+    {
+      "type": "tip",
+      "title": "Regla simple",
+      "text": "**Una tarea, una conversación.** Después del `/clear` le dices \"lee NOTAS.md y sigamos\" y retoma sin arrastrar todo lo anterior."
+    },
+    { "type": "heading", "text": "2. Usa el modelo correcto" },
+    {
+      "type": "paragraph",
+      "text": "No todo necesita el modelo más potente. Escribe `/model` para ver tus modelos y cambiar en cualquier momento. Elegir bien te da mejores resultados donde importa y hace que tu límite rinda mucho más."
+    },
+    {
+      "type": "table",
+      "head": ["Modelo", "Qué es", "Úsalo para"],
+      "rows": [
+        ["**Opus**", "El más capaz; gasta tu límite más rápido", "Planear proyectos, decisiones de arquitectura y errores difíciles que nadie entiende"],
+        ["**Sonnet**", "El del día a día; equilibrio entre calidad y consumo", "Escribir código, construir funciones y la mayoría de tareas normales"],
+        ["**Haiku**", "El rápido; el que menos consume", "Cambios pequeños, renombrar cosas, preguntas rápidas y tareas repetitivas"]
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "**La combinación ganadora:** planea con Opus y ejecuta con Sonnet. Con `/model` cambias entre uno y otro en segundos.",
+        "**Baja de modelo sin miedo:** si la tarea es simple, el modelo grande no la hace mejor, solo la hace más cara.",
+        "**No te aprendas los nombres:** las versiones cambian seguido. `/model` siempre te muestra las disponibles en tu plan."
+      ]
+    },
+    { "type": "heading", "text": "3. Siempre empieza en modo plan" },
+    {
+      "type": "paragraph",
+      "text": "Primero se piensa, después se toca código. En modo plan, Claude **investiga tu proyecto, hace preguntas y te propone un plan**, pero no cambia ningún archivo. Tú lo revisas, lo corriges y solo cuando lo apruebas empieza a construir. Corregir un plan cuesta una frase; corregir código mal hecho cuesta horas."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Activa el modo plan", "text": "Presiona **Shift + Tab** hasta que abajo diga \"plan mode\"." },
+        { "title": "Explica qué quieres", "text": "El resultado que buscas, no cómo programarlo. Él investiga el resto." },
+        { "title": "Revisa el plan", "text": "¿Falta algo? ¿Sobra algo? Pídele cambios hasta que te convenza." },
+        { "title": "Apruébalo", "text": "Ahora sí construye, siguiendo lo que acordaron." }
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Quiero [lo que quieres lograr]. Antes de proponer el plan, revisa el proyecto y hazme las preguntas que necesites. En el plan dime qué archivos vas a tocar y qué riesgos ves."
+    },
+    {
+      "type": "tip",
+      "title": "¿Siempre?",
+      "text": "Para cambiar una palabra no hace falta. Pero si la tarea toca **más de un archivo** o no tienes claro cómo hacerla, **modo plan sí o sí**."
+    },
+    { "type": "heading", "text": "4. Ten siempre un archivo CLAUDE.md" },
+    {
+      "type": "paragraph",
+      "text": "Cada conversación nueva empieza sin recordar nada. **CLAUDE.md** es un archivo de texto que Claude **lee automáticamente al iniciar cada sesión**: la memoria permanente de tu proyecto. Ahí va lo que no quieres repetirle nunca más: qué es el proyecto, cómo se trabaja y qué no debe hacer."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Qué es el proyecto:** para qué sirve y para quién, en dos o tres líneas.",
+        "**Cómo se usa:** los comandos para correrlo, probarlo y publicarlo.",
+        "**Tus reglas:** estilo, idioma, herramientas que prefieres y cómo quieres que te hable.",
+        "**Lo que nunca debe hacer:** errores que ya cometió y no quieres que repita."
+      ]
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Escribe /init", "text": "Claude revisa tu proyecto y escribe un primer CLAUDE.md por ti." },
+        { "title": "Hazlo crecer", "text": "Cuando le corrijas algo, dile: \"agrega esta regla al CLAUDE.md\"." }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Dos niveles",
+      "text": "El de la carpeta del proyecto aplica solo ahí. El de `~/.claude/CLAUDE.md` aplica a **todos tus proyectos**: ahí van los no negociables 5 y 6 (el texto está en el bonus, al final)."
+    },
+    { "type": "heading", "text": "5. Que te cuestione" },
+    {
+      "type": "paragraph",
+      "text": "Un compañero que siempre te da la razón no te sirve. Las IA tienden a hacer exactamente lo que pides, aunque haya una forma mejor o tu idea tenga un problema. Si le das permiso explícito para **llevarte la contraria**, te avisa antes de que pierdas tiempo. Tú sigues decidiendo, pero decides con toda la información."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Preguntar antes de suponer:** si algo no está claro, que pregunte en vez de adivinar.",
+        "**Avisar los riesgos:** qué se puede romper, qué cuesta y qué puede salir mal.",
+        "**Proponer algo mejor:** si hay una opción más simple, barata o segura, que la diga.",
+        "**No darme la razón por darla:** si me equivoco, que me lo diga directo y con argumentos."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Antes de hacerlo, cuestiona mi idea: ¿qué puede salir mal, qué estoy pasando por alto y hay una forma mejor? Si algo no está claro, pregúntame. No me des la razón solo por dármela."
+    },
+    { "type": "heading", "text": "6. Que te explique qué, por qué y cómo" },
+    {
+      "type": "paragraph",
+      "text": "Si no entiendes lo que hizo, no es tuyo. Claude puede cambiar diez archivos en un minuto. Si no sabes qué hizo, **no puedes detectar errores, no puedes arreglarlo cuando falle y no aprendes nada**. Pedir explicaciones te convierte en alguien que entiende su proyecto, no en alguien que solo aprieta \"aceptar\"."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Qué hizo:** qué archivos cambió y qué hace ahora el proyecto que antes no hacía.",
+        "**Por qué:** por qué eligió esa solución y qué otras descartó.",
+        "**Cómo:** cómo funciona por dentro, en palabras simples."
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Explícame qué hiciste, por qué lo hiciste así y cómo funciona, como si no supiera programar. Usa un ejemplo si ayuda."
+    },
+    {
+      "type": "tip",
+      "title": "Truco",
+      "text": "Si algo de la explicación no te queda claro, pregunta otra vez: \"no entendí esta parte, explícamela con otra analogía\". No hay pregunta tonta con una IA."
+    },
+    {
+      "type": "summary",
+      "title": "Los 6, en resumen",
+      "items": [
+        "`/clear` entre tareas: una tarea, una conversación. Guarda notas si vas a retomar.",
+        "El modelo correcto con `/model`: Opus para pensar, Sonnet para construir, Haiku para lo rápido.",
+        "Modo plan antes de construir: Shift + Tab, revisa el plan, corrígelo y después apruébalo.",
+        "Un CLAUDE.md en cada proyecto: créalo con `/init` y hazlo crecer con cada corrección.",
+        "Que te cuestione: riesgos, preguntas y alternativas antes de hacer nada.",
+        "Que te explique qué, por qué y cómo."
+      ]
+    },
+    { "type": "heading", "text": "Bonus: tus no negociables, automáticos" },
+    {
+      "type": "paragraph",
+      "text": "Pega este texto en tu archivo `~/.claude/CLAUDE.md` (en Windows: `C:\\Users\\TU_USUARIO\\.claude\\CLAUDE.md`). Si no existe, créalo. Desde ese momento Claude te cuestiona y te explica en todos tus proyectos sin que se lo pidas."
+    },
+    {
+      "type": "code",
+      "text": "## Cómo quiero que trabajes conmigo\n- Antes de implementar algo que toque más de un archivo, propón un plan y espera mi aprobación.\n- Cuestióname: si mi idea tiene un problema, un riesgo o hay una forma más simple, dímelo antes de hacerla. No me des la razón solo por dármela.\n- Si algo no está claro, pregúntame en vez de suponer.\n- Después de cada cambio, explícame en lenguaje simple: qué hiciste, por qué lo hiciste así y cómo funciona.\n- Si una tarea es simple, avísame si conviene un modelo más ligero."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Sin tocar archivos:** pega el texto de arriba en Claude Code y escribe \"agrega estas reglas a mi CLAUDE.md global en ~/.claude/CLAUDE.md\". Él lo crea o lo actualiza por ti."
+    },
+    {
+      "type": "tip",
+      "title": "Hazlo tuyo",
+      "text": "Estas son mis reglas. Edítalas, quita las que no te sirvan y agrega las tuyas: **tu CLAUDE.md es tu forma de trabajar**."
+    }
+  ]
+}
