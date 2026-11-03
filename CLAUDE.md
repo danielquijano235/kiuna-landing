@@ -20,7 +20,8 @@ There is no test suite, linter, or formatter configured in this repo.
 - `src/App.tsx` — the entire site. Content sections (capabilities, outcomes, process steps, hero copy) are defined as static data arrays near the top of the file and rendered via `.map()`, so copy edits and structural edits happen in different parts of the same file.
 - The contact form posts to Web3Forms (`https://api.web3forms.com/submit`) with `import.meta.env.VITE_WEB3FORMS_ACCESS_KEY`. The key lives in `.env.local` (gitignored) locally and in EasyPanel for production; Vite inlines it at build time, so it must be present when the Docker image is built (`ARG`/`ENV` in `Dockerfile`).
 - Pointer-driven decorative effects (hero parallax via `--pointer-x`/`--pointer-y` CSS custom properties, and a click/move "bubble" particle system) are implemented with plain React state + refs in `App.tsx` and styled entirely through CSS custom properties consumed by `src/styles.css`. When touching these, keep the timer cleanup in the `useEffect` return (bubble timers) intact to avoid leaking `setTimeout` handles.
-- `dist/` is no longer committed (gitignored). Production is built inside Docker (multi-stage `Dockerfile` → nginx with `nginx.conf`) and deployed via EasyPanel on the Hostinger VPS at kiuna.cloud — see `DEPLOY.md`.
+- `dist/` is no longer committed (gitignored). Production is built inside Docker (multi-stage `Dockerfile` → nginx with `nginx.conf`) and deployed via EasyPanel on the Hostinger VPS at kiuna.cloud — see `DEPLOY.md`. A GitHub webhook on push to `main` triggers the EasyPanel deploy automatically (no manual "Implementar" needed).
+- Free guides live in `content/recursos/<slug>.json` (format: `content/recursos/README.md`, validate with `node scripts/check-guides.mjs`) and render at `/recursos-gratuitos`. Never use em/en dashes in site copy.
 - `assets/kiuna-hero.png` is the hero background image, referenced by absolute path `/assets/kiuna-hero.png`.
 
 ## Design Context
