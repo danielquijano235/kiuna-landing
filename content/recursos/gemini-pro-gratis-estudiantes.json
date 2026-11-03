@@ -1,0 +1,154 @@
+{
+  "slug": "gemini-pro-gratis-estudiantes",
+  "title": "Gemini gratis 1 año para estudiantes",
+  "subtitle": "Cómo activar el plan pagado de Google (AI Pro / AI Plus) sin costo, siendo estudiante universitario.",
+  "kind": "Guía paso a paso",
+  "readingMinutes": 4,
+  "date": "2026-09-26",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "Entra a **gemini.google.com/students** con tu Gmail personal.",
+        "Verifica que eres estudiante y agrega una tarjeta (**no te cobran ahora**).",
+        "Listo: **1 año gratis** del plan pagado. Pon un recordatorio al mes 11 para decidir si sigues."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Qué es esto y quién califica"
+    },
+    {
+      "type": "paragraph",
+      "text": "Me escribes preguntando por el \"Gemini gratis para estudiantes\", así que aquí lo tienes claro y en orden. La buena noticia: **sí, casi cualquier estudiante universitario del mundo puede activar el plan pagado de Gemini gratis por 12 meses** — el mismo que normalmente cuesta unos $20 al mes."
+    },
+    {
+      "type": "paragraph",
+      "text": "El único detalle es que **el plan se llama distinto según tu país**:"
+    },
+    {
+      "type": "table",
+      "head": [
+        "Tu país",
+        "Cómo se llama el plan"
+      ],
+      "rows": [
+        [
+          "Estados Unidos y España",
+          "**Google AI Pro**"
+        ],
+        [
+          "La mayoría de Latinoamérica",
+          "**Google AI Plus**"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Son prácticamente el mismo beneficio. Para calificar solo necesitas ser **estudiante universitario, mayor de 18 años, con matrícula activa**."
+    },
+    {
+      "type": "tip",
+      "title": "Importante",
+      "text": "La oferta tiene una **fecha límite para reclamarla** que cambia según el país. No la dejes para después — actívala apenas puedas."
+    },
+    {
+      "type": "heading",
+      "text": "Qué incluye el plan"
+    },
+    {
+      "type": "benefits",
+      "items": [
+        "Mucho más uso de **Gemini** (el modelo más potente)",
+        "**Deep Research** para investigar a fondo",
+        "Generación de **video e imágenes**",
+        "**NotebookLM** para estudiar tus apuntes",
+        "**2 TB** de almacenamiento en Google",
+        "Todo **gratis por 12 meses**"
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Lo que necesitas antes de empezar"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Ser **estudiante universitario**, mayor de 18 años, con matrícula activa.",
+        "Una **cuenta personal de Google** (tu Gmail de siempre).",
+        "Un **método de pago válido** (tarjeta). No te cobran ahora, pero Google lo pide para activar el año gratis.",
+        "Tu **correo institucional o comprobante de matrícula**, por si te lo piden al verificar."
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Paso a paso para activarlo"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "text": "Entra a **gemini.google.com/students** e inicia sesión con tu cuenta personal de Google."
+        },
+        {
+          "text": "Toca la opción para **reclamar la oferta de estudiante**."
+        },
+        {
+          "text": "**Verifica que eres estudiante** con SheerID: elige tu universidad y, si te lo pide, sube el comprobante de matrícula o usa tu correo institucional."
+        },
+        {
+          "text": "**Agrega un método de pago** para activar el año gratis (repito: no te cobran ahora)."
+        },
+        {
+          "text": "Confirma y listo: ya tienes el plan activo **sin costo por 12 meses**."
+        }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Página oficial · Google",
+      "title": "Gemini para estudiantes — reclama tu año gratis",
+      "meta": "El único enlace en el que debes hacer todo el proceso",
+      "text": "Aquí verificas que eres estudiante y activas el plan pagado de Gemini (AI Pro o AI Plus según tu país) sin costo por 12 meses. Ábrelo con tu cuenta personal de Google.",
+      "links": [
+        {
+          "label": "gemini.google.com/students",
+          "href": "https://gemini.google.com/students"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "text": "Avisos importantes (para no pagar sin querer)"
+    },
+    {
+      "type": "tip",
+      "title": "Se cobra solo al terminar el año",
+      "text": "Cuando pasen los 12 meses, Google cobra el plan automáticamente (~$20/mes) si no lo cancelas antes. Ponte un **recordatorio un mes antes** para decidir si sigues o cancelas — así nunca te llega un cobro sorpresa."
+    },
+    {
+      "type": "tip",
+      "title": "Reclámalo a tiempo",
+      "text": "La fecha límite para activar la oferta depende de tu país; revísala en la misma página oficial y no lo dejes para el último día."
+    },
+    {
+      "type": "tip",
+      "title": "Si SheerID no encuentra tu universidad",
+      "text": "Usa tu correo institucional o sube el comprobante de matrícula que te pida — con eso suele resolverse la verificación."
+    },
+    {
+      "type": "heading",
+      "text": "Cómo aprovecharla"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Actívalo hoy siguiendo el paso a paso; te toma pocos minutos.",
+        "Agenda el recordatorio para el mes 11, así decides con calma si continúas.",
+        "Empieza a usarlo para tus estudios y proyectos — para eso lo activaste."
+      ]
+    }
+  ]
+}

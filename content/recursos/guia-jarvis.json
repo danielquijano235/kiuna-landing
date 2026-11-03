@@ -1,0 +1,122 @@
+{
+  "slug": "guia-jarvis",
+  "title": "Guía Jarvis",
+  "subtitle": "9 pasos para construir tu propio asistente de IA personal, de punta a punta.",
+  "kind": "Guía práctica",
+  "readingMinutes": 7,
+  "date": "2026-09-04",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "De qué se trata"
+    },
+    {
+      "type": "paragraph",
+      "text": "Un \"Jarvis\" no es un chatbot más: es un asistente de IA personal que vive prendido, conoce tu negocio, se conecta a tus herramientas, recuerda quién eres y actúa por vos — desde texto, voz o WhatsApp. No hace falta programar nada desde cero: hoy existen piezas open-source que ya resuelven cada parte del problema. Estos son los 9 pasos para ensamblarlas, en orden, de la infraestructura al toque final."
+    },
+    {
+      "type": "heading",
+      "text": "Los 9 pasos"
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 1",
+      "title": "Dale una casa",
+      "meta": "Infraestructura donde vive 24/7",
+      "text": "Tu Jarvis necesita estar siempre encendido, no solo cuando abrís tu laptop. Las 3 opciones más comunes: reciclar un computador viejo que ya no uses, comprar una Mac mini (bajo consumo eléctrico, suficiente potencia para correr un agente sin parar) o alquilar un servidor en la nube tipo VPS si no querés tener hardware físico en casa. Sin este paso, el agente \"muere\" cada vez que apagás tu equipo — y no puede recordarte nada ni actuar mientras dormís.",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 2",
+      "title": "Elegí el modelo",
+      "meta": "El \"cerebro\" que razona y decide",
+      "text": "Puede ser Claude, ChatGPT, Gemini o Grok — podés usar cualquiera, todos se conectan por API. Esta decisión no es permanente: el harness del paso 3 habla con el modelo a través de una API key, así que podés cambiarlo después sin rehacer el resto del sistema. Lo que importa al elegir no es solo \"qué tan inteligente es\", sino qué tan bien sigue instrucciones largas y usa herramientas (tool calling), porque de eso depende que ejecute tareas reales y no solo converse.",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 3",
+      "title": "Instalá un harness agéntico",
+      "meta": "Convierte el modelo en un agente que actúa",
+      "text": "Un modelo de IA solo, por sí mismo, únicamente devuelve texto. El harness es la capa de software que le da un bucle real de \"percibir → decidir → ejecutar\": le da acceso a herramientas, le permite encadenar varios pasos sin que vos intervengas en cada uno, y lo deja correr en segundo plano en la casa que armaste en el paso 1. Hermes Agent es un harness open-source pensado justo para esto — corre en tu propio servidor, es agnóstico al modelo que elijas y no manda tus datos a la nube de nadie.",
+      "links": [
+        {
+          "label": "hermes-agent.org",
+          "href": "https://hermes-agent.org/"
+        }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 4",
+      "title": "Enseñale quién sos",
+      "meta": "El contexto que lo saca de lo genérico",
+      "text": "Armá un documento (o memoria \"core\", según el harness) con quién sos, a qué te dedicás, cómo funciona tu negocio, tu tono de comunicación y tus reglas no negociables. Ese contexto se inyecta en cada conversación, así que el agente deja de sonar a chatbot genérico y empieza a responder y decidir como lo harías vos — es la diferencia entre \"una IA cualquiera\" y \"tu Jarvis\".",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 5",
+      "title": "Conectalo con tus herramientas",
+      "meta": "Que actúe donde ya trabajás",
+      "text": "Tu Gmail, tu calendario o tu Notion. Estas conexiones normalmente se hacen vía MCP (Model Context Protocol), el estándar que usan los harnesses modernos para dar acceso a servicios externos con permisos y API keys propias de cada uno. Con esto tu agente deja de vivir en una ventana de chat aislada: puede leer un correo, agendar una reunión o actualizar una base de datos de Notion sin que se lo pidas manualmente cada vez.",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 6",
+      "title": "Dale memoria persistente",
+      "meta": "Que no se le borre todo al reiniciar",
+      "text": "Sin memoria persistente, cada conversación empieza de cero — el agente olvida decisiones, preferencias y datos apenas se reinicia. Letta es un framework open-source diseñado justo para esto: guarda el estado del agente (memoria, decisiones, aprendizajes) en una base de datos real, así sobrevive a reinicios y va acumulando contexto sobre vos con el tiempo, en vez de repetir las mismas preguntas cada sesión.",
+      "links": [
+        {
+          "label": "letta.com",
+          "href": "https://www.letta.com/"
+        }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 7",
+      "title": "Dale skills para tareas específicas",
+      "meta": "De genérico a experto en lo tuyo",
+      "text": "Una skill es un paquete de instrucciones, ejemplos y pasos ya probados para una tarea concreta y repetible, que el agente puede invocar cuando la necesita en vez de improvisar desde cero cada vez. Por ejemplo: una skill que redacte contratos con tu formato y cláusulas estándar, u otra que analice el contenido de redes de tu competencia y te resuma patrones y oportunidades. Cuantas más skills bien armadas tenga, menos supervisión necesita para hacer bien el trabajo específico de tu negocio.",
+      "links": []
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 8",
+      "title": "Dale canales y voz",
+      "meta": "Que puedas hablarle desde donde ya estás",
+      "text": "Conectá tu agente a canales como WhatsApp e Instagram para escribirle sin abrir una app aparte, y sumale voz: ElevenLabs genera audio realista a partir de texto (ideal para que el agente \"hable\" con su propia voz), y el modo de voz de Hermes Agent permite conversaciones habladas de ida y vuelta directamente con el harness. Con esto tu Jarvis deja de ser un chat de texto y se vuelve algo con lo que realmente conversás.",
+      "links": [
+        {
+          "label": "elevenlabs.io",
+          "href": "https://elevenlabs.io/"
+        },
+        {
+          "label": "Voice Mode de Hermes",
+          "href": "https://hermes-agent.nousresearch.com/docs/user-guide/features/voice-mode"
+        }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 9 · Toque final",
+      "title": "Armá una interfaz",
+      "meta": "La cara visible de todo lo anterior",
+      "text": "Con Claude Code podés programar un dashboard o panel de control a medida para gestionar y monitorear tu agente; con Claude Design podés diseñar esa misma interfaz de forma visual, sin escribir código, a partir de una descripción o de tu sistema de diseño. Cualquiera de las dos rutas, conectada a la voz de Hermes del paso anterior, es lo que cierra el círculo: una interfaz propia, con voz, para hablarle a tu Jarvis como le hablarías a un asistente real.",
+      "links": [
+        {
+          "label": "claude.com/product/claude-code",
+          "href": "https://claude.com/product/claude-code"
+        },
+        {
+          "label": "Claude Design",
+          "href": "https://www.anthropic.com/news/claude-design-anthropic-labs"
+        }
+      ]
+    }
+  ]
+}
