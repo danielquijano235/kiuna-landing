@@ -1,0 +1,125 @@
+{
+  "slug": "herramientas-ia-2026",
+  "title": "Las 7 herramientas de IA que uso en 2026",
+  "subtitle": "Cinco herramientas para crear e investigar, y dos que forman el stack donde todo queda funcionando. Para qué uso cada una y cuánto cuesta empezar.",
+  "kind": "Recursos recomendados",
+  "readingMinutes": 5,
+  "date": "2026-11-06",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "**Para construir:** Claude Code y Codex.",
+        "**Para pensar y analizar:** Gemini.",
+        "**Para investigar o sacar datos:** Perplexity o Apify, según lo que necesites.",
+        "**Para crear video e imagen:** Higgsfield.",
+        "**El stack:** Hostinger y n8n. No son herramientas de IA como tal, pero son lo que mantiene todo funcionando."
+      ]
+    },
+    { "type": "heading", "text": "Las herramientas, una por una" },
+    {
+      "type": "resource",
+      "badge": "1 · Construir",
+      "title": "Claude Code",
+      "meta": "Desde $17 al mes con pago anual, o $20 con pago mensual (plan Pro de Claude)",
+      "text": "Un agente que trabaja sobre tu carpeta: lee los archivos, los edita y ejecuta comandos. Tú le dices qué quieres y lo construye. **Lo uso para:** crear webs, apps y herramientas desde cero, y para ordenar y procesar archivos en masa. El plan gratis de Claude no lo incluye.",
+      "links": [
+        { "label": "Claude Code", "href": "https://claude.com/product/claude-code" },
+        { "label": "Precios", "href": "https://claude.com/pricing" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "2 · Construir",
+      "title": "Codex",
+      "meta": "Incluido en los planes de ChatGPT, también en el gratis, con límites distintos en cada uno",
+      "text": "El agente de programación de OpenAI. Funciona en la web, en la terminal y en el editor. **Lo uso para:** pedir una segunda opinión sobre un código, revisar errores y delegar tareas largas en segundo plano. Si ya pagas ChatGPT Plus ($20 al mes), pruébalo antes de contratar otra cosa.",
+      "links": [{ "label": "Planes y límites", "href": "https://learn.chatgpt.com/docs/pricing" }]
+    },
+    {
+      "type": "resource",
+      "badge": "3 · Pensar y analizar",
+      "title": "Gemini",
+      "meta": "Tiene opción gratis. Los planes de pago cambian de precio según el país",
+      "text": "La IA de Google. **La uso para:** analizar videos y PDF muy largos, trabajar con mis archivos de Google Drive y probar cosas gratis antes de pagar otra IA. Si estás empezando, es de las mejores puertas de entrada porque no tienes que pagar nada para probarla.",
+      "links": [{ "label": "Planes de Gemini", "href": "https://gemini.google/subscriptions/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "4 · Investigar",
+      "title": "Perplexity",
+      "meta": "Mira los planes vigentes en su web",
+      "text": "Un buscador con IA que responde con fuentes. **Lo uso para:** investigar un nicho o la competencia, verificar datos y encontrar la fuente original. Úsalo cuando necesites una **respuesta**.",
+      "links": [{ "label": "perplexity.ai", "href": "https://www.perplexity.ai/" }]
+    },
+    {
+      "type": "resource",
+      "badge": "4 · Conseguir datos",
+      "title": "Apify",
+      "meta": "Plan gratis con $5 de uso al mes. El siguiente plan cuesta $19 al mes",
+      "text": "Una tienda de scrapers listos que sacan datos públicos de redes sociales, Google Maps y otras webs. **Lo uso para:** encontrar negocios y prospectos en Google Maps, analizar cuentas y comentarios, y alimentar flujos de n8n. Úsalo cuando necesites una **lista de datos**. Si se te acaban los $5 del plan gratis, se bloquea hasta el siguiente ciclo.",
+      "links": [{ "label": "Precios de Apify", "href": "https://apify.com/pricing" }]
+    },
+    {
+      "type": "resource",
+      "badge": "5 · Video e imagen",
+      "title": "Higgsfield",
+      "meta": "Mira los planes vigentes en su web",
+      "text": "Una plataforma para generar video e imagen con IA, con movimientos de cámara de cine y varios modelos en un mismo lugar. **La uso para:** hacer b-rolls y tomas que no tengo grabadas, y crear piezas visuales para reels y anuncios.",
+      "links": [{ "label": "higgsfield.ai", "href": "https://higgsfield.ai/pricing" }]
+    },
+    { "type": "heading", "text": "El stack: Hostinger y n8n" },
+    {
+      "type": "paragraph",
+      "text": "Estas dos no son herramientas de IA como tal. Son la base: n8n conecta tus apps y hace que las tareas pasen solas, y Hostinger le da un servidor para que sigan corriendo aunque apagues tu computador."
+    },
+    {
+      "type": "resource",
+      "badge": "6 · Servidor",
+      "title": "Hostinger",
+      "meta": "VPS desde $6.49 al mes con contrato de 24 meses. Se renueva a $11.99",
+      "text": "Un servidor tuyo que siempre está encendido. **Lo uso para:** publicar webs con dominio propio, alojar n8n y mantener bots corriendo las 24 horas. Tiene una plantilla que deja n8n ya instalado.",
+      "links": [{ "label": "VPS para n8n", "href": "https://www.hostinger.com/vps/n8n-hosting" }]
+    },
+    {
+      "type": "resource",
+      "badge": "7 · Automatización",
+      "title": "n8n",
+      "meta": "Community Edition gratis si la alojas tú. En la nube, desde €20 al mes con pago anual",
+      "text": "Un lienzo visual donde conectas apps como piezas: recibe un mensaje, consulta una IA, guarda el dato y responde. **Lo uso para:** bots de WhatsApp e Instagram con IA, reportes y avisos que se envían solos, y para conectar Apify con hojas de cálculo y correo.",
+      "links": [
+        { "label": "Precios de n8n", "href": "https://n8n.io/pricing" },
+        { "label": "Documentación", "href": "https://docs.n8n.io/hosting/" }
+      ]
+    },
+    { "type": "heading", "text": "Monta el stack en 4 pasos" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Elige un VPS", "text": "Entra a la página de n8n de Hostinger. El plan KVM 1 es el más barato y el KVM 2 ($8.79 al mes con contrato de 24 meses, se renueva a $14.99) es el que marcan como más popular." },
+        { "title": "Usa la plantilla de n8n", "text": "Al configurar el servidor, elige la plantilla **Ubuntu 24.04 with n8n**. Así no tienes que instalarlo a mano." },
+        { "title": "Crea un flujo pequeño", "text": "Empieza con algo que repitas cada semana, como un aviso o un reporte. Un solo flujo que funcione vale más que diez a medias." },
+        { "title": "Súmale IA y datos", "text": "Cuando ese flujo funcione, conéctale un modelo de IA o datos de Apify." }
+      ]
+    },
+    { "type": "heading", "text": "Lo que cuesta empezar" },
+    {
+      "type": "table",
+      "head": ["Herramienta", "¿Se puede empezar gratis?", "Primer plan de pago"],
+      "rows": [
+        ["**Claude Code**", "No", "$17 al mes con pago anual, o $20 con pago mensual"],
+        ["**Codex**", "Sí, con el plan gratis de ChatGPT", "$8 al mes (ChatGPT Go)"],
+        ["**Gemini**", "Sí", "Según tu país"],
+        ["**Apify**", "Sí, con $5 de uso al mes", "$19 al mes"],
+        ["**Hostinger**", "No", "$6.49 al mes con contrato de 24 meses"],
+        ["**n8n**", "Sí, si lo alojas tú", "€20 al mes con pago anual, en la nube"]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "No las contrates todas",
+      "text": "Empieza por la que resuelva tu problema de hoy y suma la siguiente cuando choques con un límite real. Precios revisados en noviembre de 2026 en las páginas oficiales: pueden cambiar, así que confírmalos antes de pagar."
+    }
+  ]
+}
