@@ -1,0 +1,206 @@
+{
+  "slug": "app-ia-mas-rapida",
+  "title": "Tu app con IA más rápida",
+  "subtitle": "Los prompts para pedirle a Claude las cinco mejoras que hacen más rápida tu aplicación o página web, y cómo conectar los tres MCPs para probar que de verdad mejoró.",
+  "kind": "Guía práctica",
+  "readingMinutes": 7,
+  "date": "2026-11-06",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "Mide primero con Chrome DevTools MCP: sin un número de antes, no puedes saber si mejoró.",
+        "Pídele a Claude los cinco puntos, uno por uno: renders, bundle, requests, queries y archivos pesados.",
+        "Vuelve a medir y compara el antes y el después.",
+        "Prueba con Playwright MCP que no se haya roto nada.",
+        "Vigila con Sentry MCP qué pasa con tus usuarios reales en producción."
+      ]
+    },
+    { "type": "heading", "text": "Antes de empezar: el método" },
+    {
+      "type": "paragraph",
+      "text": "Si le dices a Claude \"hazla más rápida\", va a cambiar cosas y te va a decir que mejoró, pero no vas a tener cómo comprobarlo. Por eso esta guía va en orden: **primero conectas los MCPs y mides, después optimizas, y al final mides otra vez**."
+    },
+    {
+      "type": "paragraph",
+      "text": "Un MCP es una conexión que le da a Claude acceso a otra herramienta. Con estos tres, Claude puede abrir tu app en un navegador, medirla, usarla como un usuario y leer los errores de producción."
+    },
+    { "type": "heading", "text": "Conecta los 3 MCPs" },
+    {
+      "type": "paragraph",
+      "text": "Los comandos se pegan en tu terminal, no dentro de la conversación con Claude. Necesitas Claude Code y Node.js instalados. Después de agregarlos, abre Claude Code y escribe `/mcp` para confirmar que aparecen conectados."
+    },
+    {
+      "type": "resource",
+      "badge": "MCP 1",
+      "title": "Chrome DevTools MCP",
+      "meta": "Para medir el rendimiento",
+      "text": "Le da a Claude las herramientas de desarrollador de Chrome: abre tu página, graba un análisis de rendimiento y revisa cada petición de red. Necesitas Chrome instalado. No pide cuenta ni clave.",
+      "links": [{ "label": "Ver en GitHub", "href": "https://github.com/ChromeDevTools/chrome-devtools-mcp" }]
+    },
+    { "type": "code", "text": "claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest" },
+    {
+      "type": "resource",
+      "badge": "MCP 2",
+      "title": "Playwright MCP",
+      "meta": "Para probar flujos reales",
+      "text": "Claude controla un navegador y hace lo que haría un usuario: entra, hace clic, llena formularios y revisa la consola. Sirve para confirmar que nada se rompió. Necesitas Node.js 18 o superior. No pide cuenta ni clave.",
+      "links": [{ "label": "Ver en GitHub", "href": "https://github.com/microsoft/playwright-mcp" }]
+    },
+    { "type": "code", "text": "claude mcp add playwright npx @playwright/mcp@latest" },
+    {
+      "type": "resource",
+      "badge": "MCP 3",
+      "title": "Sentry MCP",
+      "meta": "Para detectar problemas en producción",
+      "text": "Claude lee los errores y problemas de rendimiento que Sentry registra con tus usuarios reales. Necesitas una cuenta de Sentry con tu app ya conectada. La primera vez te pide iniciar sesión en el navegador: no hay que copiar ninguna clave.",
+      "links": [
+        { "label": "Sitio oficial", "href": "https://mcp.sentry.dev" },
+        { "label": "Ver en GitHub", "href": "https://github.com/getsentry/sentry-mcp" }
+      ]
+    },
+    { "type": "code", "text": "claude mcp add --transport http sentry https://mcp.sentry.dev/mcp" },
+    {
+      "type": "tip",
+      "title": "Dónde quedan instalados",
+      "text": "Chrome DevTools queda para todos tus proyectos por el `--scope user`. Playwright y Sentry quedan solo en la carpeta donde corriste el comando: si los quieres en todos, agrégales `--scope user` igual."
+    },
+    { "type": "heading", "text": "Paso previo: toma la medida de antes" },
+    {
+      "type": "paragraph",
+      "text": "Con tu app corriendo, pégale esto a Claude. Cambia la dirección por la tuya. Guarda el resultado: es tu punto de comparación."
+    },
+    {
+      "type": "code",
+      "text": "Usa Chrome DevTools MCP para abrir http://localhost:3000 y graba un análisis de rendimiento de la carga de la página. Revisa también las peticiones de red. Escribe en RENDIMIENTO.md los tiempos de carga, el peso total descargado, la cantidad de peticiones y los 5 problemas que más la frenan. No cambies nada todavía."
+    },
+    {
+      "type": "tip",
+      "title": "Antes de tocar código",
+      "text": "Guarda tu proyecto con un commit de Git y aplica **un punto a la vez**. Si algo se rompe, sabes exactamente qué fue y puedes volver atrás."
+    },
+    { "type": "heading", "text": "1. Elimina los renders innecesarios" },
+    {
+      "type": "paragraph",
+      "text": "Pasa cuando la aplicación o la página vuelve a dibujar partes de la pantalla que no cambiaron. Escribes en un buscador y se redibuja la página entera, y por eso se siente lenta aunque tenga poco contenido."
+    },
+    {
+      "type": "code",
+      "text": "Revisa el proyecto y detecta los renders innecesarios: componentes que se vuelven a dibujar aunque sus datos no cambiaron. Dame una lista ordenada por impacto, con el archivo y la causa de cada uno. Propón la solución antes de aplicarla y explícame cada cambio en palabras simples. No agregues memoización donde no vaya a notarse: solo donde haya una mejora real."
+    },
+    { "type": "heading", "text": "2. Reduce el bundle con lazy loading" },
+    {
+      "type": "paragraph",
+      "text": "El **bundle** es todo el código que descarga el usuario al entrar. Con **lazy loading**, cada parte se carga solo cuando se necesita: si alguien nunca abre el panel de configuración, nunca descarga ese código."
+    },
+    {
+      "type": "code",
+      "text": "Analiza el bundle de mi proyecto: dime cuánto pesa, qué librerías y qué partes ocupan más, y cuáles no se usan. Después propón un plan para dividir el código con lazy loading, empezando por las páginas y componentes que no se ven en la primera carga. Si una librería pesada se puede reemplazar por algo más liviano, dímelo. Dame una estimación de cuánto se reduce con cada cambio."
+    },
+    { "type": "heading", "text": "3. Optimiza el request y el caching" },
+    {
+      "type": "paragraph",
+      "text": "La idea es hacer menos llamadas al servidor y guardar las respuestas para no pedir lo mismo dos veces. Cada llamada que te ahorras es tiempo que el usuario no espera."
+    },
+    {
+      "type": "code",
+      "text": "Revisa todas las llamadas al servidor que hace mi app. Encuentra las duplicadas, las que se repiten sin necesidad y las que traen más datos de los que se usan. Propón cuáles se pueden unir o eliminar, y qué respuestas conviene guardar en caché y por cuánto tiempo. Nunca guardes en caché compartida datos privados de un usuario, y dime cómo se actualiza cada dato cuando cambia."
+    },
+    { "type": "heading", "text": "4. Encuentra las queries lentas y los N+1" },
+    {
+      "type": "paragraph",
+      "text": "Un **N+1** es cuando, para mostrar una lista, se consulta la API o la base de datos una vez por cada elemento, en vez de una sola vez para todos. Con 5 elementos no se nota. Con 500 elementos son 500 consultas y la pantalla se queda cargando."
+    },
+    {
+      "type": "code",
+      "text": "Busca en el proyecto las queries lentas y los problemas N+1: lugares donde se hace una consulta dentro de un ciclo o una consulta por cada elemento de una lista. Por cada uno dime el archivo, qué pantalla afecta y cómo traer todo en una sola consulta. Revisa también si faltan índices en las columnas por las que más se busca. No cambies la estructura de la base de datos sin mostrarme el plan primero."
+    },
+    { "type": "heading", "text": "5. Optimiza imágenes, fuentes y scripts" },
+    {
+      "type": "paragraph",
+      "text": "Normalmente son lo más pesado de una página. Una sola foto sin comprimir puede pesar más que todo tu código, así que este punto suele dar la mejora más grande con el menor esfuerzo."
+    },
+    {
+      "type": "code",
+      "text": "Revisa las imágenes, las fuentes y los scripts de mi página y dime cuáles pesan más. Convierte las imágenes a WebP o AVIF con el tamaño que realmente se muestra, y carga con lazy loading las que no se ven al entrar, sin aplicarlo a la imagen principal. Deja solo las fuentes y los grosores que se usan y que el texto se vea mientras cargan. Retrasa los scripts que no sean necesarios para la primera carga. Muéstrame el peso de antes y el de después."
+    },
+    { "type": "heading", "text": "Prueba que mejoró" },
+    {
+      "type": "paragraph",
+      "text": "Aquí entran los tres MCPs, cada uno con su trabajo. Pega estos prompts cuando termines los cambios."
+    },
+    {
+      "type": "table",
+      "head": ["MCP", "Te responde", "Cuándo"],
+      "rows": [
+        ["**Chrome DevTools**", "¿Cargó más rápido?", "Después de cada punto"],
+        ["**Playwright**", "¿Se rompió algo?", "Antes de publicar"],
+        ["**Sentry**", "¿Mejoró para los usuarios reales?", "Después de publicar"]
+      ]
+    },
+    { "type": "paragraph", "text": "**Compara con la medida de antes:**" },
+    {
+      "type": "code",
+      "text": "Usa Chrome DevTools MCP para repetir exactamente la misma medición que está en RENDIMIENTO.md. Hazme una tabla con el antes y el después de cada número, y dime con honestidad qué mejoró, qué empeoró y qué quedó igual."
+    },
+    { "type": "paragraph", "text": "**Prueba los flujos importantes:**" },
+    {
+      "type": "code",
+      "text": "Usa Playwright MCP para probar mi app como lo haría un usuario. Recorre estos flujos: [entrar a la página, iniciar sesión, buscar algo, completar una compra]. En cada uno revisa que funcione, que no aparezcan errores en la consola y que las imágenes y pantallas carguen. Usa solo datos de prueba. Dime qué falló y en qué paso."
+    },
+    { "type": "paragraph", "text": "**Revisa lo que pasa en producción:**" },
+    {
+      "type": "code",
+      "text": "Usa Sentry MCP para revisar mi proyecto en producción. Dime qué errores nuevos aparecieron desde el último despliegue, cuáles son los problemas de rendimiento que afectan a más usuarios y si detecta queries N+1. Ordénalos por impacto y propón una solución para los tres primeros."
+    },
+    {
+      "type": "tip",
+      "title": "No te quedes con la palabra de Claude",
+      "text": "Si Claude dice \"ya quedó más rápida\", pídele el número de antes y el de después. **Sin los dos números, no hay mejora comprobada.**"
+    },
+    { "type": "heading", "text": "Documentación oficial" },
+    {
+      "type": "paragraph",
+      "text": "Si quieres entender mejor cada punto, estas son las fuentes que usé en el video."
+    },
+    {
+      "type": "resource",
+      "badge": "Punto 1 y 2",
+      "title": "Renders y lazy loading",
+      "text": "Cómo React evita volver a dibujar un componente y cómo carga el código solo cuando hace falta.",
+      "links": [
+        { "label": "React memo", "href": "https://es.react.dev/reference/react/memo" },
+        { "label": "React lazy", "href": "https://es.react.dev/reference/react/lazy" },
+        { "label": "MDN: Lazy loading", "href": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/Lazy_loading" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Punto 3 y 4",
+      "title": "Caching y N+1",
+      "text": "Cómo funciona la caché de HTTP y cómo detecta Sentry las consultas N+1.",
+      "links": [
+        { "label": "MDN: HTTP caching", "href": "https://developer.mozilla.org/es/docs/Web/HTTP/Guides/Caching" },
+        { "label": "Sentry: N+1 Queries", "href": "https://docs.sentry.io/product/issues/issue-details/performance-issues/n-one-queries/" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Punto 5",
+      "title": "Imágenes y fuentes",
+      "text": "Los cursos de Google para servir imágenes y fuentes sin hacer lenta la página.",
+      "links": [
+        { "label": "web.dev: Learn Images", "href": "https://web.dev/learn/images" },
+        { "label": "web.dev: Optimize web fonts", "href": "https://web.dev/learn/performance/optimize-web-fonts" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Herramienta",
+      "title": "Claude Code",
+      "text": "La herramienta con la que corres todos los prompts de esta guía.",
+      "links": [{ "label": "Sitio oficial", "href": "https://www.anthropic.com/claude-code" }]
+    }
+  ]
+}
