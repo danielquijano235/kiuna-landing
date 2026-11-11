@@ -1,0 +1,235 @@
+{
+  "slug": "motion-graphics-claude",
+  "title": "Motion graphics con Claude que no parecen hechos con IA",
+  "subtitle": "Lo que le das a Claude antes del prompt: las reglas, tu marca, una referencia y una skill para repetirlo. Con los textos listos para copiar, en Claude Design o en Claude Code.",
+  "kind": "Guía paso a paso",
+  "readingMinutes": 8,
+  "date": "2026-11-11",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "Claude no crea el video: escribe el código de la animación y **HyperFrames** lo convierte en MP4.",
+        "Puedes hacerlo en **Claude Design** (en el navegador) o en tu computador con **Claude Code**.",
+        "Paso 1: dale reglas que le prohíban el look típico de la IA.",
+        "Paso 2: pásale tu marca, tu foto y los datos concretos que quieres en pantalla.",
+        "Paso 3: muéstrale una captura de un video que te inspire para que copie el estilo, no el contenido.",
+        "Paso 4: cuando te guste el resultado, conviértelo en una skill y la próxima vez solo das marca, foto y duración."
+      ]
+    },
+    { "type": "heading", "text": "El prompt es lo de menos" },
+    {
+      "type": "paragraph",
+      "text": "Desde que salió Claude Opus 5.5 todo el mundo está haciendo videos con motion graphics. El problema es que casi todos se ven iguales: un texto flotando en el centro, un degradado morado y mucho espacio vacío. Eso pasa porque todos le escriben a Claude un prompt parecido y nada más."
+    },
+    {
+      "type": "paragraph",
+      "text": "Lo que cambia el resultado es **lo que le das antes del prompt**: reglas, tu marca y una referencia de estilo. Esta guía te da cada una de esas piezas lista para copiar."
+    },
+    { "type": "heading", "text": "Cómo funciona por dentro" },
+    {
+      "type": "paragraph",
+      "text": "Claude no genera video como una IA de imágenes. Escribe cada escena como una página web animada (HTML, CSS y animaciones) y **HyperFrames**, un proyecto gratis y open source de HeyGen, la graba fotograma a fotograma y la convierte en MP4. Por eso puedes pedir cambios con palabras: \"haz el título más grande\", \"que la foto entre desde la derecha\"."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Tú das el contexto", "text": "Reglas, marca, referencia y lo que quieres contar." },
+        { "title": "Claude escribe la animación", "text": "Escena por escena, en código." },
+        { "title": "HyperFrames la convierte en video", "text": "Un MP4 listo para Instagram, TikTok o YouTube." }
+      ]
+    },
+    { "type": "heading", "text": "Elige dónde hacerlo" },
+    {
+      "type": "table",
+      "head": ["Qué", "Claude Design", "Claude Code"],
+      "rows": [
+        ["Dónde", "En el navegador, en claude.ai/design", "En tu computador, en la terminal o la app de escritorio"],
+        ["Para quién", "Si no quieres instalar nada", "Si quieres control total y renders ilimitados"],
+        ["Cómo sale el video", "Lo envías a **HyperFrames** desde las opciones de exportar y se renderiza en la nube", "HyperFrames lo renderiza en tu computador"],
+        ["Costo del render", "Gratis 3 renders al mes; después, con créditos de HeyGen", "Gratis"],
+        ["Necesitas", "Una cuenta de Claude y una de HeyGen", "Claude Code, Node.js 22 o más nuevo y FFmpeg"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Si eliges Claude Code, instala HyperFrames una sola vez con estos dos comandos en tu terminal y abre una sesión nueva:"
+    },
+    {
+      "type": "code",
+      "text": "claude plugin marketplace add heygen-com/hyperframes\nclaude plugin install hyperframes@hyperframes"
+    },
+    {
+      "type": "tip",
+      "title": "Revisa que todo esté listo",
+      "text": "Corre `npx hyperframes doctor`: te dice si falta FFmpeg o algo más para renderizar. Después, en Claude Code, empieza tus pedidos con `/hyperframes:hyperframes` para que cargue las reglas del framework."
+    },
+    { "type": "heading", "text": "Paso 1: dale reglas" },
+    {
+      "type": "paragraph",
+      "text": "Si no le pones reglas, Claude elige lo más seguro y lo más común. Y lo más común es justo lo que hacen otras 200 mil personas. Pégale este bloque al inicio de la conversación (o guárdalo para el paso 4):"
+    },
+    {
+      "type": "code",
+      "text": "REGLAS DE DISEÑO (no negociables)\n\nProhibido:\n- Texto solo, flotando en el centro de la pantalla, sobre un fondo vacío.\n- Degradados genéricos (morado, azul, neón) y fondos con brillos que no dicen nada.\n- Emojis como íconos, íconos de stock y formas abstractas de relleno.\n- Que todas las escenas tengan la misma composición.\n- Animaciones lineales o rebotes exagerados.\n\nObligatorio:\n- Usa solo los colores y las tipografías de mi marca (máximo 2 fuentes).\n- Composiciones con intención: alineadas a una cuadrícula, con contraste fuerte de tamaños (un elemento muy grande, el resto pequeño).\n- El texto entra por partes, nunca todo de golpe.\n- Movimiento con curvas suaves (que frene al llegar) y transiciones que conecten una escena con la siguiente.\n- Cada texto queda en pantalla al menos 1,5 segundos para que se pueda leer.\n- Usa material real (mi foto, mi logo, capturas, cifras concretas) antes que decoración.\n- Antes de entregar, revisa fotogramas sueltos. Si alguno parece una plantilla genérica de IA, rehazlo."
+    },
+    {
+      "type": "tip",
+      "text": "Ajusta las reglas a tu gusto. Lo importante es que estén escritas: lo que no prohíbes, Claude lo va a usar."
+    },
+    { "type": "heading", "text": "Paso 2: personalízalo" },
+    {
+      "type": "paragraph",
+      "text": "La segunda razón por la que todos los videos se parecen es que no tienen nada de quien los hizo. Comparte tu marca, una foto tuya o algo personal, y los datos específicos que quieres que aparezcan. Rellena esta ficha y adjunta los archivos:"
+    },
+    {
+      "type": "code",
+      "text": "MI MARCA\n\nNombre: [tu nombre o tu marca]\nColores: [principal #xxxxxx, acento #xxxxxx, fondo #xxxxxx]\nTipografías: [títulos: ..., textos: ...] (adjunto los archivos de fuente si no son de Google Fonts)\nLogo: adjunto [logo.svg o logo.png]\nFoto de apoyo: adjunto [mi-foto.jpg]\nTono: [ej.: directo, cercano, sin tecnicismos]\nDatos que deben aparecer tal cual: [cifras, nombres de herramientas, frases exactas]\nFormato: [vertical 9:16 para reels / horizontal 16:9]\nDuración: [ej.: 15 segundos]"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**En Claude Design:** adjunta el logo, la foto y las fuentes en la conversación. Si ya tienes un sistema de diseño configurado, el proyecto lo usa solo.",
+        "**En Claude Code:** guarda los archivos en una carpeta `assets/` dentro del proyecto y nómbralos en el prompt (`assets/logo.svg`). Con la ruta exacta, Claude no tiene que buscarlos."
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Colores exactos",
+      "text": "Dale los códigos hex, no \"un azul elegante\". Las palabras de ambiente Claude las interpreta a su manera; los valores exactos los respeta."
+    },
+    { "type": "heading", "text": "Paso 3: dale un estilo más profesional" },
+    {
+      "type": "paragraph",
+      "text": "Busca un video que te guste cómo se ve y pásale una captura. Claude saca de ahí los colores, la tipografía, el ritmo y hasta el tipo de transiciones, **sin copiar el contenido**."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "En Claude Design", "text": "Haz 2 o 3 capturas del video de referencia (inicio, mitad y una transición) y súbelas como imágenes." },
+        { "title": "En Claude Code", "text": "Deja el video en la carpeta del proyecto y pídele que saque fotogramas con FFmpeg. Así ve varios momentos, no uno solo." },
+        { "title": "Pide el análisis antes de animar", "text": "Usa el prompt de abajo y revisa lo que te devuelve antes de que empiece a construir." }
+      ]
+    },
+    {
+      "type": "code",
+      "text": "Te paso una referencia de estilo [adjunto las capturas / el video está en assets/referencia.mp4: saca un fotograma cada 2 segundos].\n\nAntes de animar nada, analiza y dime:\n1. Paleta de colores (con códigos hex aproximados).\n2. Tipografía: tipo de letra, pesos y tamaños relativos.\n3. Ritmo: cuánto dura cada plano y cada cuánto pasa algo nuevo.\n4. Transiciones: cómo pasa de una escena a otra.\n5. Composición: dónde pone el texto, las imágenes y el espacio vacío.\n\nDespués aplica ese estilo a MI contenido, adaptado a los colores y fuentes de mi marca. No copies textos, logos, personajes ni imágenes de la referencia: solo el estilo."
+    },
+    {
+      "type": "tip",
+      "text": "Usa la referencia para inspirarte, no para clonar el video de otra persona. Si el resultado se parece demasiado, pídele que cambie la composición y deje solo el ritmo y las transiciones."
+    },
+    { "type": "heading", "text": "Itera hasta que te guste" },
+    {
+      "type": "paragraph",
+      "text": "Con las reglas, la marca y la referencia, ahora sí escribes el prompt: qué quieres contar. Puede ser tan simple como esto:"
+    },
+    {
+      "type": "code",
+      "text": "Con mis reglas, mi marca y el estilo de la referencia, haz un motion graphic vertical de 15 segundos sobre: [tema o guion]. Usa mi foto en la escena final con mi nombre. Primero muéstrame un storyboard con una imagen por escena y espera mi visto bueno antes de animar."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Pide el storyboard primero:** ves el video en imágenes fijas antes de que se mueva nada, y es más barato corregir ahí.",
+        "**Corrige con frases concretas:** \"la escena 2 dura demasiado\", \"el título de la escena 3 al doble de tamaño\".",
+        "**Anota lo que corriges:** si repites una corrección dos veces, es una regla que falta. Agrégala al bloque del paso 1."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Para sacar el video: en Claude Design, envíalo a HyperFrames desde las opciones de exportar y renderiza el MP4 allí. En Claude Code, pídele que lo renderice o corre `npx hyperframes render --output final.mp4` dentro de la carpeta del proyecto."
+    },
+    { "type": "heading", "text": "Paso 4: conviértelo en una skill" },
+    {
+      "type": "paragraph",
+      "text": "Cuando después de varias vueltas te guste el resultado, no lo pierdas. Una **skill** es una carpeta con un archivo `SKILL.md` que guarda instrucciones y archivos de apoyo; Claude la carga sola cuando la necesita. Así la próxima vez no repites las reglas, la marca ni la referencia."
+    },
+    {
+      "type": "paragraph",
+      "text": "En Claude Code, al final de la conversación donde lograste el video que te gustó, pídele esto:"
+    },
+    {
+      "type": "code",
+      "text": "Convierte todo lo que hicimos en esta conversación en una skill personal llamada motion-mi-marca, en ~/.claude/skills/motion-mi-marca/.\n\nIncluye:\n- Las reglas de diseño, con las correcciones que te fui pidiendo.\n- Mi marca: colores, tipografías y la ruta del logo y las fuentes (copia los archivos dentro de la carpeta de la skill).\n- El estilo que sacaste de la referencia: paleta, ritmo, transiciones y composición.\n- El proceso: storyboard primero, revisar fotogramas antes de entregar y renderizar con HyperFrames.\n\nLa skill solo me tiene que pedir tres cosas: el tema o guion, una foto de apoyo y la duración."
+    },
+    {
+      "type": "paragraph",
+      "text": "Por dentro queda un archivo como este. Lo importante es la `description`: es lo que Claude lee para saber cuándo usarla."
+    },
+    {
+      "type": "code",
+      "text": "---\nname: motion-mi-marca\ndescription: Crea motion graphics con mi marca y mi estilo, renderizados con HyperFrames. Úsala cuando pida un video animado, un reel con motion graphics o una intro.\n---\n\n# Motion graphics con mi marca\n\n## Qué pedirme\nTema o guion, una foto de apoyo y la duración.\n\n## Reglas de diseño\n[las reglas del paso 1 con tus correcciones]\n\n## Marca\n[colores, fuentes, logo en ./assets/]\n\n## Estilo\n[paleta, ritmo, transiciones y composición de la referencia]\n\n## Proceso\n1. Storyboard y espero el visto bueno.\n2. Animo con HyperFrames.\n3. Reviso fotogramas sueltos contra las reglas.\n4. Renderizo el MP4."
+    },
+    {
+      "type": "table",
+      "head": ["Dónde la usas", "Dónde se guarda"],
+      "rows": [
+        ["Claude Code, en todos tus proyectos", "`~/.claude/skills/motion-mi-marca/`"],
+        ["Claude Code, solo en un proyecto", "`.claude/skills/motion-mi-marca/` dentro de ese proyecto"],
+        ["Claude en la web o la app", "Comprime la carpeta en un .zip y súbela en la configuración, en la sección de Skills"]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Detalles que evitan errores",
+      "text": "El nombre de la skill va en minúsculas, con números y guiones, y no puede incluir la palabra \"claude\". Las skills no se sincronizan entre productos: si la usas en Claude Code y en la web, tienes que subirla en los dos."
+    },
+    { "type": "heading", "text": "La próxima vez" },
+    {
+      "type": "paragraph",
+      "text": "Con la skill lista, todo el trabajo previo ya está hecho. Solo escribes:"
+    },
+    {
+      "type": "code",
+      "text": "Usa la skill motion-mi-marca. Tema: [de qué trata]. Foto: [adjunta o assets/foto.jpg]. Duración: 20 segundos."
+    },
+    {
+      "type": "paragraph",
+      "text": "Y a medida que hagas más videos, sigue agregando a la skill las correcciones que repites. Cada video sale mejor que el anterior sin que tengas que explicar nada de nuevo."
+    },
+    { "type": "heading", "text": "Enlaces oficiales" },
+    {
+      "type": "resource",
+      "badge": "Opción 1",
+      "title": "Claude Design",
+      "meta": "En el navegador · Incluido en los planes de Claude",
+      "text": "Crea diseños y animaciones conversando con Claude, sube capturas de referencia y envía el resultado a HyperFrames desde las opciones de exportar.",
+      "links": [
+        { "label": "Abrir Claude Design", "href": "https://claude.ai/design" },
+        { "label": "Guía para empezar", "href": "https://support.claude.com/en/articles/14604416-get-started-with-claude-design" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Opción 2",
+      "title": "Claude Code",
+      "meta": "En tu computador · Terminal o app de escritorio",
+      "text": "El agente de Claude que trabaja con archivos de tu computador. Con el plugin de HyperFrames renderiza los videos en local, sin límite de renders.",
+      "links": [{ "label": "Claude Code", "href": "https://claude.com/product/claude-code" }]
+    },
+    {
+      "type": "resource",
+      "badge": "El motor de video · de HeyGen",
+      "title": "HyperFrames",
+      "meta": "Gratis y open source · Necesita Node.js 22+ y FFmpeg en local",
+      "text": "Convierte HTML animado en MP4. Trae la guía para usarlo con Claude Code y los consejos para escribir mejores pedidos.",
+      "links": [
+        { "label": "Repositorio en GitHub", "href": "https://github.com/heygen-com/hyperframes" },
+        { "label": "Guía con Claude Code", "href": "https://hyperframes.heygen.com/guides/with-claude-code" },
+        { "label": "Cómo escribir mejores pedidos", "href": "https://hyperframes.heygen.com/guides/prompting" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Paso 4",
+      "title": "Agent Skills",
+      "text": "Qué es una skill, cómo se arma el `SKILL.md` y dónde guardarla en cada producto de Claude.",
+      "links": [
+        { "label": "Documentación de Skills", "href": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" },
+        { "label": "Skills en Claude Code", "href": "https://code.claude.com/docs/en/skills" }
+      ]
+    }
+  ]
+}
