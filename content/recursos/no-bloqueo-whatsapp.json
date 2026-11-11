@@ -1,0 +1,242 @@
+{
+  "slug": "no-bloqueo-whatsapp",
+  "title": "7 reglas para que no bloqueen tu WhatsApp",
+  "subtitle": "Las siete reglas que aplico antes de poner un agente de IA a responder en WhatsApp, para que ningún número de mis clientes termine bloqueado. Con la checklist para revisarlas antes de automatizar.",
+  "kind": "Guía práctica",
+  "readingMinutes": 7,
+  "date": "2026-11-10",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "Conecta tu número con la API oficial y, para escribir primero, usa solo plantillas aprobadas.",
+        "Avisa desde el primer mensaje que quien responde es un agente de IA.",
+        "Cada mensaje debe pedir una respuesta, aunque sea un sí o un no.",
+        "Sube el volumen poco a poco: nada de pasar de 10 a 1.000 mensajes de golpe.",
+        "Revisa la calificación de calidad de tu número cada semana.",
+        "Segmenta: cada grupo de clientes recibe el mensaje que le sirve.",
+        "Siempre debe existir una forma de hablar con una persona."
+      ]
+    },
+    { "type": "heading", "text": "Por qué bloquean un número" },
+    {
+      "type": "paragraph",
+      "text": "WhatsApp no te bloquea por usar un agente de IA. Te bloquea por cómo reacciona la gente a tus mensajes: si te bloquean, te reportan, te silencian o archivan tu chat, Meta lo lee como spam. Esa calidad se mide con lo que pasó en los **últimos 7 días**, y lo más reciente pesa más."
+    },
+    {
+      "type": "paragraph",
+      "text": "Por eso las siete reglas apuntan a lo mismo: que la gente quiera recibir tus mensajes y los responda."
+    },
+    {
+      "type": "tip",
+      "title": "La regla cero",
+      "text": "Solo escríbele a quien te dio su número y **aceptó recibir mensajes tuyos**. Es un requisito de la política de WhatsApp Business. Y si alguien pide que no le escribas más, sácalo de tu lista ese mismo día."
+    },
+    { "type": "heading", "text": "1. Usa la API oficial y plantillas aprobadas" },
+    {
+      "type": "paragraph",
+      "text": "Conecta tu número a la **WhatsApp Business Platform** (la Cloud API de Meta), directo o a través de un proveedor oficial. Las herramientas que conectan tu número escaneando un código QR, como si fueran WhatsApp Web, no son oficiales: es el caso de **Evolution API** cuando se usa con Baileys. Meta prohíbe usar herramientas de terceros no autorizadas, y es la forma más fácil de que te baneen el número."
+    },
+    {
+      "type": "paragraph",
+      "text": "Con la API oficial hay una regla que tienes que conocer: la **ventana de 24 horas**. Se abre cada vez que el cliente te escribe."
+    },
+    {
+      "type": "table",
+      "head": ["Situación", "Qué puedes enviar"],
+      "rows": [
+        ["El cliente te escribió hace menos de 24 horas", "Mensajes libres, incluidas las respuestas de tu agente de IA"],
+        ["Pasaron más de 24 horas, o tú inicias la conversación", "Solo **plantillas aprobadas**"]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Las plantillas son de tres tipos: **marketing** (ofertas y novedades), **utilidad** (confirmaciones, recordatorios, estado de un pedido) y **autenticación** (códigos de acceso). Meta las revisa sola cuando las creas o las editas, y puede tardar hasta 24 horas. Solo se pueden enviar las aprobadas."
+    },
+    {
+      "type": "tip",
+      "title": "Cada plantilla también tiene calidad",
+      "text": "En WhatsApp Manager cada plantilla aparece con calidad alta, media o baja. Si la gente la bloquea, la reporta o no la lee, Meta la **pausa** o la **desactiva** y deja de salir. Una plantilla en calidad media o baja es una alarma: cámbiala antes de seguir enviándola."
+    },
+    { "type": "heading", "text": "2. Di desde el principio que es un agente de IA" },
+    {
+      "type": "paragraph",
+      "text": "Cuando alguien cree que habla con una persona y a la mitad descubre que era un bot, se siente engañado. Ahí llegan los enojos, los bloqueos y los reportes. La política de WhatsApp pide no confundir ni engañar a la gente con tus mensajes. Si lo dices desde el primer mensaje, la persona sabe qué esperar y no se siente engañada."
+    },
+    { "type": "paragraph", "text": "Un saludo que funciona, para adaptar a tu negocio:" },
+    {
+      "type": "code",
+      "text": "Hola, soy Sofía, la asistente de inteligencia artificial de [tu negocio]. Te ayudo con precios, horarios y pedidos. Si en algún momento prefieres hablar con una persona, escribe ASESOR."
+    },
+    { "type": "heading", "text": "3. Que tus mensajes generen respuesta" },
+    {
+      "type": "paragraph",
+      "text": "Una plantilla que nadie responde es la que más bloqueos junta. Termina cada mensaje con una pregunta fácil, y mejor todavía si la persona solo tiene que tocar un botón. Además, cuando el cliente responde se abre la ventana de 24 horas y tu agente ya puede conversar con mensajes libres."
+    },
+    {
+      "type": "table",
+      "head": ["Mensaje que se ignora", "Mensaje que genera respuesta"],
+      "rows": [
+        ["\"Tenemos 20% de descuento esta semana.\"", "\"Tu pedido está listo. ¿Pasas a recogerlo hoy?\" con botones **Sí, hoy** y **Mañana**"],
+        ["\"Recuerda tu cita del jueves.\"", "\"Tu cita es el jueves a las 10:00. ¿La confirmas?\" con botones **Confirmo** y **Cambiar hora**"]
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Botones de respuesta",
+      "text": "Las plantillas pueden llevar botones de respuesta rápida. Dentro de la ventana de 24 horas también puedes enviar mensajes con **hasta 3 botones**, de máximo 20 caracteres cada uno."
+    },
+    { "type": "heading", "text": "4. Calienta el número y sube el volumen poco a poco" },
+    {
+      "type": "paragraph",
+      "text": "Un número nuevo no tiene historial. Si un día envía 10 mensajes y al día siguiente 1.000, Meta lo detecta como spam y puede bloquearlo. Además, Meta te pone un **límite de mensajes**: la cantidad de personas distintas a las que puedes escribirles fuera de la ventana de 24 horas, en un periodo móvil de 24 horas. Ese límite es de todo tu portafolio de negocio y lo comparten todos tus números."
+    },
+    {
+      "type": "table",
+      "head": ["Límite", "Cómo llegas"],
+      "rows": [
+        ["**250** personas", "Es el límite con el que empiezas"],
+        ["**2.000** personas", "Verificas tu negocio, o envías 2.000 mensajes entregados con plantillas de calidad alta en 30 días"],
+        ["**10.000**, **100.000** e **ilimitado**", "Subes un nivel solo si tus mensajes son de calidad alta y en los últimos 7 días usaste al menos la mitad de tu límite"]
+      ]
+    },
+    { "type": "paragraph", "text": "Así caliento un número nuevo:" },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Empieza por los que más responden", "text": "Los primeros días escríbeles a tus clientes más activos, los que te conocen y seguro contestan. Pocas decenas al día." },
+        { "title": "Sube de a poco", "text": "Aumenta el volumen solo si la calidad sigue alta y la gente responde. Sin saltos exponenciales." },
+        { "title": "Reparte los envíos grandes", "text": "Una campaña de 1.000 mensajes sale mejor en varios días y horarios que toda de una vez." },
+        { "title": "Si la calidad baja, frena", "text": "No vuelvas a subir el volumen hasta que la calificación se recupere." }
+      ]
+    },
+    { "type": "heading", "text": "5. Vigila el quality rating de tu número" },
+    {
+      "type": "paragraph",
+      "text": "El **quality rating** es la calificación que WhatsApp le da a tu número según cómo recibe la gente tus mensajes: bloqueos, reportes, silenciados, archivados y los motivos que dan al bloquearte. Si envías mucho, puede cambiar en cuestión de minutos. Mientras más rápido veas que baja, más fácil es corregirlo."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Entra a WhatsApp Manager", "text": "Desde business.facebook.com, con la cuenta de tu negocio." },
+        { "title": "Abre los números de teléfono", "text": "En **Herramientas de la cuenta > Números de teléfono**." },
+        { "title": "Revisa los tres datos", "text": "El estado del número, su calificación de calidad y tu límite de mensajes." }
+      ]
+    },
+    {
+      "type": "table",
+      "head": ["Calificación", "Qué hago"],
+      "rows": [
+        ["**Alta** (verde)", "Todo bien. Puedes seguir subiendo el volumen poco a poco."],
+        ["**Media** (amarilla)", "Frena. Busca qué plantilla o qué segmento está generando bloqueos y cámbialo."],
+        ["**Baja** (roja)", "Detén los envíos masivos y corrige antes de volver a escribir."]
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Revísalo cada semana y siempre al día siguiente de un envío grande. Es más fácil corregir una plantilla a tiempo que recuperar un número castigado."
+    },
+    { "type": "heading", "text": "6. Segmenta tus mensajes" },
+    {
+      "type": "paragraph",
+      "text": "No todos tus clientes necesitan el mismo mensaje. Quien te compró ayer no quiere la misma promoción que alguien que no te escribe hace seis meses. El mensaje que no le sirve a alguien es el que termina bloqueado."
+    },
+    {
+      "type": "list",
+      "items": [
+        "**Por etapa:** cliente nuevo, cliente activo, cliente que no compra hace tiempo.",
+        "**Por interés:** lo que compró o lo que preguntó la última vez.",
+        "**Por lo que aceptó recibir:** la política de WhatsApp recomienda pedir permiso por tipo de mensaje (pedidos, ofertas, recomendaciones). Si solo aceptó avisos de pedidos, no le mandes ofertas.",
+        "**Por cómo respondió:** quien nunca contesta tus mensajes no debería recibir el siguiente envío masivo."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Y en cada segmento se mantiene la regla 3: el mensaje termina con algo fácil de responder."
+    },
+    { "type": "heading", "text": "7. Ten siempre una ruta a un humano" },
+    {
+      "type": "paragraph",
+      "text": "Los bots 100% autónomos también generan bloqueos: cuando la persona no consigue lo que necesita y no tiene con quién hablar, se frustra y te bloquea. La política de WhatsApp Business permite automatizar las respuestas, pero **exige tener vías claras y directas para escalar**, como pasar el chat a una persona del equipo."
+    },
+    { "type": "paragraph", "text": "Cuándo debería pasar la conversación a una persona:" },
+    {
+      "type": "list",
+      "items": [
+        "Cuando el cliente lo pide (\"quiero hablar con alguien\", \"asesor\").",
+        "Cuando el agente no sabe la respuesta o empieza a repetirse.",
+        "Quejas, reclamos, reembolsos o cualquier tema delicado de dinero.",
+        "Cuando la persona se nota molesta."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "En la práctica: el agente marca la conversación en tu CRM o bandeja de entrada, avisa al equipo y deja de responder solo en ese chat hasta que una persona la toma. Esta instrucción se agrega al prompt de tu agente:"
+    },
+    {
+      "type": "code",
+      "text": "Si el cliente pide hablar con una persona, se queja, menciona un reembolso o no sabes la respuesta, no inventes nada. Dile que lo vas a pasar con alguien del equipo, usa la herramienta de transferir a humano y no vuelvas a responder en ese chat hasta que el equipo lo cierre."
+    },
+    { "type": "heading", "text": "Checklist antes de automatizar" },
+    {
+      "type": "paragraph",
+      "text": "Antes de conectar un agente de IA a cualquier número, revisa que todo esto se cumpla:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Mi número está conectado por la API oficial, no escaneando un QR.",
+        "Todos mis contactos aceptaron recibir mensajes de mi negocio.",
+        "Mis plantillas están aprobadas y terminan con una pregunta o con botones.",
+        "El primer mensaje dice que responde un agente de IA.",
+        "Tengo un plan para subir el volumen poco a poco.",
+        "Sé dónde ver el quality rating y lo reviso cada semana.",
+        "Mis contactos están segmentados.",
+        "Existe una forma clara de pasar a una persona."
+      ]
+    },
+    { "type": "heading", "text": "Documentación oficial" },
+    {
+      "type": "paragraph",
+      "text": "Todo lo de esta guía sale de la documentación de Meta. Si quieres profundizar en alguna regla, aquí están las fuentes."
+    },
+    {
+      "type": "resource",
+      "badge": "Regla 1",
+      "title": "WhatsApp Business Platform y Cloud API",
+      "text": "La forma oficial de conectar tu número y enviar mensajes desde un sistema o un agente de IA.",
+      "links": [
+        { "label": "WhatsApp Business Platform", "href": "https://business.whatsapp.com/products/business-platform" },
+        { "label": "Cloud API", "href": "https://developers.facebook.com/docs/whatsapp/cloud-api/overview?locale=es_LA" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Reglas 1 y 3",
+      "title": "Plantillas y botones de respuesta",
+      "text": "Cómo se crean y aprueban las plantillas, y cómo enviar mensajes con botones.",
+      "links": [
+        { "label": "Plantillas de mensajes", "href": "https://developers.facebook.com/docs/whatsapp/business-management-api/message-templates?locale=es_LA" },
+        { "label": "Botones de respuesta", "href": "https://developers.facebook.com/docs/whatsapp/cloud-api/messages/interactive-reply-buttons-messages?locale=es_LA" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Reglas 4 y 5",
+      "title": "Límites de mensajes y calificación de calidad",
+      "text": "Cómo funcionan los niveles de envío, cómo se sube de nivel y qué mide la calificación de calidad.",
+      "links": [
+        { "label": "Límites de mensajes", "href": "https://developers.facebook.com/docs/whatsapp/messaging-limits?locale=es_LA" },
+        { "label": "Calificación de calidad", "href": "https://www.facebook.com/business/help/896873687365001?locale=es_LA" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Reglas 2, 6 y 7",
+      "title": "Política de WhatsApp Business",
+      "text": "Las reglas de consentimiento, de bajas y de escalamiento a una persona que tu negocio tiene que cumplir.",
+      "links": [{ "label": "Leer la política", "href": "https://business.whatsapp.com/policy" }]
+    }
+  ]
+}
