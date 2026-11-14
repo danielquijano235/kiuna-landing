@@ -1,0 +1,264 @@
+{
+  "slug": "funciones-claude-pro",
+  "title": "10 funciones del plan Pro de Claude que casi nadie usa",
+  "subtitle": "Si pagas los 20 dólares de Claude, esto es todo lo que ya tienes incluido y cuál te sirve más según a lo que te dedicas.",
+  "kind": "Guía práctica",
+  "readingMinutes": 8,
+  "date": "2026-11-14",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "El plan **Pro** cuesta **$20 al mes** (o $17 al mes si pagas el año completo) y trae mucho más que un chat con más mensajes.",
+        "Las 10 funciones: **Claude Code**, **Cowork**, **Research**, **Claude Design**, **tareas programadas**, **Claude en Chrome**, **Claude para Microsoft 365**, **Proyectos**, **Opus** y **Dashboards**.",
+        "Casi todas son exclusivas de los planes de pago: en el plan gratis no aparecen.",
+        "No necesitas usar las 10. Más abajo tienes una tabla para elegir según tu trabajo.",
+        "Todas consumen tu límite de uso del plan, así que empieza por las 2 o 3 que más te sirvan."
+      ]
+    },
+    { "type": "heading", "text": "Qué incluye el plan Pro" },
+    {
+      "type": "paragraph",
+      "text": "La mayoría paga Pro para tener más mensajes y sigue usando Claude igual que en el plan gratis. Pero el plan desbloquea herramientas completas: un agente que trabaja en tus archivos, investigación profunda, tareas que se hacen solas cada día, Claude dentro de Chrome y de Excel, y el modelo más potente."
+    },
+    {
+      "type": "table",
+      "head": ["Función", "Plan gratis", "Plan Pro"],
+      "rows": [
+        ["**Claude Code**", "No", "Sí"],
+        ["**Cowork y tareas programadas**", "No", "Sí"],
+        ["**Research**", "No", "Sí"],
+        ["**Claude Design**", "Sí, con poco uso", "Sí, con mucho más uso"],
+        ["**Claude en Chrome**", "No", "Sí"],
+        ["**Claude para Microsoft 365**", "No", "Sí"],
+        ["**Proyectos**", "Hasta 5", "Sí, sin ese tope de 5"],
+        ["**Opus**", "No (Sonnet y Haiku)", "Sí"],
+        ["**Dashboards (beta)**", "No", "Sí"]
+      ]
+    },
+    { "type": "heading", "text": "Cuál te sirve según lo que haces" },
+    {
+      "type": "table",
+      "head": ["Si te dedicas a...", "Empieza por"],
+      "rows": [
+        ["Programar o crear apps y webs", "**Claude Code** y **Opus**"],
+        ["Tener un negocio o emprendimiento", "**Cowork**, **tareas programadas** y **Claude en Chrome**"],
+        ["Trabajar en oficina con Excel, Word y PowerPoint", "**Claude para Microsoft 365** y **Proyectos**"],
+        ["Crear contenido o redes sociales", "**Claude Design** y **Research**"],
+        ["Estudiar o investigar", "**Research** y **Proyectos**"],
+        ["Invertir o seguir el mercado", "**Tareas programadas** y **Research**"],
+        ["Analizar datos o reportes", "**Dashboards** y **Claude para Excel**"]
+      ]
+    },
+    { "type": "heading", "text": "1. Claude Code" },
+    {
+      "type": "paragraph",
+      "text": "Es un agente que entra a tus proyectos, lee tus archivos y **modifica cosas por ti**: arregla errores, crea funciones nuevas o arma una web completa a partir de lo que le pides. Funciona en la terminal, en la app de escritorio, en VS Code, en la web (claude.ai/code) y hasta en el celular."
+    },
+    {
+      "type": "tip",
+      "title": "Para quién",
+      "text": "Programadores, pero también cualquiera que quiera crear su propia app, web o automatización sin saber programar. Le explicas lo que quieres y lo construye."
+    },
+    { "type": "heading", "text": "2. Claude Cowork" },
+    {
+      "type": "paragraph",
+      "text": "Muy parecido a Claude Code, pero pensado para el trabajo de todos los días y no solo para código. Vive dentro de la **app de escritorio de Claude**: eliges una carpeta de tu computador, le das un objetivo y él lee, ordena y modifica tus archivos hasta entregarte el trabajo terminado. Es como tener un agente dentro de tu computador."
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Ordena mi carpeta Descargas por tipo de archivo y borra los duplicados.\"",
+        "\"Lee las facturas de esta carpeta y hazme un Excel con el total por proveedor.\"",
+        "\"Convierte estas notas de reunión en un informe en Word.\""
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Claude está juntando el chat y Cowork en una sola experiencia, así que puede que lo veas simplemente como \"Claude\" en la app de escritorio. Cowork gasta tu límite de uso más rápido que el chat normal."
+    },
+    { "type": "heading", "text": "3. Research" },
+    {
+      "type": "paragraph",
+      "text": "Le pides que investigue algo **a fondo** y Claude hace muchas búsquedas seguidas en internet (y en tus apps conectadas), cruza la información y te entrega un informe con fuentes. Es mucho más útil y concreto que pedírselo al chat normal, que hace una o dos búsquedas y ya."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "En el chat, toca el botón **+** abajo a la izquierda." },
+        { "text": "Elige **Research**: aparece un indicador azul." },
+        { "text": "Escribe tu pregunta con todo el contexto que puedas y espera el informe." }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Para quién",
+      "text": "Estudiantes, emprendedores que quieren analizar a su competencia, o cualquiera que tenga que tomar una decisión con información (comprar, invertir, elegir proveedor)."
+    },
+    { "type": "heading", "text": "4. Claude Design" },
+    {
+      "type": "paragraph",
+      "text": "Le describes lo que necesitas y te arma una primera versión: diseños para redes, presentaciones, one pagers, maquetas de webs y hasta animaciones. Después lo ajustas con comentarios o controles y lo exportas a PDF, PowerPoint o HTML. Se puede probar gratis, pero el uso es limitado: con Pro tienes mucho más margen para crear y repetir hasta que quede bien."
+    },
+    {
+      "type": "tip",
+      "title": "Para quién",
+      "text": "Creadores de contenido, emprendedores que no tienen diseñador y cualquiera que haga presentaciones seguido."
+    },
+    { "type": "heading", "text": "5. Tareas programadas" },
+    {
+      "type": "paragraph",
+      "text": "Le dejas a Claude una tarea que se repite sola: cada hora, cada día, cada semana o solo de lunes a viernes. Yo lo uso para seguir las acciones de bolsa que me interesan: **todos los días a las 4:20** me manda un resumen de cómo les fue y qué pasos seguir."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Abre la app de escritorio de Claude y entra a **Scheduled** en la barra lateral." },
+        { "text": "Toca **New task** y elige **Create with Claude** para armarla conversando, o **Set up manually** para poner tú el nombre, la instrucción y la frecuencia." },
+        { "text": "Desde ahí puedes ver cada ejecución, pausarla, editarla o correrla cuando quieras." }
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Las tareas corren en la nube, así que funcionan aunque tu computador esté apagado o la app cerrada. La excepción: si la tarea necesita archivos de tu computador, ahí sí tiene que estar prendido."
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Cada mañana a las 8, revisa las noticias de mi sector y mándame las 5 más importantes.\"",
+        "\"Todos los viernes, resume lo que vendí en la semana.\"",
+        "\"De lunes a viernes a las 4:20, dame el resumen de estas acciones y qué hacer con cada una.\""
+      ]
+    },
+    { "type": "heading", "text": "6. Claude en Chrome" },
+    {
+      "type": "paragraph",
+      "text": "Es una extensión del navegador. Abres el panel de Claude al lado de cualquier página y le pides cosas: que revise tu correo, que navegue por varias pestañas buscando algo, que llene un formulario o que compare precios. Claude lee la página, hace clic, escribe y navega por ti."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Instala **Claude** desde la Chrome Web Store (solo funciona en Google Chrome)." },
+        { "text": "Inicia sesión con tu cuenta Pro." },
+        { "text": "Toca el ícono de Claude en la barra de Chrome para abrir el panel lateral." }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Ojo con la seguridad",
+      "text": "Claude te pide aprobación antes de acciones sensibles como compras. Puedes elegir que te pregunte en cada paso o darle permiso por sitio. Revisa siempre lo que hace en páginas con datos importantes."
+    },
+    { "type": "heading", "text": "7. Claude para Microsoft 365" },
+    {
+      "type": "paragraph",
+      "text": "Claude se instala como complemento dentro de **Excel**, **Word** y **PowerPoint** (y **Outlook**, en beta) y trabaja ahí mismo, en un panel al lado de tu archivo. Ya no copias y pegas entre Claude y Office."
+    },
+    {
+      "type": "table",
+      "head": ["App", "Qué hace Claude ahí"],
+      "rows": [
+        ["**Excel**", "Te explica celdas y fórmulas, cambia supuestos sin romper nada y arma modelos"],
+        ["**Word**", "Edita con control de cambios, responde comentarios y respeta tus estilos"],
+        ["**PowerPoint**", "Crea diapositivas con tu plantilla, con gráficos y diagramas"],
+        ["**Outlook** (beta)", "Ordena tu bandeja, deja respuestas listas y busca horarios para reuniones"]
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Se instala desde el marketplace de Microsoft. Recuerda lo que hiciste en una app cuando pasas a otra, y puedes hablarle por dictado en el panel."
+    },
+    { "type": "heading", "text": "8. Proyectos" },
+    {
+      "type": "paragraph",
+      "text": "Un proyecto es como una **carpeta** donde guardas tus documentos, instrucciones y conversaciones de un tema, separados del resto. Todo lo que hablas ahí parte sabiendo esa información, sin volver a explicarla. En el plan gratis tienes un tope de 5 proyectos; con Pro ese tope desaparece."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Un proyecto por cliente, con sus documentos y su forma de trabajar.",
+        "Un proyecto por materia, con tus apuntes y el programa del curso.",
+        "Un proyecto para tu marca, con tu tono, tus productos y tus precios."
+      ]
+    },
+    { "type": "heading", "text": "9. Más modelos: Opus" },
+    {
+      "type": "paragraph",
+      "text": "En el plan gratis usas **Sonnet** y **Haiku**. Con Pro se suma **Opus**, el modelo más potente de Claude (hoy **Opus 5.5**), que razona mejor y rinde mucho más en tareas complicadas: código difícil, análisis largos o documentos con muchos detalles. Lo eliges en el selector de modelo, al lado de donde escribes."
+    },
+    {
+      "type": "tip",
+      "title": "Cuándo usar cada uno",
+      "text": "**Sonnet** para el día a día (rápido y gasta menos uso). **Opus** cuando la tarea es difícil o importante. Opus consume tu límite más rápido, así que no lo dejes puesto para todo."
+    },
+    { "type": "heading", "text": "10. Claude Dashboards (beta)" },
+    {
+      "type": "paragraph",
+      "text": "Es la función más nueva: **paneles con tus datos** que Claude arma dentro de sus artifacts, para ver números y gráficos en un solo lugar en vez de leerlos en un texto largo. Está en **beta en los planes de pago**, así que puede que todavía no te aparezca o que cambie de nombre."
+    },
+    {
+      "type": "tip",
+      "text": "Si lo que quieres ver es cuánto te queda de uso del plan, eso está en **Settings > Usage**: ahí ves tu consumo de la sesión actual y cuándo se reinicia tu límite semanal."
+    },
+    { "type": "heading", "text": "Sácale provecho esta semana" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Busca tu trabajo en la tabla de arriba y elige **2 funciones**.",
+        "Crea **un proyecto** con la información de lo que más haces.",
+        "Deja **una tarea programada** que te ahorre algo que haces todos los días.",
+        "Usa **Research** la próxima vez que tengas que investigar algo, en vez del chat normal."
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Los menús de Claude cambian de nombre seguido. Si no encuentras una opción, revisa la página de precios o la ayuda oficial de abajo: la función es la misma."
+    },
+    { "type": "heading", "text": "Enlaces oficiales" },
+    {
+      "type": "resource",
+      "badge": "Precios",
+      "title": "Planes de Claude",
+      "meta": "Pro: $20 al mes, o $17 al mes pagando anual",
+      "text": "La tabla oficial con todo lo que incluye cada plan y cómo funcionan los límites de uso.",
+      "links": [
+        { "label": "Ver planes", "href": "https://claude.com/pricing" },
+        { "label": "Cómo funcionan los límites", "href": "https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Agentes",
+      "title": "Claude Code y Cowork",
+      "text": "Las páginas oficiales de los dos agentes y la guía para programar tareas.",
+      "links": [
+        { "label": "Claude Code", "href": "https://claude.com/product/claude-code" },
+        { "label": "Claude Cowork", "href": "https://claude.com/product/cowork" },
+        { "label": "Tareas programadas", "href": "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Herramientas",
+      "title": "Research, Design, Chrome y Microsoft 365",
+      "text": "Cómo activar cada una y qué puede hacer.",
+      "links": [
+        { "label": "Usar Research", "href": "https://support.claude.com/en/articles/11088861-using-research-on-claude-ai" },
+        { "label": "Claude Design", "href": "https://claude.com/product/claude-design" },
+        { "label": "Claude en Chrome", "href": "https://claude.com/chrome" },
+        { "label": "Claude para Microsoft 365", "href": "https://claude.com/claude-for-excel" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Modelos",
+      "title": "Opus y Sonnet",
+      "text": "Qué hace cada modelo y para qué conviene usarlo.",
+      "links": [
+        { "label": "Claude Opus", "href": "https://www.anthropic.com/claude/opus" },
+        { "label": "Claude Sonnet", "href": "https://www.anthropic.com/claude/sonnet" }
+      ]
+    }
+  ]
+}
