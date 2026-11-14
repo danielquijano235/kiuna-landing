@@ -1,0 +1,237 @@
+{
+  "slug": "mcps-claude",
+  "title": "Los 5 MCP básicos para usar Claude bien",
+  "subtitle": "Conecta Gmail, Google Sheets, Notion, Slack y Google Drive a Claude (y a Claude Code) paso a paso, con ejemplos de qué pedirle a cada uno.",
+  "kind": "Guía paso a paso",
+  "readingMinutes": 7,
+  "date": "2026-11-14",
+  "blocks": [
+    {
+      "type": "summary",
+      "title": "Resumen en 30 segundos",
+      "items": [
+        "Un **MCP** (en Claude se llaman **conectores**) deja que Claude entre a tus apps: lee, busca y crea cosas ahí mismo.",
+        "Los 5 básicos: **Gmail**, **Google Sheets**, **Notion**, **Slack** y **Google Drive**.",
+        "Se conectan una sola vez desde **Customize > Connectors** en claude.ai, con tu cuenta de cada app.",
+        "Si entras a **Claude Code** con tu cuenta de Claude, los conectores que ya activaste aparecen solos.",
+        "Claude solo ve lo que tu cuenta ya puede ver, y te pide permiso antes de enviar correos."
+      ]
+    },
+    { "type": "heading", "text": "Qué es un MCP" },
+    {
+      "type": "paragraph",
+      "text": "**MCP** (Model Context Protocol) es un estándar abierto que conecta a Claude con otras aplicaciones. Sin conectores, Claude solo sabe lo que le pegas en el chat. Con ellos, puede ir a buscar el correo, la hoja de cálculo o la nota que necesita, y además hacer cosas: dejar un borrador, editar una página o mandar un mensaje."
+    },
+    {
+      "type": "paragraph",
+      "text": "Si pagas Claude y no tienes ninguno conectado, lo estás usando como un chat más. Estos 5 son los primeros que vale la pena activar porque son las apps donde pasa casi todo tu trabajo."
+    },
+    {
+      "type": "table",
+      "head": ["Conector", "Qué hace Claude por ti", "Quién lo hace"],
+      "rows": [
+        ["**Gmail**", "Busca en tu bandeja, resume hilos y te deja borradores listos", "Google"],
+        ["**Google Sheets**", "Revisa tus hojas, encuentra errores y mejora fórmulas", "Google"],
+        ["**Notion**", "Lee, crea, edita y organiza tus páginas y notas", "Notion"],
+        ["**Slack**", "Lee tus canales, resume hilos y envía mensajes", "Slack"],
+        ["**Google Drive**", "Busca, lee, sube y organiza tus archivos", "Google"]
+      ]
+    },
+    { "type": "heading", "text": "Cómo se conecta cualquiera de los 5" },
+    {
+      "type": "paragraph",
+      "text": "El proceso es el mismo para todos. Funciona en claude.ai y en la app de escritorio:"
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "Abre los conectores", "text": "Entra a **Customize > Connectors**, o directo a `claude.ai/customize/connectors`." },
+        { "title": "Busca la app", "text": "Toca el **+** junto a Connectors y busca Gmail, Notion, Slack, etc." },
+        { "title": "Conecta tu cuenta", "text": "Abre el conector, toca **Connect** e inicia sesión con tu cuenta de esa app para darle permiso." },
+        { "title": "Actívalo en el chat", "text": "En cualquier conversación toca **+**, pasa el mouse por **Connectors** y enciende los que quieres usar ahí." }
+      ]
+    },
+    {
+      "type": "tip",
+      "title": "Si tu Claude es de empresa",
+      "text": "En planes Team y Enterprise, primero el administrador tiene que habilitar el conector en **Organization settings > Connectors**. Después cada persona conecta su propia cuenta."
+    },
+    { "type": "heading", "text": "1. Gmail" },
+    {
+      "type": "paragraph",
+      "text": "Claude lee tus correos, encuentra lo que buscas sin que tengas que pasar entre spam y promociones, resume hilos largos y te deja **borradores listos para enviar** en tu Gmail. Tú los revisas y los mandas."
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Busca los correos de esta semana que tengan una pregunta sin responder y hazme una lista.\"",
+        "\"Resume el hilo con el proveedor de envíos y dime qué quedó pendiente.\"",
+        "\"Déjame un borrador respondiendo a Laura que acepto la reunión del jueves.\""
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Por defecto, Claude te pide aprobación antes de enviar, responder o reenviar un correo. Los borradores no salen de tu cuenta hasta que tú los envías."
+    },
+    { "type": "heading", "text": "2. Google Sheets" },
+    {
+      "type": "paragraph",
+      "text": "Si manejas los datos de tu negocio en hojas de cálculo, este es el que más tiempo te ahorra. Claude abre tu hoja, te avisa si hay datos con errores, celdas vacías o duplicados, y te dice qué fórmulas se pueden mejorar. En la web (Chrome) y en la app de escritorio puede editarla en vivo en un panel al lado del chat."
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "text": "Conecta primero **Google Drive** (paso 5): es el que busca y comparte los archivos." },
+        { "text": "En el chat, toca **+ > Connectors** y enciende **Google Sheets**." },
+        { "text": "Pídele la hoja **por su nombre** o pega el link. Si solo dices \"una hoja de cálculo\", Claude crea un archivo nuevo en vez de abrir la tuya." }
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Revisa la hoja Ventas 2026 y dime qué filas tienen datos raros o fórmulas rotas.\"",
+        "\"Mejora las fórmulas de la columna Total para que no se rompan si agrego filas.\"",
+        "\"Agrega una pestaña con el total vendido por mes.\""
+      ]
+    },
+    { "type": "heading", "text": "3. Notion" },
+    {
+      "type": "paragraph",
+      "text": "Claude lee y escribe en tu Notion: organiza tus notas, crea páginas nuevas, edita las que ya tienes, borra lo que sobra y consulta tus bases de datos. Ideal si tienes ideas, tareas y apuntes regados por todos lados."
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Busca mis notas sobre el lanzamiento y júntalas en una sola página ordenada.\"",
+        "\"Convierte esta conversación en una página de Notion con las tareas pendientes.\"",
+        "\"Revisa mi base de datos de clientes y dime quién no tiene fecha de seguimiento.\""
+      ]
+    },
+    { "type": "heading", "text": "4. Slack" },
+    {
+      "type": "paragraph",
+      "text": "Claude lee las conversaciones de tus canales e hilos, busca mensajes y archivos, y puede **enviar mensajes por ti**. Lo mejor: antes de una reunión le pides el resumen del hilo y no llegas con la mente en blanco."
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"¿Qué se decidió esta semana en el canal #marketing?\"",
+        "\"Resume el hilo del cliente nuevo en 5 puntos antes de mi llamada.\"",
+        "\"Escríbele a Pedro por Slack que el informe está listo en Drive.\""
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Claude solo ve los canales y mensajes que tu cuenta ya puede ver. Si tu empresa restringe las apps de Slack, el administrador tiene que aprobar el conector."
+    },
+    { "type": "heading", "text": "5. Google Drive" },
+    {
+      "type": "paragraph",
+      "text": "Claude busca en tus archivos, lee documentos, hojas, presentaciones y PDF, los descarga, **sube archivos nuevos** y te ayuda a ordenar tus carpetas. Le pides el documento con tus palabras y te lo trae, aunque no recuerdes cómo se llamaba."
+    },
+    {
+      "type": "list",
+      "items": [
+        "\"Busca en mi Drive la propuesta para el cliente Pérez y resúmela en 5 puntos.\"",
+        "\"Guarda este resumen como documento en mi carpeta Reuniones.\"",
+        "\"¿Cuáles son los últimos archivos que modifiqué esta semana?\""
+      ]
+    },
+    { "type": "heading", "text": "Úsalos en Claude Code" },
+    {
+      "type": "paragraph",
+      "text": "No tienes que configurarlos dos veces. Si inicias sesión en **Claude Code** con tu cuenta de Claude (Pro, Max, Team o Enterprise), los conectores que activaste en claude.ai aparecen solos. Para revisarlos, escribe esto dentro de Claude Code:"
+    },
+    { "type": "code", "text": "/mcp" },
+    {
+      "type": "paragraph",
+      "text": "Ahí ves la lista de servidores MCP conectados y puedes iniciar sesión en los que lo pidan. Si alguno no aparece, revisa que esté conectado en claude.ai y que no estés usando Claude Code con una API key, porque en ese caso los conectores de tu cuenta no se cargan."
+    },
+    {
+      "type": "paragraph",
+      "text": "También puedes agregar un servidor MCP directo desde la terminal. Por ejemplo, el oficial de Notion para todos tus proyectos:"
+    },
+    { "type": "code", "text": "claude mcp add --transport http notion --scope user https://mcp.notion.com/mcp" },
+    {
+      "type": "paragraph",
+      "text": "Después abre Claude Code, escribe `/mcp`, elige **notion** y completa el inicio de sesión en el navegador."
+    },
+    {
+      "type": "tip",
+      "title": "Con Claude Code se ponen interesantes",
+      "text": "Puedes mezclar varios en un solo pedido: \"Lee los correos de clientes de hoy en Gmail, anota los pedidos en la hoja Pedidos de Sheets y avísame por Slack cuando termines\"."
+    },
+    { "type": "heading", "text": "Empieza hoy en 10 minutos" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Conecta **Gmail** y **Google Drive**: son los que más vas a usar.",
+        "Prueba un pedido real de la lista de arriba en cada uno.",
+        "Suma **Sheets**, **Notion** o **Slack** según dónde trabajes más.",
+        "Apaga en cada chat los conectores que no necesitas: Claude responde más rápido y con menos ruido."
+      ]
+    },
+    {
+      "type": "tip",
+      "text": "Los menús de Claude cambian de nombre con las actualizaciones. Si no encuentras una opción, busca **Connectors** en la configuración: la idea es la misma."
+    },
+    { "type": "heading", "text": "Enlaces oficiales" },
+    {
+      "type": "resource",
+      "badge": "Directorio",
+      "title": "Conectores de Claude",
+      "meta": "Más de mil apps · Web, escritorio y Claude Code",
+      "text": "El directorio oficial con todos los conectores y el artículo de ayuda con los pasos para activarlos.",
+      "links": [
+        { "label": "Directorio de conectores", "href": "https://claude.com/connectors" },
+        { "label": "Cómo usar conectores", "href": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Google",
+      "title": "Gmail, Google Sheets y Google Drive",
+      "meta": "Hechos por Google · Inicias sesión con tu cuenta de Google",
+      "text": "Las páginas oficiales de cada conector y la guía de Claude para usar Gmail, Drive, Docs, Sheets y Slides.",
+      "links": [
+        { "label": "Conector de Gmail", "href": "https://claude.com/marketplace/connectors/gmail" },
+        { "label": "Conector de Google Drive", "href": "https://claude.com/marketplace/connectors/google-drive" },
+        { "label": "Guía de Google Workspace", "href": "https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Notion",
+      "title": "Notion MCP",
+      "meta": "Hecho por Notion",
+      "text": "El conector oficial de Notion y su guía para conectarlo a Claude y a Claude Code.",
+      "links": [
+        { "label": "Conector de Notion", "href": "https://claude.com/marketplace/connectors/notion" },
+        { "label": "Guía de Notion MCP", "href": "https://developers.notion.com/docs/get-started-with-mcp" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Slack",
+      "title": "Slack MCP",
+      "meta": "Hecho por Slack",
+      "text": "El conector oficial de Slack: busca, lee canales e hilos, envía mensajes y crea canvases.",
+      "links": [
+        { "label": "Conector de Slack", "href": "https://claude.com/marketplace/connectors/slack" },
+        { "label": "Documentación de Slack MCP", "href": "https://docs.slack.dev/ai/slack-mcp-server" }
+      ]
+    },
+    {
+      "type": "resource",
+      "badge": "Para ir más allá",
+      "title": "MCP y Claude Code",
+      "text": "Qué es el Model Context Protocol y cómo agregar, revisar y quitar servidores MCP en Claude Code.",
+      "links": [
+        { "label": "Qué es MCP", "href": "https://modelcontextprotocol.io" },
+        { "label": "MCP en Claude Code", "href": "https://code.claude.com/docs/en/mcp" },
+        { "label": "Claude Code", "href": "https://www.claude.com/product/claude-code" }
+      ]
+    }
+  ]
+}
